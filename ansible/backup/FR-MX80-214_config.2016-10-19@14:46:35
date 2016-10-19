@@ -1,0 +1,350 @@
+## Last changed: 2016-10-19 21:43:21 UTC
+version "16.1-20160926.0 [builder]";
+system {
+    host-name FR-MX80-214;
+    domain-name jnpr.net;
+    authentication-order [ password radius ];
+    root-authentication {
+        encrypted-password "$5$aMI50IXz$dBLhi9IgsuV0OKRt5nIfWqcZSUVk8pjKtJ4hTRHXUV4";
+    }
+    name-server {
+        172.29.143.60;
+    }
+    radius-server {
+        10.1.3.100 secret "$9$wl2oZHqfn/tmP0IEcvMaZU";
+    }
+    dynamic-profile-options {
+        versioning;
+    }
+    login {
+        class dtcp {
+            permissions [ flow-tap flow-tap-control flow-tap-operation ];
+        }
+        class netop {
+            permissions [ access access-control clear configure field firewall firewall-control interface interface-control network reset rollback routing routing-control security security-control snmp snmp-control system system-control trace trace-control view view-configuration ];
+        }
+        user adrien {
+            uid 2009;
+            class netop;
+            authentication {
+                encrypted-password "$1$89KLk65l$zERP.QqYZL0xznD7RBkjO/";
+            }
+        }
+        user juniper {
+            uid 2002;
+            class super-user;
+            authentication {
+                encrypted-password "$5$Ymbi0D5/$A2XecUBcOc6LcQok54FoUY4yFWR7u3S5xtv2A7xCzPB";
+            }
+        }
+        user md {
+            uid 2010;
+            class dtcp;
+        }
+        user mediation {
+            uid 2008;
+            class dtcp;
+            authentication {
+                encrypted-password "$1$ZMv6RYr6$zAxiGDM5PFIajkh6Z9JnL.";
+            }
+        }
+        user tiaddemo {
+            uid 2012;
+            class super-user;
+            authentication {
+                encrypted-password "$5$.nEJHGog$tdMPa5VPCaB9vqoRItGJEowMl8z9vgcfLcoi5q5.BZC";
+            }
+        }
+        user tom {
+            uid 2011;
+            class super-user;
+            authentication {
+                encrypted-password "$1$6fntHCH3$l.pOrrkKBIoea8AQZUPEs.";
+            }
+        }
+    }
+    services {
+        ftp;
+        ssh {
+            max-sessions-per-connection 32;
+        }
+        telnet;
+        netconf {
+            ssh;
+        }
+        flow-tap-dtcp {
+            ssh;
+        }
+        rest {
+            http;
+        }
+    }
+    syslog {
+        user * {
+            any emergency;
+        }
+        file interactive-commands {
+            interactive-commands any;
+        }
+        file message {
+            any any;
+            archive world-readable;
+            explicit-priority;
+        }
+        file script-test {
+            daemon info;
+            explicit-priority;
+        }
+        file default-log-messages {
+            any info;
+            match "(requested 'commit' operation)|(copying configuration to juniper.save)|(commit complete)|ifAdminStatus|(FRU power)|(FRU removal)|(FRU insertion)|(link UP)|transitioned|Transferred|transfer-file|(license add)|(license delete)|(package -X update)|(package -X delete)|(FRU Online)|(FRU Offline)|(plugged in)|(unplugged)|CFMD_CCM_DEFECT| LFMD_3AH | RPD_MPLS_PATH_BFD|(Master Unchanged, Members Changed)|(Master Changed, Members Changed)|(Master Detected, Members Changed)|(vc add)|(vc delete)|(Master detected)|(Master changed)|(Backup detected)|(Backup changed)|(interface vcp-)";
+            structured-data;
+        }
+    }
+    processes {
+        inactive: general-authentication-service {
+            traceoptions {
+                file ppp;
+                flag all;
+            }
+        }
+    }
+    ntp {
+        server 172.30.108.11;
+    }
+}
+chassis {
+    aggregated-devices {
+        ethernet {
+            device-count 4;
+        }
+    }
+    fpc 1 {
+        pic 0 {
+            tunnel-services {
+                bandwidth 1g;
+            }
+            inline-services {
+                bandwidth 10g;
+            }
+        }
+        pic 1 {
+            tunnel-services {
+                bandwidth 1g;
+            }
+        }
+    }
+    inactive: tfeb {
+        slot 0 {
+            sampling-instance s1;
+        }
+    }
+}
+interfaces {
+    xe-0/0/0 {
+        unit 0 {
+            family inet {
+                address 10.0.0.1/24;
+            }
+            family mpls;
+        }
+    }
+    xe-0/0/1 {
+        unit 0 {
+            family inet {
+                address 10.10.0.2/24;
+            }
+        }
+    }
+    ge-1/0/4 {
+        vlan-tagging;
+    }
+    ge-1/0/8 {
+        vlan-tagging;
+        encapsulation flexible-ethernet-services;
+        unit 100 {
+            vlan-id 100;
+            family inet {
+                address 192.168.100.2/24;
+            }
+        }
+    }
+    ge-1/0/9 {
+        unit 0 {
+            family inet {
+                address 20.100.0.1/24;
+            }
+        }
+    }
+    gr-1/0/10 {
+        unit 0 {
+            tunnel {
+                source 170.0.0.254;
+                destination 170.0.0.1;
+            }
+            family inet {
+                address 192.0.0.254/24;
+            }
+        }
+    }
+    vt-1/0/10 {
+        unit 0 {
+            family inet;
+            family inet6;
+        }
+    }
+    ge-1/1/0 {
+        description "to VM vlan-132";
+        unit 0 {
+            family inet {
+                address 10.1.3.80/24;
+            }
+        }
+    }
+    ge-1/1/1 {
+        description "to VM vlan-133";
+        unit 0 {
+            family inet {
+                address 10.1.4.80/24;
+            }
+        }
+    }
+    ge-1/1/8 {
+        unit 0 {
+            family inet {
+                address 180.0.0.254/24;
+            }
+        }
+    }
+    ge-1/1/9 {
+        mtu 4484;
+        unit 0 {
+            family inet {
+                address 170.0.0.254/24;
+            }
+        }
+    }
+    fxp0 {
+        description test;
+        unit 0 {
+            family inet {
+                address 172.30.108.214/24;
+            }
+        }
+    }
+    lo0 {
+        unit 2 {
+            family inet {
+                address 2.2.2.2/32;
+                address 5.5.5.5/32;
+                address 6.6.6.6/32;
+            }
+        }
+    }
+}
+snmp {
+    inactive: v3 {
+        usm {
+            local-engine {
+                user mediation {
+                    authentication-md5 {
+                        authentication-key "$9$.mz6pu1hyKBI";
+                    }
+                }
+            }
+        }
+        target-address test {
+            address 10.1.3.101;
+            port 162;
+            tag-list mediation-8;
+            target-parameters tpl;
+        }
+        target-parameters tpl {
+            parameters {
+                message-processing-model v3;
+                security-model usm;
+                security-level authentication;
+                security-name mediation;
+            }
+            notify-filter nfl;
+        }
+        notify nfl {
+            type trap;
+            tag mediation-8;
+        }
+    }
+    community public {
+        authorization read-only;
+        clients {
+            172.30.0.0/16;
+        }
+    }
+    trap-group space {
+        targets {
+            172.30.108.80;
+            172.30.108.78;
+            172.30.109.95;
+        }
+    }
+}
+routing-options {
+    graceful-restart;
+    static {
+        route 172.0.0.0/8 next-hop 172.30.108.1;
+        route 0.0.0.0/0 next-hop 172.30.109.1;
+        route 192.168.0.0/24 next-hop 20.20.20.1;
+        route 4.4.4.4/32 next-hop gr-1/0/10.0;
+    }
+    router-id 2.2.2.2;
+    autonomous-system 65000;
+}
+protocols {
+    mpls {
+        interface xe-0/0/0.0;
+    }
+    bgp {
+        group interne {
+            type internal;
+            local-address 2.2.2.2;
+            neighbor 1.1.1.1 {
+                family inet {
+                    unicast;
+                }
+                family inet-vpn {
+                    unicast;
+                }
+            }
+        }
+    }
+    ospf {
+        area 0.0.0.0 {
+            interface lo0.2;
+            interface xe-0/0/0.0;
+            interface ge-1/0/9.0;
+        }
+    }
+    ldp {
+        interface xe-0/0/0.0;
+    }
+    lldp {
+        interface all;
+    }
+}
+routing-instances {
+    CE {
+        instance-type virtual-router;
+        interface ge-1/0/7.100;
+        routing-options {
+            static {
+                route 0.0.0.0/0 next-hop 192.168.100.2;
+            }
+        }
+    }
+    PE {
+        instance-type vrf;
+        interface ge-1/0/8.100;
+        route-distinguisher 65000:200;
+        vrf-target target:65000:100;
+        vrf-table-label;
+    }
+}

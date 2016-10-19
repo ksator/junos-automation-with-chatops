@@ -1,0 +1,163 @@
+## Last changed: 2016-10-19 21:44:06 UTC
+version "16.1-20160915.0 [builder]";
+system {
+    host-name MX240-04;
+    root-authentication {
+        encrypted-password "$1$f39IdPn7$JrK1QaKisrPEdgrNHLE571";
+    }
+    login {
+        user juniper {
+            uid 2000;
+            class super-user;
+            authentication {
+                encrypted-password "$1$6UYqX8.c$NkqT2xCZk6GdWaeOVPg7L1";
+            }
+        }
+        user tiaddemo {
+            uid 2001;
+            class super-user;
+            authentication {
+                encrypted-password "$5$Xt04oNZW$K3IgL7ZvbrotSdt/.6JYE72OXyQdJzSheNKgu8HhSq2";
+            }
+        }
+    }
+    services {
+        ftp;
+        ssh;
+        telnet;
+        netconf {
+            ssh;
+        }
+        rest {
+            http;
+        }
+    }
+    syslog {
+        user * {
+            any emergency;
+        }
+        file messages {
+            any notice;
+            authorization info;
+        }
+        file interactive-commands {
+            interactive-commands any;
+        }
+    }
+}
+chassis {
+    network-services enhanced-ip;
+}
+interfaces {
+    xe-1/0/0 {
+        unit 0 {
+            family inet {
+                address 10.10.0.1/24;
+            }
+        }
+    }
+    ge-1/2/0 {
+        vlan-tagging;
+        unit 100 {
+            vlan-id 100;
+            family inet {
+                address 192.168.1.1/24;
+            }
+        }
+    }
+    ge-1/2/1 {
+        vlan-tagging;
+        unit 100 {
+            vlan-id 100;
+            family inet {
+                address 192.168.1.2/24;
+            }
+        }
+    }
+    ge-1/2/2 {
+        unit 0 {
+            family inet {
+                address 10.100.0.1/24;
+            }
+        }
+    }
+    ge-1/2/3 {
+        disable;
+        unit 0 {
+            family inet {
+                address 20.100.0.1/24;
+            }
+        }
+    }
+    fxp0 {
+        unit 0 {
+            family inet {
+                address 172.30.108.210/24;
+            }
+        }
+    }
+    lo0 {
+        unit 0 {
+            family inet {
+                address 3.3.3.3/32;
+            }
+        }
+    }
+}
+routing-options {
+    static {
+        route 172.0.0.0/8 next-hop 172.30.108.1;
+    }
+    router-id 3.3.3.3;
+    autonomous-system 65000;
+}
+protocols {
+    mpls {
+        interface xe-1/0/0.0;
+    }
+    ospf {
+        area 0.0.0.0 {
+            interface lo0.0;
+            interface xe-1/0/0.0;
+            interface ge-1/2/3.0;
+        }
+    }
+    ldp {
+        interface xe-1/0/0.0;
+    }
+    lldp {
+        interface all;
+    }
+}
+policy-options {
+    policy-statement bgp-in {
+        then accept;
+    }
+    policy-statement bgp-out {
+        then accept;
+    }
+}
+openconfig-bgp:bgp {
+    neighbors {
+        neighbor 10.10.0.2 {
+            config {
+                peer-as 104;
+                peer-group OC;
+            }
+        }
+    }
+    peer-groups {
+        peer-group OC {
+            config {
+                local-as 110;
+                peer-type EXTERNAL;
+            }
+            apply-policy {
+                config {
+                    import-policy bgp-in;
+                    export-policy bgp-out;
+                }
+            }
+        }
+    }
+}

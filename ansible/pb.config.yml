@@ -1,0 +1,12 @@
+---
+ - name: pass set and delete commands
+   hosts: "{{ device }}"
+   connection: local
+   gather_facts: no
+
+   tasks:
+   - name: pass set and delete commands  
+     junos_config:
+      provider: "{{ credentials }}"
+      lines: "{{ cli }}"
+      comment: configured by Ansible module junos_config

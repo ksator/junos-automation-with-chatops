@@ -1,0 +1,18 @@
+{
+  "name": "myhubot",
+  "version": "0.0.0",
+  "private": true,
+  "author": "ksator <khelil.sator@gmail.com>",
+  "description": "A simple helpful robot for your Company",
+  "dependencies": {
+    "hubot": "^2.19.0",
+    "hubot-diagnostics": "0.0.1", 
+    "hubot-help": "^0.2.0",
+    "hubot-redis-brain": "0.0.3",
+    "hubot-scripts": "^2.17.2",
+    "hubot-slack": "^4.2.1"
+  },
+  "engines": {
+    "node": "0.10.x"
+  }
+}

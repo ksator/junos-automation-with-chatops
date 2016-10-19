@@ -1,0 +1,21 @@
+---
+- name: pass a junos show command and print the output
+  hosts: "{{ device }}"
+  connection: local
+  gather_facts: no
+
+  tasks:
+
+  - name: pass a junos show command
+    junos_command:
+      provider: "{{ credentials }}"
+      commands: "{{ cli }}"
+      format: text
+    register: command
+
+  - name: print the show command output
+    debug: var=command.stdout_lines
+
+
+
+

@@ -1,0 +1,29 @@
+---
+ - name: make sure the directory diffs exists
+   hosts: localhost
+   gather_facts: no
+
+   tasks:
+
+   - name: create a directory
+     file: path={{playbook_dir}}/diffs state=directory
+
+ - name: Rollback configuration on junos devices
+   hosts: "{{ device }}"
+   roles:       
+    - Juniper.junos
+   connection: local
+   gather_facts: no
+
+   tasks:
+
+   - name: Rollback junos configuration task
+     junos_rollback:
+      #http://junos-ansible-modules.readthedocs.io/en/1.4.0/junos_rollback.html
+      host={{ junos_host }}
+      user={{ ADMUSER }}
+      passwd={{ ADMPASS }}
+      logfile={{playbook_dir}}/rollback.log
+      diffs_file={{playbook_dir}}/diffs/{{ inventory_hostname }}.diff
+      rollback={{rbid}}
+      comment="configuration rolled back by Ansible"

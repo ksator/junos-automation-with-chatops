@@ -1,0 +1,28 @@
+---
+ - name: make sure the directory backup exists  
+   hosts: localhost
+   gather_facts: no
+   
+   tasks:
+    
+   - name: create a directory
+     file: path={{playbook_dir}}/configs state=directory
+
+ - name: Collect configuration from devices
+   hosts: "{{ device|default('all') }}"
+   connection: local
+   gather_facts: no
+   tasks:
+
+## This playbook will query facts and configuration in text format
+## and Store the configuration in Ansible server
+
+    - name: Collect configuration from devices
+      junos_facts:
+        config: yes
+        config_format: text
+        provider: "{{ credentials }}"
+      register: result
+
+    - name: Save configuration to file in local directory
+      copy: content="{{ result.ansible_facts.config }}" dest={{playbook_dir}}/backup/{{inventory_hostname}}.conf
