@@ -15,7 +15,7 @@ The steps to reproduce are:
 -	Invite some peoples 
 -	Install hubot (I am using it on an ubuntu 14.04 VM) 
 -	Invite your bot 
--	Create some automation content (on the same VM that has the bot, so you do not need to use API between the bot and the automation content). My automation content is based on Ansible: https://github.com/ksator/chatops_junos/tree/master/ansible . 
+-	Create some automation content (on the same VM that has the bot, so the bot dosent need to use API to consume the automation content). My automation content is based on Ansible: https://github.com/ksator/chatops_junos/tree/master/ansible . 
 - Optionally, you can also use the slack notification module in the Ansible playbooks (here's an https://github.com/ksator/chatops_junos/blob/master/ansible/pb.template.yml)    
 -	Create a script that tell your bot what to do based on slack messages. Here’s mine https://github.com/ksator/chatops_junos/blob/master/scripts/junos.coffee.  
 - launch the bot, with a slack adaptor: 
