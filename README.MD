@@ -27,5 +27,5 @@ Here’s the syntax ( \<Y> has to exist in the ansible inventory file, it could 
 ksator@ubuntu:~/myhubot$ HUBOT_SLACK_TOKEN=xoxb-90946701733-BTJh5QnUdQrTMcbtjgawmvjo ./bin/hubot -a slack
 ```
 
-  
-
+#### Contributions, bugs, questions, suggestions, enhancement requests
+Please submit github issues or pull requests. 
