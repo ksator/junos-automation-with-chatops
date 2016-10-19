@@ -15,6 +15,10 @@ Here’s the syntax ( \<Y> has to exist in the ansible inventory file, it could 
 - **myhubot show \<X> on dev \<Y>** - Execute a junos show command on device/group \<Y> and print the command output
 - **myhubot playbook \<X> on dev \<Y>** - Execute the playbook <X> on device/group \<Y>
 
+#### How does it work: 
+The bot uses Ansible under the hood: https://github.com/ksator/chatops_junos/tree/master/ansible   
+The bot configuration is this file: https://github.com/ksator/chatops_junos/blob/master/scripts/junos.coffee  
+
 #### The steps to reproduce are: 
 -	create a slack team  
 -	Optionally, integrate some tools into some channels of this slack team (some of my github repositories have a webhook to slack, some of my .travis.yml send slack notifications. So from these channels I receive notifications from github and TravisCI). 
