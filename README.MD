@@ -1,13 +1,13 @@
 The bot can execute junos commands (set/delete/show) to a device or a group of devices. It can also backup the junos configuration, rollback the junos configuration, load a jinja2 template, apply a playbook to junos devices.  
 It uses Ansible under the hood.   
-Here’s the syntax ( <Y> has to exist in the ansible inventory file, it could be an endpoint or a group) with some help: 
-- **myhubot set \<X> on dev <Y>** - Execute a junos set command on device/group <Y>
-- **myhubot delete <X> on dev <Y>** - Execute a junos delete command on device/group <Y>
-- **myhubot rollback <id> on dev <Y>** - Rollback <id> the configuration of device/group <Y>
-- **myhubot template <X> on dev <Y>** - Backup the configuration of device/group <Y>, and apply the template <X> to the device/group <Y>
-- **myhubot backup on dev <Y>** - Backup the configuration of the device/group <Y>
-- **myhubot show <X> on dev <Y>** - Execute a junos show command on device/group <Y> and print the command output
-- **myhubot playbook <X> on dev <Y>** - Execute the playbook <X> on device/group <Y>
+Here’s the syntax ( \<Y> has to exist in the ansible inventory file, it could be an endpoint or a group) with some help: 
+- **myhubot set \<X> on dev \<Y>** - Execute a junos set command on device/group \<Y>
+- **myhubot delete \<X> on dev \<Y>** - Execute a junos delete command on device/group \<Y>
+- **myhubot rollback \<id> on dev \<Y>** - Rollback <id> the configuration of device/group \<Y>
+- **myhubot template \<X> on dev \<Y>** - Backup the configuration of device/group \<Y>, and apply the template \<X> to the device/group \<Y>
+- **myhubot backup on dev \<Y>** - Backup the configuration of the device/group \<Y>
+- **myhubot show \<X> on dev \<Y>** - Execute a junos show command on device/group \<Y> and print the command output
+- **myhubot playbook \<X> on dev \<Y>** - Execute the playbook <X> on device/group \<Y>
 
 The steps to reproduce are: 
 -	create a slack team  
