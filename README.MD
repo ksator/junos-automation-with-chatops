@@ -38,9 +38,16 @@ Here’s the chat syntax, with some help:
 The bot uses Ansible under the hood. Here's the Ansible content https://github.com/ksator/chatops_junos/tree/master/ansible   
 The bot configuration is this file: https://github.com/ksator/chatops_junos/blob/master/scripts/junos.coffee  
 
-So, as example, the slack message **myhubot template \<X> on dev \<Y>** triggers the ansible playbook [**pb.template.yml**](https://github.com/ksator/chatops_junos/blob/master/ansible/pb.template.yml) with some variable definitions. Actually, the bot will execute this command:  
+So, as example, the slack message:   
+**myhubot template \<X> on dev \<Y>**   
+triggers the ansible playbook [**pb.template.yml**](https://github.com/ksator/chatops_junos/blob/master/ansible/pb.template.yml) with some variable definitions.   
+Actually, the bot will execute this command:  
 ```
 ansible-playbook $PWD/ansible/pb.template.yml --extra-vars = "{'device': <Y>, 'template': <X>}"
+```
+Which is the equivalent of: 
+```
+ansible-playbook $PWD/ansible/pb.template.yml --extra-vars "device=<Y> template=<X>"  
 ```
 
 #### The steps to reproduce are: 
