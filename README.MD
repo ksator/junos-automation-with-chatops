@@ -39,7 +39,9 @@ The bot uses Ansible under the hood. Here's the Ansible content https://github.c
 The bot configuration is this file: https://github.com/ksator/chatops_junos/blob/master/scripts/junos.coffee  
 
 So, as example, the slack message:   
-**myhubot template \<X> on dev \<Y>**   
+```
+myhubot template \<X> on dev \<Y>   
+```
 triggers the ansible playbook [**pb.template.yml**](https://github.com/ksator/chatops_junos/blob/master/ansible/pb.template.yml) with some variable definitions (using the --extra-vars option to pass the variables definition to the playbook):   
 Actually, the bot will execute this command:  
 ```
