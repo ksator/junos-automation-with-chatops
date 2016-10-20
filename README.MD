@@ -21,7 +21,7 @@ The bot configuration is this file: https://github.com/ksator/chatops_junos/blob
 
 As example, the slack message **myhubot template \<X> on dev \<Y>** triggers the ansible playbook [**pb.template.yml**](https://github.com/ksator/chatops_junos/blob/master/ansible/pb.template.yml) with some variable definitions. The bot will execute this command:  
 ```
-ansible-playbook $PWD/ansible/pb.template.yml --extra-vars = "{'device': \<Y>, 'template': \<X>}"
+ansible-playbook $PWD/ansible/pb.template.yml --extra-vars = "{'device': <Y>, 'template': <X>}"
 ```
 
 #### The steps to reproduce are: 
