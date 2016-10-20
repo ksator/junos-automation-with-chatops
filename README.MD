@@ -1,5 +1,7 @@
 #### What to find on this repo:  
-chatops for network engineers, based on slack and hubot and ansible for junos automation
+Chatops for network engineers.  
+Based on slack and hubot and ansible for junos automation  
+Initially inspired by this demo https://www.dravetech.com/blog/2016/03/30/chatops-demo.html  
 
 #### Bot capabilties:
 The bot can execute junos commands (set/delete/show) to a device or a group of devices.  
@@ -40,7 +42,11 @@ The bot configuration is this file: https://github.com/ksator/chatops_junos/blob
 
 So, as example, the slack message:   
 ```
-myhubot template \<X> on dev \<Y>   
+myhubot template <X> on dev <Y>   
+```
+or
+```
+@myhubot template <X> on dev <Y>   
 ```
 triggers the ansible playbook [**pb.template.yml**](https://github.com/ksator/chatops_junos/blob/master/ansible/pb.template.yml) with some variable definitions (using the --extra-vars option to pass the variables definition to the playbook):   
 Actually, the bot will execute this command:  
