@@ -10,7 +10,6 @@ This is easily extensible.
 
 #### Syntax: 
 Here’s the chat syntax, with some help:  
-\<Y> is a device or a group of devices. \<Y> has to exist in the ansible inventory file (https://github.com/ksator/chatops_junos/blob/master/ansible/hosts). 
 - **myhubot set \<X> on dev \<Y>** - Execute a junos set command on device/group \<Y>
 - **myhubot delete \<X> on dev \<Y>** - Execute a junos delete command on device/group \<Y>
 - **myhubot rollback \<id> on dev \<Y>** - Rollback <id> the configuration of device/group \<Y>
@@ -18,6 +17,8 @@ Here’s the chat syntax, with some help:
 - **myhubot backup on dev \<Y>** - Backup the configuration of the device/group \<Y>
 - **myhubot show \<X> on dev \<Y>** - Execute a junos show command on device/group \<Y> and print the command output
 - **myhubot playbook \<X> on dev \<Y>** - Execute the playbook <X> on device/group \<Y>
+
+Note: \<Y> is a device or a group of devices. \<Y> has to exist in the ansible inventory file (https://github.com/ksator/chatops_junos/blob/master/ansible/hosts).   
 
 ##### Chat examples:   
 ```
