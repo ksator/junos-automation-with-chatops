@@ -1,6 +1,6 @@
 ---
  - name: Check physical topology 
-   hosts: Openconfig_Routers
+   hosts: "{{ device|default('Openconfig_Routers') }}"
    connection: local
    gather_facts: no
 

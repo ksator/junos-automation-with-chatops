@@ -1,6 +1,6 @@
 ---
  - name: check if junos devices can ping ip of their neighbors (directly connected) 
-   hosts: Openconfig_Routers
+   hosts: "{{ device|default('Openconfig_Routers') }}"
    connection: local
    gather_facts: no
    roles: 
