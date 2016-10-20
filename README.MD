@@ -19,8 +19,7 @@ Here’s the syntax ( \<Y> has to exist in the ansible inventory file, it could 
 The bot uses Ansible under the hood: https://github.com/ksator/chatops_junos/tree/master/ansible   
 The bot configuration is this file: https://github.com/ksator/chatops_junos/blob/master/scripts/junos.coffee  
 
-As example, the slack message **myhubot template \<X> on dev \<Y>** triggers the ansible playbook [**pb.template.yml**](https://github.com/ksator/chatops_junos/blob/master/ansible/pb.template.yml) with some variable definitions.  
-The bot will execute this command:  
+As example, the slack message **myhubot template \<X> on dev \<Y>** triggers the ansible playbook [**pb.template.yml**](https://github.com/ksator/chatops_junos/blob/master/ansible/pb.template.yml) with some variable definitions. The bot will execute this command:  
 ```
 ansible-playbook $PWD/ansible/pb.template.yml --extra-vars = "{'device': \<Y>, 'template': \<X>}"
 ```
