@@ -10,9 +10,6 @@ env:
   - ANSIBLE_VERSION=2.1.1.0
   - ANSIBLE_VERSION=2.1.2.0
  
-  
-  
-  
 before_install:
   - sudo apt-get install -y python-dev libxml2-dev python-pip libxslt1-dev build-essential libssl-dev libffi-dev
 
@@ -27,7 +24,10 @@ script:
   - ansible-playbook ansible/pb.ping.yml --syntax-check
   - ansible-playbook ansible/pb.oc.bgp.yml --syntax-check
   - ansible-playbook ansible/pb.check.physical.topology.yml --syntax-check
-   
+  - ansible-playbook ansible/pb.backup.yml --extra-vars "device=Openconfig_Routers" --syntax-check
+  - ansible-playbook ansible/pb.config.yml --extra-vars "device=Openconfig_Routers cli=set system login message newbanner" --syntax-check 
+  - ansible-playbook ansible/pb.command.yml --extra-vars "device=Openconfig_Routers cli=show version" --syntax-check
+ 
   
 branches:
   only:
