@@ -16,6 +16,25 @@ Here’s the chat syntax, with some help:
 - **myhubot show \<X> on dev \<Y>** - Execute a junos show command on device/group \<Y> and print the command output
 - **myhubot playbook \<X> on dev \<Y>** - Execute the playbook <X> on device/group \<Y>
 
+##### Chat examples:   
+```
+@myhubot help
+
+@myhubot help template
+
+@myhubot template openconfig_bgp.j2 on dev Openconfig_Routers
+@myhubot show bgp summary on dev FR-MX80-214
+@myhubot rollback 1 on dev Openconfig_Routers
+
+@myhubot backup on dev all
+
+@myhubot set system login message newbanner on dev MX240-04
+@myhubot delete system login message newbanner on dev MX240-04
+
+@myhubot playbook pb.check.physical.topology.yml on dev FR-MX80-214
+```
+
+
 #### How does it work: 
 The bot uses Ansible under the hood. Here's the Ansible content https://github.com/ksator/chatops_junos/tree/master/ansible   
 The bot configuration is this file: https://github.com/ksator/chatops_junos/blob/master/scripts/junos.coffee  
