@@ -19,7 +19,7 @@ install:
   - ansible-galaxy --force install Juniper.junos -p ./
 
 script:
-  - ansible-playbook ansible/pb.template.yml --syntax-check
+  - ansible-playbook ansible/pb.template.yml --extra-vars = "{'device': Openconfig_Routers, 'template': ansible/openconfig_bgp.j2}" --syntax-check
   - ansible-playbook ansible/pb.rollback.yml --syntax-check
   - ansible-playbook ansible/pb.ping.yml --syntax-check
   - ansible-playbook ansible/pb.oc.bgp.yml --syntax-check
