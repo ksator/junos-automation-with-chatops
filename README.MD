@@ -1,11 +1,11 @@
 #### What to find on this repo:  
 chatops for network engineers, based on slack and hubot and ansible for junos automation
 
-#### bot capabilties:
+#### Bot capabilties:
 The bot can execute junos commands (set/delete/show) to a device or a group of devices.  
 It can also backup the junos configuration, rollback the junos configuration, load a jinja2 template, apply a playbook to junos devices.  
 
-#### syntax: 
+#### Syntax: 
 Here’s the syntax ( \<Y> has to exist in the ansible inventory file, it could be an endpoint or a group) with some help: 
 - **myhubot set \<X> on dev \<Y>** - Execute a junos set command on device/group \<Y>
 - **myhubot delete \<X> on dev \<Y>** - Execute a junos delete command on device/group \<Y>
@@ -37,7 +37,7 @@ ansible-playbook $PWD/ansible/pb.template.yml --extra-vars = "{'device': <Y>, 't
 ```
 ksator@ubuntu:~/myhubot$ HUBOT_SLACK_TOKEN=xoxb-90946701733-BTJh5QnUdQrTMcbtjgawmvjo ./bin/hubot -a slack
 ```
-#### project road map
+#### Project road map
 I will add permissions (otherwise anyone in the chat room can execute automation content on a live network just chatting with a bot …).   
 I will also add more automation content. 
 
