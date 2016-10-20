@@ -9,6 +9,11 @@ env:
   - ANSIBLE_VERSION=2.1.0.0
   - ANSIBLE_VERSION=2.1.1.0
   - ANSIBLE_VERSION=2.1.2.0
+  - device=Openconfig_Routers
+  - template=ansible/openconfig_bgp.j2
+  - rbid=1
+  - cli=show system login message newbanner
+  
   
 before_install:
   - sudo apt-get install -y python-dev libxml2-dev python-pip libxslt1-dev build-essential libssl-dev libffi-dev
@@ -19,14 +24,14 @@ install:
   - ansible-galaxy --force install Juniper.junos -p ./
 
 script:
-  - ansible-playbook ansible/pb.template.yml --extra-vars="{'device': Openconfig_Routers, 'template': ansible/openconfig_bgp.j2}" --syntax-check
-  - ansible-playbook ansible/pb.rollback.yml --extra-vars="{'device': Openconfig_Routers, 'rbid': 1}" --syntax-check
+  - ansible-playbook ansible/pb.template.yml --syntax-check
+  - ansible-playbook ansible/pb.rollback.yml --syntax-check
   - ansible-playbook ansible/pb.ping.yml --syntax-check
   - ansible-playbook ansible/pb.oc.bgp.yml --syntax-check
-  - ansible-playbook ansible/pb.config.yml --extra-vars="{'device': Openconfig_Routers, 'cli': show system login message newbanner}" --syntax-check 
-  - ansible-playbook ansible/pb.command.yml --extra-vars="{'device': Openconfig_Routers, 'cli': show version}" --syntax-check 
+  - ansible-playbook ansible/pb.config.yml --syntax-check 
+  - ansible-playbook ansible/pb.command.yml --syntax-check 
   - ansible-playbook ansible/pb.check.physical.topology.yml --syntax-check
-  - ansible-playbook ansible/pb.backup.yml --extra-vars="{'device': Openconfig_Routers}" --syntax-check 
+  - ansible-playbook ansible/pb.backup.yml --syntax-check 
 
 branches:
   only:
