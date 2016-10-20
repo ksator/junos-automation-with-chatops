@@ -39,8 +39,9 @@ Note: \<Y> is a device or a group of devices. \<Y> has to exist in the ansible i
 
 
 #### How does it work: 
-The bot uses Ansible under the hood. Here's the Ansible content https://github.com/ksator/chatops_junos/tree/master/ansible   
-The bot configuration is this file: https://github.com/ksator/chatops_junos/blob/master/scripts/junos.coffee  
+The bot configuration is this file: https://github.com/ksator/chatops_junos/blob/master/scripts/junos.coffee. This is where we define the various actions the bot has to take based on the slack messages in the chat room.  The bot is configure to execute Ansible playbooks.   
+
+The bot uses Ansible under the hood. Here's the Ansible content (playbooks, variables, inventory ....) https://github.com/ksator/chatops_junos/tree/master/ansible   
 
 So, as example, the slack message:   
 ```
