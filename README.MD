@@ -6,7 +6,8 @@ The bot can execute junos commands (set/delete/show) to a device or a group of d
 It can also backup the junos configuration, rollback the junos configuration, load a jinja2 template, apply a playbook to junos devices.  
 
 #### Syntax: 
-Here’s the syntax ( \<Y> has to exist in the ansible inventory file, it could be an endpoint or a group) with some help: 
+Here’s the chat syntax, with some help:  
+\<Y> has to exist in the ansible inventory file (https://github.com/ksator/chatops_junos/blob/master/ansible/hosts). It could be an endpoint or a group.   
 - **myhubot set \<X> on dev \<Y>** - Execute a junos set command on device/group \<Y>
 - **myhubot delete \<X> on dev \<Y>** - Execute a junos delete command on device/group \<Y>
 - **myhubot rollback \<id> on dev \<Y>** - Rollback <id> the configuration of device/group \<Y>
