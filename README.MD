@@ -19,7 +19,6 @@ Here’s the chat syntax, with some help:
 ##### Chat examples:   
 ```
 @myhubot help
-
 @myhubot help template
 
 @myhubot template openconfig_bgp.j2 on dev Openconfig_Routers
