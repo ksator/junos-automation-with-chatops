@@ -10,31 +10,38 @@ This is easily extensible.
 
 #### Syntax: 
 Here’s the chat syntax to delegate tasks to the bot, with some help:  
-- **myhubot set \<junos_command> on dev \<target>** - Execute a junos set command on device/group \<target>
-- **myhubot delete \<junos_command> on dev \<target>** - Execute a junos delete command on device/group \<target>
-- **myhubot rollback \<rb_id> on dev \<target>** - Rollback \<rb_id> the configuration of device/group \<target>
-- **myhubot template \<template> on dev \<target>** - Backup the configuration of device/group \<target>, and apply the template \<template> to the device/group \<target>
-- **myhubot backup on dev \<target>** - Backup the configuration of the device/group \<target>
-- **myhubot show \<junos_command> on dev \<target>** - Execute a junos show command on device/group \<target> and print the command output
-- **myhubot playbook \<playbook> on dev \<target>** - Execute the playbook \<playbook> on device/group \<target>
+- **myhubot target \<target> set \<junos_command>** - Execute a junos set command on device/group \<target>
+- **myhubot target \<target> delete \<junos_command>** - Execute a junos delete command on device/group \<target>
+- **myhubot target \<target> rollback \<rb_id>** - Rollback \<rb_id> the configuration of device/group \<target>
+- **myhubot target \<target> template \<template>** - Backup the configuration of device/group \<target>, and apply the template \<template> to the device/group \<target>
+- **myhubot target \<target> backup** - Backup the configuration of the device/group \<target>
+- **myhubot target \<target> show \<junos_command>** - Execute a junos show command on device/group \<target> and print the command output
+- **myhubot target \<target> playbook \<playbook>** - Execute the playbook \<playbook> on device/group \<target>
+- **hubot list playbooks** - Print the list of Ansible playbooks
+- **hubot list templates** - Print the list of Jinja2 templates
+- **hubot display <file>** - Print an Ansible file (playbook, template, ...)
 
 Note: \<target> is a device or a group of devices. \<target> has to exist in the ansible inventory file (https://github.com/ksator/chatops_junos/blob/master/ansible/hosts).   
 
 ##### Chat examples:   
 ```
 @myhubot help
+
 @myhubot help template
+@myhubot list templates
+@myhubot display openconfig_bgp.j2
+@myhubot list hosts
+@myhubot target Openconfig_Routers template openconfig_bgp.j2
+@myhubot target FR-MX80-214 show bgp summary 
+@myhubot target Openconfig_Routers rollback 1
 
-@myhubot template openconfig_bgp.j2 on dev Openconfig_Routers
-@myhubot show bgp summary on dev FR-MX80-214
-@myhubot rollback 1 on dev Openconfig_Routers
+@myhubot target all backup
 
-@myhubot backup on dev all
+@myhubot target MX240-04 set system login message newbanner
+@myhubot target MX240-04 delete system login message newbanner
 
-@myhubot set system login message newbanner on dev MX240-04
-@myhubot delete system login message newbanner on dev MX240-04
-
-@myhubot playbook pb.check.physical.topology.yml on dev FR-MX80-214
+@myhubot list playbooks
+@myhubot target FR-MX80-214 playbook pb.check.physical.topology.yml
 ```
 
 
@@ -45,20 +52,20 @@ The bot uses Ansible under the hood. Here's the Ansible content (playbooks, vari
 
 So, as example, the slack message:   
 ```
-myhubot template <X> on dev <Y>   
+myhubot target <target> template <template>    
 ```
 or
 ```
-@myhubot template <X> on dev <Y>   
+@myhubot target <target> template <template>  
 ```
 triggers the ansible playbook [**pb.template.yml**](https://github.com/ksator/chatops_junos/blob/master/ansible/pb.template.yml) with some variable definitions (using the --extra-vars option to pass the variables definition to the playbook):   
 Actually, the bot will execute this command:  
 ```
-ansible-playbook $PWD/ansible/pb.template.yml --extra-vars = "{'device': <Y>, 'template': <X>}"
+ansible-playbook $PWD/ansible/pb.template.yml --extra-vars = "{'device': <target>, 'template': <template>}"
 ```
 Which is the equivalent of: 
 ```
-ansible-playbook $PWD/ansible/pb.template.yml --extra-vars "device=<Y> template=<X>"  
+ansible-playbook $PWD/ansible/pb.template.yml --extra-vars "device=<target> template=<template>"  
 ```
 
 #### The steps to reproduce are: 
