@@ -10,15 +10,15 @@ This is easily extensible.
 
 #### Syntax: 
 Here’s the chat syntax, with some help:  
-- **myhubot set \<X> on dev \<Y>** - Execute a junos set command on device/group \<Y>
-- **myhubot delete \<X> on dev \<Y>** - Execute a junos delete command on device/group \<Y>
-- **myhubot rollback \<id> on dev \<Y>** - Rollback <id> the configuration of device/group \<Y>
-- **myhubot template \<X> on dev \<Y>** - Backup the configuration of device/group \<Y>, and apply the template \<X> to the device/group \<Y>
-- **myhubot backup on dev \<Y>** - Backup the configuration of the device/group \<Y>
-- **myhubot show \<X> on dev \<Y>** - Execute a junos show command on device/group \<Y> and print the command output
-- **myhubot playbook \<X> on dev \<Y>** - Execute the playbook <X> on device/group \<Y>
+- **myhubot set \<junos_command> on dev \<target>** - Execute a junos set command on device/group \<target>
+- **myhubot delete \<junos_command> on dev \<target>** - Execute a junos delete command on device/group \<target>
+- **myhubot rollback \<rb_id> on dev \<target>** - Rollback \<rb_id> the configuration of device/group \<target>
+- **myhubot template \<template> on dev \<target>** - Backup the configuration of device/group \<target>, and apply the template \<template> to the device/group \<target>
+- **myhubot backup on dev \<target>** - Backup the configuration of the device/group \<target>
+- **myhubot show \<junos_command> on dev \<target>** - Execute a junos show command on device/group \<target> and print the command output
+- **myhubot playbook \<playbook> on dev \<target>** - Execute the playbook \<playbook> on device/group \<target>
 
-Note: \<Y> is a device or a group of devices. \<Y> has to exist in the ansible inventory file (https://github.com/ksator/chatops_junos/blob/master/ansible/hosts).   
+Note: \<target> is a device or a group of devices. \<target> has to exist in the ansible inventory file (https://github.com/ksator/chatops_junos/blob/master/ansible/hosts).   
 
 ##### Chat examples:   
 ```
