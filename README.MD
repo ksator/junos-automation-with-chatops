@@ -1,7 +1,7 @@
 #### What to find on this repo:  
 Chatops for network engineers.  
-Based on slack and hubot and ansible for junos automation  
 Initially inspired by this demo https://www.dravetech.com/blog/2016/03/30/chatops-demo.html  
+Actually based on slack and hubot and ansible for junos automation  
 
 #### Bot capabilties:
 The bot can execute junos commands (set/delete/show) to a device or a group of devices.  
