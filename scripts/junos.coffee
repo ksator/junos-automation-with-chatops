@@ -4,12 +4,12 @@
 # Commands:
 #
 #   hubot target <target> backup - Backup the configuration of the device/group <target>
-#   hubot target <target> delete <command>  - Execute a junos delete command on device/group <target>
+#   hubot target <target> delete <command>  - Execute a Junos delete command on device/group <target>
 #   hubot target <target> rollback <rb_id> - Rollback <rb_id> the configuration of device/group <target>
-#   hubot target <target> set <command> - Execute a junos set command on device/group <target>
-#   hubot target <target> show <command> - Execute a junos show command on device/group <target> and print the command output
-#   hubot target <target> template <template> - Backup the configuration of device/group <target>, and apply the template <template> to the device/group <target>
-#   hubot target <target> playbook <playbook> - Execute the playbook <playbook> on device/group <target>
+#   hubot target <target> set <command> - Execute a Junos set command on device/group <target>
+#   hubot target <target> show <command> - Execute a Junos show command on device/group <target> and print the command output
+#   hubot target <target> template <template> - Backup the configuration of device/group <target>, and apply the jinja2 template <template> to the device/group <target>
+#   hubot target <target> playbook <playbook> - Execute the Ansible playbook <playbook> on device/group <target>
 #   hubot display <file> - Print an Ansible file (playbook, template, ...)
 #   hubot list playbooks - Print the list of Ansible playbooks
 #   hubot list templates - Print the list of Jinja2 templates
