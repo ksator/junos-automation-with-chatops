@@ -13,10 +13,10 @@ Here’s the chat syntax to delegate tasks to the bot, with some help:
 - **myhubot target \<target> set \<junos_command>** - Execute a junos set command on device/group \<target>
 - **myhubot target \<target> delete \<junos_command>** - Execute a junos delete command on device/group \<target>
 - **myhubot target \<target> rollback \<rb_id>** - Rollback \<rb_id> the configuration of device/group \<target>
-- **myhubot target \<target> template \<template>** - Backup the configuration of device/group \<target>, and apply the template \<template> to the device/group \<target>
+- **myhubot target \<target> template \<template>** - Backup the configuration of device/group \<target>, and apply the jinja2 template \<template> to the device/group \<target>
 - **myhubot target \<target> backup** - Backup the configuration of the device/group \<target>
 - **myhubot target \<target> show \<junos_command>** - Execute a junos show command on device/group \<target> and print the command output
-- **myhubot target \<target> playbook \<playbook>** - Execute the playbook \<playbook> on device/group \<target>
+- **myhubot target \<target> playbook \<playbook>** - Execute the ansible playbook \<playbook> on device/group \<target>
 - **hubot list playbooks** - Print the list of Ansible playbooks
 - **hubot list templates** - Print the list of Jinja2 templates
 - **hubot display <file>** - Print an Ansible file (playbook, template, ...)
