@@ -9,7 +9,7 @@ It can also backup the junos configuration, rollback the junos configuration, lo
 This is easily extensible.    
 
 #### Syntax: 
-Here’s the chat syntax, with some help:  
+Here’s the chat syntax to delegate tasks to the bot, with some help:  
 - **myhubot set \<junos_command> on dev \<target>** - Execute a junos set command on device/group \<target>
 - **myhubot delete \<junos_command> on dev \<target>** - Execute a junos delete command on device/group \<target>
 - **myhubot rollback \<rb_id> on dev \<target>** - Rollback \<rb_id> the configuration of device/group \<target>
