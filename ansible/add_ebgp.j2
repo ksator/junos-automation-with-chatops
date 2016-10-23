@@ -1,0 +1,11 @@
+{# jinja2 template to add in junos an ebgp neighbor to an existing bgp group. Make sure the bgp policies already exist, and the routing options (asn and router-id) already exist #}
+protocols
+    bgp {
+        group external-peers {
+            type external;
+                neighbor {{ peer_ip }} {
+            	    peer-as {{ peer_asn }};
+        }
+    }
+}
+
