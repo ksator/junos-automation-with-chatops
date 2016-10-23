@@ -1,0 +1,18 @@
+---
+ - name: check bgp states
+   hosts: "{{ device }}"
+   connection: local
+   gather_facts: no
+   roles:
+   - Juniper.junos
+
+   tasks:
+   - name: check bgp peer states
+     junos_command:
+      provider: "{{ credentials }}"
+      commands:
+       - show bgp neighbor "{{ peer_ip }}"
+     register: bgp
+
+   - name: Print some bgp states
+     debug: msg="bgp neighbor {{ peer_ip }} state is {{bgp.stdout[0]["bgp-information"]["bgp-peer"]["peer-state"]}}"
