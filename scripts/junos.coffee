@@ -2,16 +2,17 @@
 #   Junos automation
 #
 # Commands:
-#   hubot <target> backup - Backup the configuration of the device/group <target>
-#   hubot <target> delete <command>  - Execute a Junos delete command on device/group <target>
-#   hubot <target> rollback <rb_id> - Rollback <rb_id> the configuration of device/group <target>
-#   hubot <target> set <command> - Execute a Junos set command on device/group <target>
-#   hubot <target> show <command> - Execute a Junos show command on device/group <target> and print the command output
-#   hubot <target> template <template> - Backup the configuration of device/group <target>, and apply the jinja2 template <template> to the device/group <target>
-#   hubot <target> playbook <playbook> - Execute the Ansible playbook <playbook> on device/group <target>
-#   hubot <target> add bgp neighbor <peer_ip> as <peer_asn> - Configure an ebgp neighbor on device <target>. Syntax: you can use "neighbor" or "neigh".   
-#   hubot <target> get bgp state <peer_ip> - Retrieve on the device <target> the bgp state for the neighbor <peer_ip>, and print it. Syntax: you can use "neighbor" or "neigh"
-#   hubot <target> remove bgp neighbor <peer_ip> - Delete an existing ebgp neighbor on device <target>. Syntax: you can use "remove" or "rm", you can use "neighbor" or "neigh".
+#
+#   hubot dev=<target> backup - Backup the configuration of the device/group <target>
+#   hubot dev=<target> delete <command>  - Execute a Junos delete command on device/group <target>
+#   hubot dev=<target> rollback <rb_id> - Rollback <rb_id> the configuration of device/group <target>
+#   hubot dev=<target> set <command> - Execute a Junos set command on device/group <target>.  Add "--diff" to display the differences. Add "--check" for a dry run. 
+#   hubot dev=<target> show <command> - Execute a Junos show command on device/group <target> and print the command output
+#   hubot dev=<target> template <template> - Backup the configuration of device/group <target>, and apply the jinja2 template <template> to the device/group <target>.  Add "--diff" to display the differences. Add "--check" for a dry run. 
+#   hubot dev=<target> playbook <playbook> - Execute the Ansible playbook <playbook> on device/group <target>.  Add "--diff" to display the differences. Add "--check" for a dry run. 
+#   hubot dev=<target> add bgp neighbor <peer_ip> as <peer_asn> - Configure an ebgp neighbor on device <target>. You can use "neighbor" or "neigh". Add "--diff" to display the differences. Add "--check" for a dry run.  
+#   hubot dev=<target> get bgp state <peer_ip> - Retrieve on the device <target> the bgp state for the neighbor <peer_ip>, and print it. You can use "neighbor" or "neigh".
+#   hubot dev=<target> remove bgp neighbor <peer_ip> - Delete an existing ebgp neighbor on device <target>. You can use "remove" or "rm", you can use "neighbor" or "neigh".
 #   hubot display <file> - Print an Ansible file (playbook, template, ...)
 #   hubot list playbooks - Print the list of Ansible playbooks
 #   hubot list templates - Print the list of Jinja2 templates
@@ -45,7 +46,7 @@ module.exports = (robot) ->
        response.reply "HEY KSATOR! YOU'RE MY BEST FRIEND!"
    )
     
-   robot.respond /(.*) playbook (.*)/i, (msg) ->
+   robot.respond /dev=(.*) playbook (.*)/i, (msg) ->
      msg.send msg.random initial_response
      pb = msg.match[2]
      dev = msg.match[1]
@@ -56,7 +57,7 @@ module.exports = (robot) ->
        else
          msg.send(stdout)
 
-   robot.respond /(.*) set (.*)/i, (msg) ->
+   robot.respond /dev=(.*) set (.*)/i, (msg) ->
      cmd = msg.match[2]
      command = "set #{cmd}"
      dev = msg.match[1]
@@ -68,7 +69,7 @@ module.exports = (robot) ->
          msg.send(stdout)
    
 
-   robot.respond /(.*) delete (.*)/i, (msg) ->
+   robot.respond /dev=(.*) delete (.*)/i, (msg) ->
      msg.send msg.random initial_response
      cmd = msg.match[2]
      command = "delete #{cmd}"
@@ -80,7 +81,7 @@ module.exports = (robot) ->
        else
          msg.send(stdout)
    
-   robot.respond /(.*) rollback (.*)/i, (msg) ->
+   robot.respond /dev=(.*) rollback (.*)/i, (msg) ->
      msg.send msg.random initial_response
      rbid = msg.match[2]
      dev = msg.match[1]
@@ -91,7 +92,7 @@ module.exports = (robot) ->
        else
          msg.send(stdout)
 
-   robot.respond /(.*) backup/i, (msg) ->
+   robot.respond /dev=(.*) backup/i, (msg) ->
      msg.send msg.random initial_response
      dev = msg.match[1]
      extra = "{'device': #{dev}}"
@@ -101,7 +102,7 @@ module.exports = (robot) ->
        else
          msg.send(stdout)
 
-   robot.respond /(.*) template (.*)/i, (msg) ->
+   robot.respond /dev=(.*) template (.*)/i, (msg) ->
      msg.send msg.random initial_response
      template = msg.match[2]      
      dev = msg.match[1]
@@ -112,7 +113,7 @@ module.exports = (robot) ->
        else
          msg.send(stdout)
 
-   robot.respond /(.*) show (.*)/i, (msg) ->
+   robot.respond /dev=(.*) show (.*)/i, (msg) ->
      msg.send msg.random initial_response
      cmd = msg.match[2]
      command = "show #{cmd}"
@@ -124,20 +125,27 @@ module.exports = (robot) ->
        else
          msg.send(stdout)
 
-   robot.respond /(.*) add bgp neigh(bor)? (.*) as (.*)/i, (msg) ->
+   robot.respond /dev=(.*) add bgp neigh(bor)? (.*) as (.*)/i, (msg) ->
      if not match = /help/.test(msg.match[1])
        msg.send msg.random initial_response
        ip = msg.match[3]
        asn = msg.match[4]
-       dev = msg.match[1] 
+       dev = msg.match[1]
+       option = ""   
+       if match = /--check/.test(asn)
+          option = "--check #{option}"
+          asn = asn.replace(/--check/i,'')
+       if match = /--diff/.test(asn)
+          option = "--diff #{option}"
+          asn = asn.replace(/--diff/i,'')
        extra = "{'device': #{dev}, 'peer_ip': #{ip}, 'peer_asn': #{asn}}"
-       child_process.exec "ansible-playbook $PWD/ansible/pb.add.ebgp.yml --extra-vars \"#{extra}\"", (error, stdout, stderr) ->
+       child_process.exec "ansible-playbook $PWD/ansible/pb.add.ebgp.yml --extra-vars \"#{extra}\" #{option}", (error, stdout, stderr) ->
          if error
            msg.send "Oops! " + error + stderr
          else
            msg.send(stdout)
 
-   robot.respond /(.*) (remove|rm) bgp neigh(bor)? (.*)/i, (msg) ->
+   robot.respond /dev=(.*) (remove|rm) bgp neigh(bor)? (.*)/i, (msg) ->
      msg.send msg.random initial_response
      dev = msg.match[1]
      ip = msg.match[4]  
@@ -148,7 +156,7 @@ module.exports = (robot) ->
        else
          msg.send(stdout)
 
-   robot.respond /(.*) get bgp state (.*)/i, (msg) ->
+   robot.respond /dev=(.*) get bgp state (.*)/i, (msg) ->
      if not match = /help/.test(msg.match[1])
        msg.send msg.random initial_response
        ip = msg.match[2]
@@ -159,7 +167,6 @@ module.exports = (robot) ->
            msg.send "Oops! " + error + stderr
          else
            msg.send(stdout)
-
 
    robot.respond /list playbooks/i, (msg) ->
      child_process.exec "cd $PWD/ansible && ls pb.*.yml && cd ..", (error, stdout, stderr) ->
