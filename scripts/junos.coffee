@@ -2,17 +2,16 @@
 #   Junos automation
 #
 # Commands:
-#
-#   hubot dev=<target> backup - Backup the configuration of the device/group <target>
-#   hubot dev=<target> delete <command>  - Execute a Junos delete command on device/group <target>
-#   hubot dev=<target> rollback <rb_id> - Rollback <rb_id> the configuration of device/group <target>
-#   hubot dev=<target> set <command> - Execute a Junos set command on device/group <target>.  Add "--diff" to display the differences. Add "--check" for a dry run. 
-#   hubot dev=<target> show <command> - Execute a Junos show command on device/group <target> and print the command output
-#   hubot dev=<target> template <template> - Backup the configuration of device/group <target>, and apply the jinja2 template <template> to the device/group <target>.  Add "--diff" to display the differences. Add "--check" for a dry run. 
-#   hubot dev=<target> playbook <playbook> - Execute the Ansible playbook <playbook> on device/group <target>.  Add "--diff" to display the differences. Add "--check" for a dry run. 
-#   hubot dev=<target> add bgp neighbor <peer_ip> as <peer_asn> - Configure an ebgp neighbor on device <target>. You can use "neighbor" or "neigh". Add "--diff" to display the differences. Add "--check" for a dry run.  
-#   hubot dev=<target> get bgp state <peer_ip> - Retrieve on the device <target> the bgp state for the neighbor <peer_ip>, and print it. You can use "neighbor" or "neigh".
-#   hubot dev=<target> remove bgp neighbor <peer_ip> - Delete an existing ebgp neighbor on device <target>. You can use "remove" or "rm", you can use "neighbor" or "neigh".
+#   hubot dev=<target> backup - Backup the configuration of the device/group <target>. It run under the hood the playbook pb.backup.yml
+#   hubot dev=<target> delete <command> - Execute a Junos delete command on device/group <target>. It run under the hood the playbook pb.delete.yml
+#   hubot dev=<target> rollback <rb_id> - Rollback <rb_id> the configuration of device/group <target>. It run under the hood the playbook pb.rollback.yml
+#   hubot dev=<target> set <command> - Execute a Junos set command on device/group <target>.  Add "--diff" to display the differences, add "--check" for a dry run. It run under the hood the playbook pb.config.yml
+#   hubot dev=<target> show <command> - Execute a Junos show command on device/group <target> and print the command output. It run under the hood the playbook pb.command.yml
+#   hubot dev=<target> template <template> - Backup the configuration of device/group <target>, and apply the jinja2 template <template> to the device/group <target>.  Add "--diff" to display the differences, add "--check" for a dry run. It run under the hood the playbook pb.template.yml
+#   hubot dev=<target> playbook <playbook> - Execute the Ansible playbook <playbook> on device/group <target>. Add "--diff" to display the differences, add "--check" for a dry run.
+#   hubot dev=<target> add bgp neighbor <peer_ip> as <peer_asn> - Configure an ebgp neighbor on device <target>. You can use "neighbor" or "neigh". Add "--diff" to display the differences, add "--check" for a dry run.  It run under the hood the playbook pb.add.ebgp.yml
+#   hubot dev=<target> get bgp state <peer_ip> - Retrieve on the device <target> the bgp state for the neighbor <peer_ip>, and print it. You can use "neighbor" or "neigh". It run under the hood the playbook pb.check.bgp.yml
+#   hubot dev=<target> remove bgp neighbor <peer_ip> - Delete an existing ebgp neighbor on device <target>. You can use "remove" or "rm", you can use "neighbor" or "neigh". It run under the hood the playbook pb.remove.ebgp.yml
 #   hubot display <file> - Print an Ansible file (playbook, template, ...)
 #   hubot list playbooks - Print the list of Ansible playbooks
 #   hubot list templates - Print the list of Jinja2 templates
