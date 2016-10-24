@@ -6,15 +6,15 @@
 #   hubot dev=<target> delete <command> - Execute a Junos delete command on device/group <target>. It run under the hood the playbook pb.delete.yml
 #   hubot dev=<target> rollback <rb_id> - Rollback <rb_id> the configuration of device/group <target>. It run under the hood the playbook pb.rollback.yml
 #   hubot dev=<target> set <command> - Execute a Junos set command on device/group <target>.  Add "--diff" to display the differences, add "--check" for a dry run. It run under the hood the playbook pb.config.yml
-#   hubot dev=<target> show <command> - Execute a Junos show command on device/group <target> and print the command output. It run under the hood the playbook pb.command.yml
+#   hubot dev=<target> show <command> - Execute a Junos show command on device/group <target> and print the command output. Ypou can use "show" or "sh". It run under the hood the playbook pb.command.yml
 #   hubot dev=<target> template <template> - Backup the configuration of device/group <target>, and apply the jinja2 template <template> to the device/group <target>.  Add "--diff" to display the differences, add "--check" for a dry run. It run under the hood the playbook pb.template.yml
 #   hubot dev=<target> playbook <playbook> - Execute the Ansible playbook <playbook> on device/group <target>. Add "--diff" to display the differences, add "--check" for a dry run.
 #   hubot dev=<target> add bgp neighbor <peer_ip> as <peer_asn> - Configure an ebgp neighbor on device <target>. You can use "neighbor" or "neigh". Add "--diff" to display the differences, add "--check" for a dry run.  It run under the hood the playbook pb.add.ebgp.yml
 #   hubot dev=<target> get bgp state <peer_ip> - Retrieve on the device <target> the bgp state for the neighbor <peer_ip>, and print it. You can use "neighbor" or "neigh". It run under the hood the playbook pb.check.bgp.yml
 #   hubot dev=<target> remove bgp neighbor <peer_ip> - Delete an existing ebgp neighbor on device <target>. You can use "remove" or "rm", you can use "neighbor" or "neigh". It run under the hood the playbook pb.remove.ebgp.yml
-#   hubot display <file> - Print an Ansible file (playbook, template, ...)
-#   hubot list playbooks - Print the list of Ansible playbooks
-#   hubot list templates - Print the list of Jinja2 templates
+#   hubot show <file> - Print a file (playbook, template, ...). You can use "show" or "sh"
+#   hubot list playbooks - Print the list of Ansible playbooks. You can use "list" or "ls"
+#   hubot list templates - Print the list of Jinja2 templates. You can use "list" or "ls"
 #
 # Author:
 #   Khelil Sator
@@ -67,7 +67,6 @@ module.exports = (robot) ->
        else
          msg.send(stdout)
    
-
    robot.respond /dev=(.*) delete (.*)/i, (msg) ->
      msg.send msg.random initial_response
      cmd = msg.match[2]
@@ -112,9 +111,9 @@ module.exports = (robot) ->
        else
          msg.send(stdout)
 
-   robot.respond /dev=(.*) show (.*)/i, (msg) ->
+   robot.respond /dev=(.*) sh(ow)? (.*)/i, (msg) ->
      msg.send msg.random initial_response
-     cmd = msg.match[2]
+     cmd = msg.match[3]
      command = "show #{cmd}"
      dev = msg.match[1]
      extra = "{'device': #{dev}, 'cli': #{command}}"
@@ -167,16 +166,17 @@ module.exports = (robot) ->
          else
            msg.send(stdout)
 
-   robot.respond /list playbooks/i, (msg) ->
+   robot.respond /(list|ls) playbooks/i, (msg) ->
      child_process.exec "cd $PWD/ansible && ls pb.*.yml && cd ..", (error, stdout, stderr) ->
         msg.send(stdout)
 
-   robot.respond /list templates/i, (msg) ->
+   robot.respond /(list|ls) templates/i, (msg) ->
      child_process.exec "cd $PWD/ansible && ls *.j2 && cd ..", (error, stdout, stderr) ->
         msg.send(stdout)
 
-   robot.respond /display (.*)/i, (msg) ->
-     file = msg.match[1]
+   robot.respond /sh(ow)? (.*)/i, (msg) ->
+     msg.send "here is it!"
+     file = msg.match[2]
      child_process.exec "cat $PWD/ansible/#{file}", (error, stdout, stderr) -> 
        if error
          msg.send "Oops! " + error + stderr
