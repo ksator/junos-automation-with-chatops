@@ -12,9 +12,12 @@
 #   hubot dev=<target> add bgp neighbor <peer_ip> as <peer_asn> - Configure an ebgp neighbor on device <target>. You can use "neighbor" or "neigh". Add "--diff" to display the differences, add "--check" for a dry run.  It run under the hood the playbook pb.add.ebgp.yml
 #   hubot dev=<target> get bgp state <peer_ip> - Retrieve on the device <target> the bgp state for the neighbor <peer_ip>, and print it. You can use "neighbor" or "neigh". It run under the hood the playbook pb.check.bgp.yml
 #   hubot dev=<target> remove bgp neighbor <peer_ip> - Delete an existing ebgp neighbor on device <target>. You can use "remove" or "rm", you can use "neighbor" or "neigh". It run under the hood the playbook pb.remove.ebgp.yml
-#   hubot show <file> - Print a file (playbook, template, ...). You can use "show" or "sh"
+#   hubot show <file> - Print a file (playbook, template, python scripts ...). You can use "show" or "sh"
 #   hubot list playbooks - Print the list of Ansible playbooks. You can use "list" or "ls"
 #   hubot list templates - Print the list of Jinja2 templates. You can use "list" or "ls"
+#   hubot list python - Print the list of Python scripts. You can use "list" or "ls"  
+#   hubot python <script> - Execute a python <script> and print the program output
+#
 #
 # Author:
 #   Khelil Sator
@@ -174,6 +177,11 @@ module.exports = (robot) ->
      child_process.exec "cd $PWD/ansible && ls *.j2 && cd ..", (error, stdout, stderr) ->
         msg.send(stdout)
 
+   robot.respond /(list|ls) python/i, (msg) ->
+     child_process.exec "cd $PWD/ansible && ls *.py && cd ..", (error, stdout, stderr) ->
+        msg.send(stdout)
+
+
    robot.respond /sh(ow)? (.*)/i, (msg) ->
      msg.send "here is it!"
      file = msg.match[2]
@@ -183,4 +191,10 @@ module.exports = (robot) ->
        else
          msg.send(stdout)
 
+   robot.respond /python (.*)/i, (msg) ->
+     msg.send msg.random initial_response
+     script = msg.match[1]
+     output = child_process.exec "python $PWD/ansible/#{script}"
+     output.stdout.on 'data', (data) ->
+        msg.send data.toString()
 
