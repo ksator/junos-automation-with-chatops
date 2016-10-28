@@ -6,11 +6,11 @@ Actually based on slack and hubot and automation content (ansible playbooks, pyt
 ### Bot capabilties:
 You can use slack to delegate these tasks to the bot: 
 - execute a junos command (set/delete/show) on junos devices  
-- load a configuration data based on a jinja2 template on junos devices  
-- apply a playbook to junos devices   
 - roll back the junos configuration on junos devices  
 - backup locally the configuration of junos devices  
 - Manage bgp neighbors (add a neighbor, remove a neighbor, audit a neighbor session) on a junos device   
+- load a configuration data based on a jinja2 template on junos devices  
+- apply a playbook to junos devices   
 - Execute a python script  
 
 This is easily extensible to other tasks.    
@@ -107,33 +107,40 @@ You can use "show" or "sh"
 ```
 @j-bot help
 
+
+@j-bot dev=all set system login message newbanner
+@j-bot dev=all rollback 1
+
+@j-bot dev=MX240-04 set interfaces xe-1/0/0 description newdesc
+@j-bot dev=MX240-04 show interfaces descriptions
+@j-bot dev=MX240-04 delete interfaces xe-1/0/0 description
+
+@j-bot dev=all backup
+
 @j-bot help bgp
-@j-bot dev=FR-MX80-214 add bgp neighbor 10.10.0.1 as 65001 --check
+@j-bot dev=FR-MX80-214 add bgp neighbor 10.10.0.1 as 65001 --check --diff
 @j-bot dev=FR-MX80-214 add bgp neighbor 10.10.0.1 as 65001
-@j-bot dev=MX240-04 add bgp neighbor 10.10.0.2 as 65002
+@j-bot dev=MX240-04 add bgp neigh 10.10.0.2 as 65000 --check 
+@j-bot dev=MX240-04 add bgp neigh 10.10.0.2 as 65000 --diff
 @j-bot dev=MX240-04 get bgp state 10.10.0.2
+@j-bot dev=MX240-04 remove bgp neighbor 10.10.0.2
+@j-bot dev=FR-MX80-214 rm bgp neighbor 10.10.0.1
 
+@j-bot list python scripts
+@j-bot python get_facts.py
 
+@j-bot list playbooks
+@j-bot dev=FR-MX80-214 playbook pb.check.physical.topology.yml
+@j-bot dev=FR-MX80-214 playbook pb.ping.yml
 
-
-
-@j-bot help template
-@j-bot list templates
+@j-bot help template 
+@j-bot ls templates
 @j-bot show openconfig_bgp.j2
 @j-bot show hosts
-
-
 @j-bot target Openconfig_Routers template openconfig_bgp.j2
 @myhubot target FR-MX80-214 show bgp summary 
 @myhubot target Openconfig_Routers rollback 1
 
-@myhubot target all backup
-
-@myhubot target MX240-04 set system login message newbanner
-@myhubot target MX240-04 delete system login message newbanner
-
-@myhubot list playbooks
-@myhubot target FR-MX80-214 playbook pb.check.physical.topology.yml
 ```
 
 ### How does it work: 
