@@ -4,7 +4,7 @@ Initially inspired by this demo https://www.dravetech.com/blog/2016/03/30/chatop
 Actually based on slack and hubot and automation content (ansible playbooks, python scripts, jinja2 templates ...) for junos automation  
 
 #### Bot capabilties:
-You can use slack delegate these tasks to the bot: 
+You can use slack to delegate these tasks to the bot: 
 - execute a junos command (set/delete/show) on junos devices  
 - load a configuration data based on a jinja2 template on junos devices  
 - apply a playbook to junos devices   
