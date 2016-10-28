@@ -24,55 +24,74 @@ It run under the hood the playbook [**pb.backup.yml**](https://github.com/ksator
 ```
 @hubot_name dev=<target> backup 
 ```
-- Execute a Junos delete command on device/group \<target>. It run under the hood the playbook [**pb.config.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.config.yml) with the variables \<target>  and \<command>.
+- Execute a Junos delete command on device/group \<target>.  
+It run under the hood the playbook [**pb.config.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.config.yml) with the variables \<target> and \<command>.
 ```
 @hubot_name dev=<target> delete <command>
 ```
-- Rollback \<rb_id> the configuration of device/group \<target>. It run under the hood the playbook [**pb.rollback.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.rollback.yml) with the variables \<target> and \<rb_id>.
+- Rollback \<rb_id> the configuration of device/group \<target>.  
+It run under the hood the playbook [**pb.rollback.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.rollback.yml) with the variables \<target> and \<rb_id>.
 ```
 @hubot_name dev=<target> rollback <rb_id>
 ```
-- Execute a Junos set command on device/group \<target>.  Add "--diff" to display the differences, add "--check" for a dry run. It run under the hood the playbook [**pb.config.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.config.yml) with the variables \<target> and \<command>.
+- Execute a Junos set command on device/group \<target>.  
+Add "--diff" to display the differences, add "--check" for a dry run.  
+It run under the hood the playbook [**pb.config.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.config.yml) with the variables \<target> and \<command>.
 ```
 @hubot_name dev=<target> set <command>
 ```
-- Execute a Junos show command on device/group \<target> and print the command output. You can use "show" or "sh". It run under the hood the playbook [**pb.command.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.command.yml) with the variables \<target> anc \<command>.
+- Execute a Junos show command on device/group \<target> and print the command output.  
+You can use "show" or "sh".  
+It run under the hood the playbook [**pb.command.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.command.yml) with the variables \<target> anc \<command>.
 ```
 @hubot_name dev=<target> show <command>
 ```
-- Backup the configuration of device/group \<target>, and apply the jinja2 template \<template> to the device/group \<target>.  Add "--diff" to display the differences, add "--check" for a dry run. It run under the hood the playbook [**pb.template.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.template.yml) with the variables \<target> and \<template>.
+- Backup the configuration of device/group \<target>, and apply the jinja2 template \<template> to the device/group \<target>.  
+Add "--diff" to display the differences, add "--check" for a dry run.  
+It run under the hood the playbook [**pb.template.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.template.yml) with the variables \<target> and \<template>.
 ```
 @hubot_name dev=<target> template <template>
 ```
-- Execute the Ansible playbook \<playbook> on device/group \<target>. Add "--diff" to display the differences, add "--check" for a dry run.
+- Execute the Ansible playbook \<playbook> on device/group \<target>.  
+Add "--diff" to display the differences, add "--check" for a dry run.
 ```
 @hubot_name dev=<target> playbook <playbook>
 ```
-- Configure an ebgp neighbor on device \<target>. You can use "neighbor" or "neigh". Add "--diff" to display the differences, add "--check" for a dry run.  It run under the hood the playbook [**pb.add.ebgp.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.add.ebgp.yml) with the variables \<target> and \<peer_ip> and \<peer_asn>.
+- Configure an ebgp neighbor on device \<target>.  
+You can use "neighbor" or "neigh". Add "--diff" to display the differences, add "--check" for a dry run.  
+It run under the hood the playbook [**pb.add.ebgp.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.add.ebgp.yml) with the variables \<target> and \<peer_ip> and \<peer_asn>.
 ```
 @hubot_name dev=<target> add bgp neighbor <peer_ip> as <peer_asn>
 ```
-- Retrieve on the device \<target> the bgp state for the neighbor \<peer_ip>, and print it. You can use "neighbor" or "neigh". It run under the hood the playbook [**pb.check.bgp.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.check.bgp.yml) with the variables \<target> and \<peer_ip> 
+- Retrieve on the device \<target> the bgp state for the neighbor \<peer_ip>, and print it.  
+You can use "neighbor" or "neigh".  
+It run under the hood the playbook [**pb.check.bgp.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.check.bgp.yml) with the variables \<target> and \<peer_ip> 
 ```
 @hubot_name dev=<target> get bgp state <peer_ip>
 ```
-- Delete an existing ebgp neighbor on device \<target>. You can use "remove" or "rm", you can use "neighbor" or "neigh". It run under the hood the playbook [**pb.remove.ebgp.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.remove.ebgp.yml) with the variables \<target> and \<peer_ip> 
+- Delete an existing ebgp neighbor on device \<target>.  
+You can use "remove" or "rm", you can use "neighbor" or "neigh".   
+It run under the hood the playbook [**pb.remove.ebgp.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.remove.ebgp.yml) with the variables \<target> and \<peer_ip> 
 ```
 @hubot_name dev=<target> remove bgp neighbor <peer_ip>
 ```
-- Print a file (playbook, template, python scripts ...). You can use "show" or "sh"
+- Print a file (playbook, template, python scripts ...).  
+You can use "show" or "sh"
 ```
 @hubot_name show <file>
 ```
-- Print the list of Ansible playbooks. You can use "list" or "ls"
+- Print the list of Ansible playbooks.  
+You can use "list" or "ls"
 ```
 @hubot_name list playbooks
 ```
-- Print the list of Jinja2 templates. You can use "list" or "ls"
+- Print the list of Jinja2 templates.  
+You can use "list" or "ls"
 ```
 @hubot_name list templates
 ```
-- Print the list of Python scripts. You can use "list" or "ls"
+- Print the list of Python scripts.  
+You can use "list" or "ls"
 ```
 @hubot_name list python scripts
 ```
