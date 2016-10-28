@@ -23,7 +23,7 @@ Here’s the chat syntax to delegate tasks to the bot:
 ```
 @hubot_name dev=<target> backup 
 ```
-- Execute a Junos delete command on device/group \<target>. It run under the hood the playbook [**pb.delete.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.delete.yml) with the variables \<target>  and \<command>.
+- Execute a Junos delete command on device/group \<target>. It run under the hood the playbook [**pb.config.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.config.yml) with the variables \<target>  and \<command>.
 ```
 @hubot_name dev=<target> delete <command>
 ```
