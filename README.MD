@@ -1,7 +1,7 @@
 #### What to find on this repo:  
 Chatops for network engineers.  
 Initially inspired by this demo https://www.dravetech.com/blog/2016/03/30/chatops-demo.html  
-Actually based on slack and hubot and automation content (ansible, python, jinja2 ...) for junos automation  
+Actually based on slack and hubot and automation content (ansible playbooks, python scripts, jinja2 templates ...) for junos automation  
 
 #### Bot capabilties:
 You can use slack delegate tasks to the bot.  
