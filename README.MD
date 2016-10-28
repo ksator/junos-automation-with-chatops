@@ -104,19 +104,33 @@ You can use "show" or "sh"
 @hubot_name show <file>
 ```
 ### Examples:   
+
+To get the help: 
 ```
 @j-bot help
+@j-bot help bgp
+```
 
-
-@j-bot dev=all set system login message newbanner
-@j-bot dev=all rollback 1
-
+To pass a junos command (set/show/delete) to devices: 
+```
 @j-bot dev=MX240-04 set interfaces xe-1/0/0 description newdesc
 @j-bot dev=MX240-04 show interfaces descriptions
 @j-bot dev=MX240-04 delete interfaces xe-1/0/0 description
+```
 
+To roll back the junos configuration on devices:  
+```
+@j-bot dev=all set system login message newbanner
+@j-bot dev=all rollback 1
+```
+
+To backup locally the configuration of all devices:
+```
 @j-bot dev=all backup
+```
 
+To add/audit/remove bgp neighbors on devices:  
+```
 @j-bot help bgp
 @j-bot dev=FR-MX80-214 add bgp neighbor 10.10.0.1 as 65001 --check --diff
 @j-bot dev=FR-MX80-214 add bgp neighbor 10.10.0.1 as 65001
@@ -125,14 +139,19 @@ You can use "show" or "sh"
 @j-bot dev=MX240-04 get bgp state 10.10.0.2
 @j-bot dev=MX240-04 remove bgp neighbor 10.10.0.2
 @j-bot dev=FR-MX80-214 rm bgp neighbor 10.10.0.1
-
+```
+To execute a python script: 
+```
 @j-bot list python scripts
 @j-bot python get_facts.py
-
+```
+To execute an Ansible playbook: 
+```
 @j-bot list playbooks
 @j-bot dev=FR-MX80-214 playbook pb.check.physical.topology.yml
 @j-bot dev=FR-MX80-214 playbook pb.ping.yml
-
+```
+```
 @j-bot help template 
 @j-bot ls templates
 @j-bot show openconfig_bgp.j2
