@@ -177,9 +177,9 @@ To load on junos devices a configuration based on a jinja2 template
 ```
 
 ### How does it work: 
-Hubot executes the scripts defined into the directory [**scripts**](https://github.com/ksator/chatops_junos/blob/master/scripts).    
+Hubot executes all the scripts defined into the directory [**scripts**](https://github.com/ksator/chatops_junos/blob/master/scripts).    
 
-The dictionnary is the file [**junos.coffee**] (https://github.com/ksator/chatops_junos/blob/master/scripts/junos.coffee).  
+The dictionnary for network automation is the file [**junos_automation.coffee**] (https://github.com/ksator/chatops_junos/blob/master/scripts/junos_automation.coffee).  
 This is where we define the various actions the bot has to take based on the slack messages in the chat room.  
 
 The bot is configured to execute the automation content (Ansible playbooks, python scripts ...) defined into the directory [**automation_content**] (https://github.com/ksator/chatops_junos/tree/master/automation_content)
@@ -211,7 +211,7 @@ Github, Ansible, Travis CI, ... can send slack notifications. So you can receive
 -	Integrate your bot in your slack team  
 - the slack status for the bot should appear as "away" in the chat room
 -	Create some automation content (you can do it on the same VM that has the bot, so the bot doesnt need to use API to consume the automation content). My automation content is based on Ansible and Python: https://github.com/ksator/chatops_junos/tree/master/automation_content. 
--	Create a script that tell your bot what to do based on the slack messages in the chat room. Here’s my dictionnary https://github.com/ksator/chatops_junos/blob/master/scripts/junos.coffee.  
+-	Create a script that tell your bot what to do based on the slack messages in the chat room. Here’s my dictionnary https://github.com/ksator/chatops_junos/blob/master/scripts/junos_automation.coffee.  
 - launch the bot, with a slack adaptor, and the token generated when you integrated the bot to the slack team: 
 ```
 ksator@ubuntu:~/myhubot$ HUBOT_SLACK_TOKEN=xoxb-90946701733-BTJh5QnUdQrTMcbtjgawmvjo ./bin/hubot -a slack
