@@ -20,47 +20,47 @@ Here’s the chat syntax to delegate tasks to the bot:
 
 Note: \<target> is a device or a group of devices. The value \<target> has to be exist in the ansible inventory [**hosts**] (https://github.com/ksator/chatops_junos/blob/master/automation_content/hosts) file.   
 
-- Backup the configuration of the device/group \<target>.   
+- Backup the configuration of \<target>.   
 It run under the hood the playbook [**pb.backup.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.backup.yml) with the variable \<target>. 
 ```
 @hubot_name dev=<target> backup 
 ```
-- Execute a Junos delete command on device/group \<target>.  
+- Execute a Junos delete command on \<target>.  
 It run under the hood the playbook [**pb.config.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.config.yml) with the variables \<target> and \<command>.
 ```
 @hubot_name dev=<target> delete <command>
 ```
-- Rollback \<rb_id> the configuration of device/group \<target>.  
+- Rollback \<rb_id> the configuration of \<target>.  
 It run under the hood the playbook [**pb.rollback.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.rollback.yml) with the variables \<target> and \<rb_id>.
 ```
 @hubot_name dev=<target> rollback <rb_id>
 ```
-- Execute a Junos set command on device/group \<target>.  
+- Execute a Junos set command on \<target>.  
 It run under the hood the playbook [**pb.config.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.config.yml) with the variables \<target> and \<command>.  
 Add "--diff" to display the differences, add "--check" for a dry run.  
 ```
 @hubot_name dev=<target> set <command>
 ```
-- Execute a Junos show command on device/group \<target> and print the command output.  
+- Execute a Junos show command on \<target> and print the command output.  
 It run under the hood the playbook [**pb.command.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.command.yml) with the variables \<target> anc \<command>.  
 You can use "show" or "sh".  
 ```
 @hubot_name dev=<target> show <command>
 ```
-- Backup the configuration of device/group \<target>, and apply the jinja2 template \<template> to the device/group \<target>.  
+- Backup the configuration of \<target>, and apply the jinja2 template \<template> to \<target>.  
 It run under the hood the playbook [**pb.template.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.template.yml) with the variables \<target> and \<template>. 
 The jinja2 template \<template> has to be defined into the directory [**automation_content**] (https://github.com/ksator/chatops_junos/blob/master/automation_content).   
 Add "--diff" to display the differences, add "--check" for a dry run.  
 ```
 @hubot_name dev=<target> template <template>
 ```
-- Execute the Ansible playbook \<playbook> on device/group \<target>.  
+- Execute the Ansible playbook \<playbook> on \<target>.  
 The Ansible playbook \<playbook> has to be defined into the directory [**automation_content**] (https://github.com/ksator/chatops_junos/blob/master/automation_content).  
 Add "--diff" to display the differences, add "--check" for a dry run.
 ```
 @hubot_name dev=<target> playbook <playbook>
 ```
-- Configure an ebgp neighbor on device \<target>.  
+- Configure an ebgp neighbor on the device \<target>.  
 It run under the hood the playbook [**pb.add.ebgp.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.add.ebgp.yml) with the variables \<target> and \<peer_ip> and \<peer_asn>.  
 You can use "neighbor" or "neigh".  
 Add "--diff" to display the differences, add "--check" for a dry run.  
@@ -72,7 +72,7 @@ It run under the hood the playbook [**pb.check.bgp.yml**](https://github.com/ksa
 ```
 @hubot_name dev=<target> get bgp state <peer_ip>
 ```
-- Delete an existing ebgp neighbor on device \<target>.  
+- Delete an existing ebgp neighbor on the device \<target>.  
 It run under the hood the playbook [**pb.remove.ebgp.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.remove.ebgp.yml) with the variables \<target> and \<peer_ip>  
 You can use "remove" or "rm", you can use "neighbor" or "neigh".   
 ```
