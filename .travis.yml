@@ -19,14 +19,14 @@ install:
   - ansible-galaxy --force install Juniper.junos -p ./
 
 script:
-  - ansible-playbook ansible/pb.template.yml --extra-vars "device=Openconfig_Routers template=ansible/openconfig_bgp.j2" --syntax-check
-  - ansible-playbook ansible/pb.rollback.yml --extra-vars "device=Openconfig_Routers rbid=1" --syntax-check
-  - ansible-playbook ansible/pb.ping.yml --syntax-check
-  - ansible-playbook ansible/pb.oc.bgp.yml --syntax-check
-  - ansible-playbook ansible/pb.check.physical.topology.yml --syntax-check
-  - ansible-playbook ansible/pb.backup.yml --extra-vars "device=Openconfig_Routers" --syntax-check
-  - ansible-playbook ansible/pb.config.yml --extra-vars "device=Openconfig_Routers cli=set system login message newbanner" --syntax-check 
-  - ansible-playbook ansible/pb.command.yml --extra-vars "device=Openconfig_Routers cli=show version" --syntax-check
+  - ansible-playbook automation_content/pb.template.yml --extra-vars "device=Openconfig_Routers template=ansible/openconfig_bgp.j2" --syntax-check
+  - ansible-playbook automation_content/pb.rollback.yml --extra-vars "device=Openconfig_Routers rbid=1" --syntax-check
+  - ansible-playbook automation_content/pb.ping.yml --syntax-check
+  - ansible-playbook automation_content/pb.oc.bgp.yml --syntax-check
+  - ansible-playbook automation_content/pb.check.physical.topology.yml --syntax-check
+  - ansible-playbook automation_content/pb.backup.yml --extra-vars "device=Openconfig_Routers" --syntax-check
+  - ansible-playbook automation_content/pb.config.yml --extra-vars "device=Openconfig_Routers cli=set system login message newbanner" --syntax-check 
+  - ansible-playbook automation_content/pb.command.yml --extra-vars "device=Openconfig_Routers cli=show version" --syntax-check
  
   
 branches:
