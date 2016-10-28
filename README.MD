@@ -18,7 +18,7 @@ This is easily extensible.
 ### Chat syntax: 
 Here’s the chat syntax to delegate tasks to the bot:  
 
-Note: \<target> is a device or a group of devices. The value \<target> has to be exist in the ansible inventory [**hosts**] (https://github.com/ksator/chatops_junos/blob/master/automation_content/hosts) file.   
+Notes: \<target> is a device or a group of devices. The value \<target> has to be exist in the ansible inventory [**hosts**] (https://github.com/ksator/chatops_junos/blob/master/automation_content/hosts) file.   
 
 - Backup the configuration of \<target>.   
 It run under the hood the playbook [**pb.backup.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.backup.yml) with the variable \<target>. 
@@ -126,7 +126,7 @@ The python script has to be defined into the directory [**automation_content**] 
 ```
 
 ### How does it work: 
-Hubot executes the scripts defined into the direcory [**scripts**](https://github.com/ksator/chatops_junos/blob/master/scripts).    
+Hubot executes the scripts defined into the directory [**scripts**](https://github.com/ksator/chatops_junos/blob/master/scripts).    
 
 The dictionnary is the file [junos.coffee] (https://github.com/ksator/chatops_junos/blob/master/scripts/junos.coffee).  
 This is where we define the various actions the bot has to take based on the slack messages in the chat room.  
@@ -135,20 +135,20 @@ The bot is configured to execute the automation content (Ansible playbooks, pyth
 
 So, as example, the slack message:   
 ```
-myhubot target <target> template <template>    
+@hubot_name dev=<target> template <template>   
 ```
 or
 ```
-@myhubot target <target> template <template>  
+hubot_name dev=<target> template <template>
 ```
 triggers the ansible playbook [**pb.template.yml**](https://github.com/ksator/chatops_junos/blob/master/ansible/pb.template.yml) with some variable definitions (using the --extra-vars option to pass the variables definition to the playbook):   
 Actually, the bot will execute this command:  
 ```
-ansible-playbook $PWD/ansible/pb.template.yml --extra-vars = "{'device': <target>, 'template': <template>}"
+ansible-playbook $PWD/automation_content/pb.template.yml --extra-vars = "{'device': <target>, 'template': <template>}"
 ```
 Which is the equivalent of: 
 ```
-ansible-playbook $PWD/ansible/pb.template.yml --extra-vars "device=<target> template=<template>"  
+ansible-playbook $PWD/automation_content/pb.template.yml --extra-vars "device=<target> template=<template>"  
 ```
 
 ### The steps to reproduce are: 
