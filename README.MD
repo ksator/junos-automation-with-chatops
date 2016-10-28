@@ -126,6 +126,8 @@ The python script has to be defined into the directory [**automation_content**] 
 ```
 
 ### How does it work: 
+Hubot executes the scripts defined into the direcory [**scripts**](https://github.com/ksator/chatops_junos/blob/master/scripts).    
+
 The dictionnary is the file [junos.coffee] (https://github.com/ksator/chatops_junos/blob/master/scripts/junos.coffee).  
 This is where we define the various actions the bot has to take based on the slack messages in the chat room.  
 
