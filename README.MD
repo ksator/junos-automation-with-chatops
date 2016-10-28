@@ -120,6 +120,7 @@ To get the help:
 
 To pass a junos command (set/show/delete) to devices: 
 ```
+@j-bot show hosts
 @j-bot dev=MX240-04 set interfaces xe-1/0/0 description newdesc
 @j-bot dev=MX240-04 show interfaces descriptions
 @j-bot dev=MX240-04 delete interfaces xe-1/0/0 description
@@ -150,13 +151,14 @@ To manage bgp neighbors (add/audit/remove bgp neighbors) on devices:
 To execute a python script: 
 ```
 @j-bot list python scripts
+@j-bot show get_facts.py
 @j-bot python get_facts.py
 ```
 To execute an Ansible playbook: 
 ```
 @j-bot list playbooks
-@j-bot show hosts
 @j-bot show pb.check.physical.topology.yml
+@j-bot show hosts
 @j-bot dev=FR-MX80-214 playbook pb.check.physical.topology.yml
 @j-bot dev=FR-MX80-214 playbook pb.ping.yml
 ```
