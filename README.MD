@@ -49,13 +49,13 @@ You can use "show" or "sh".
 ```
 - Backup the configuration of device/group \<target>, and apply the jinja2 template \<template> to the device/group \<target>.  
 It run under the hood the playbook [**pb.template.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.template.yml) with the variables \<target> and \<template>. 
-The template \<target> has to be defined into the directory **automation_content** (https://github.com/ksator/chatops_junos/blob/master/automation_content).   
-
+The jinja2 template \<template> has to be defined into the directory [**automation_content**] (https://github.com/ksator/chatops_junos/blob/master/automation_content).   
 Add "--diff" to display the differences, add "--check" for a dry run.  
 ```
 @hubot_name dev=<target> template <template>
 ```
 - Execute the Ansible playbook \<playbook> on device/group \<target>.  
+The Ansible playbook \<playbook> has to be defined into the directory [**automation_content**] (https://github.com/ksator/chatops_junos/blob/master/automation_content).  
 Add "--diff" to display the differences, add "--check" for a dry run.
 ```
 @hubot_name dev=<target> playbook <playbook>
@@ -78,27 +78,28 @@ You can use "remove" or "rm", you can use "neighbor" or "neigh".
 ```
 @hubot_name dev=<target> remove bgp neighbor <peer_ip>
 ```
-- Print a file (playbook, template, python scripts ...).  
+- Print a file (playbook, template, python scripts ...) defined in the directory [**automation_content**] (https://github.com/ksator/chatops_junos/blob/master/automation_content)    
 You can use "show" or "sh"
 ```
 @hubot_name show <file>
 ```
-- Print the list of Ansible playbooks.  
+- Print the list of Ansible playbooks defined into the directory [**automation_content**] (https://github.com/ksator/chatops_junos/blob/master/automation_content).  
 You can use "list" or "ls"
 ```
 @hubot_name list playbooks
 ```
-- Print the list of Jinja2 templates.  
+- Print the list of Jinja2 templates defined into the directory [**automation_content**] (https://github.com/ksator/chatops_junos/blob/master/automation_content).    
 You can use "list" or "ls"
 ```
 @hubot_name list templates
 ```
-- Print the list of Python scripts.  
+- Print the list of Python scripts defined into the directory [**automation_content**] (https://github.com/ksator/chatops_junos/blob/master/automation_content).  
 You can use "list" or "ls"
 ```
 @hubot_name list python scripts
 ```
-- Execute the python script \<script> and print the program output
+- Execute the python script \<script> and print the program output  
+The python script has to be defined into the directory [**automation_content**] (https://github.com/ksator/chatops_junos/blob/master/automation_content).  
 ```
 @hubot_name python <script>
 ```
