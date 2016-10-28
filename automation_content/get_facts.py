@@ -5,6 +5,7 @@ for item in mydeviceslist:
     dev=Device(host=item, user="tiaddemo", password="OpenConfig")
     dev.open()
     dev.close()
-    print ("the device "+ dev.facts["hostname"]+ " is an " + dev.facts['model'] + " running " + dev.facts["version"]+"\n")
+    print (dev.facts["hostname"]+ " is an " + dev.facts['model'] + " running " + dev.facts["version"]+"\n")
+print "Done!"
 
 

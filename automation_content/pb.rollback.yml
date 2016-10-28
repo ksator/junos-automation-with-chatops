@@ -27,3 +27,13 @@
       diffs_file={{playbook_dir}}/diffs/{{ inventory_hostname }}.diff
       rollback={{rbid}}
       comment="configuration rolled back by Ansible"
+
+   - name: Send Slack notification
+     local_action:
+      module: slack
+      #http://docs.ansible.com/ansible/slack_module.html
+      username: "Playbook pb.rollback.yml with rollabck {{ rbid }}"
+      channel: general       
+      token: T2MBN64JX/B2N0Z2MEU/1OoB46XLX6Q1oFf89Xl2X9gq
+      icon_url: "https://www.ansible.com/hs-fs/hub/330046/file-448313641-png/favicon.png"
+      msg: "configuration rolled back on device {{ inventory_hostname }}"

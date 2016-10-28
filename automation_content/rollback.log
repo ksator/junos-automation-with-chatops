@@ -1,0 +1,251 @@
+2016-10-19 07:29:09,270:CONFIG:172.30.108.210:connecting to host: tiaddemo@172.30.108.210:830
+2016-10-19 07:29:09,290:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2016-10-19 07:29:09,633:ncclient.transport.ssh:Auth banner: srvteb
+
+2016-10-19 07:29:09,634:ncclient.transport.ssh:Authentication (publickey) failed.
+2016-10-19 07:29:09,676:ncclient.transport.ssh:Authentication (password) successful!
+2016-10-19 07:29:10,149:ncclient.transport.session:initialized: session-id=18342 | server_capabilities=<dictionary-keyiterator object at 0x7f632385dec0>
+2016-10-19 07:29:10,149:CONFIG:172.30.108.210:taking lock
+2016-10-19 07:29:10,149:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-19 07:29:10,319:CONFIG:172.30.108.210:Rolling back to: 1
+2016-10-19 07:29:10,320:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-19 07:29:10,436:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-19 07:29:10,606:CONFIG:172.30.108.210:committing change, please be patient
+2016-10-19 07:29:10,606:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-19 07:29:12,344:CONFIG:172.30.108.210:change completed
+2016-10-19 07:29:12,344:CONFIG:172.30.108.210:unlocking
+2016-10-19 07:29:12,344:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-19 07:29:12,462:ncclient.operations.rpc:Requesting 'CloseSession'
+2016-10-19 15:10:15,281:CONFIG:172.30.108.210:connecting to host: tiaddemo@172.30.108.210:830
+2016-10-19 15:10:15,294:CONFIG:172.30.108.214:connecting to host: tiaddemo@172.30.108.214:830
+2016-10-19 15:10:15,384:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2016-10-19 15:10:15,440:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_7.1)
+2016-10-19 15:10:15,907:ncclient.transport.ssh:Auth banner: srvrw
+
+2016-10-19 15:10:15,908:ncclient.transport.ssh:Authentication (publickey) failed.
+2016-10-19 15:10:16,016:ncclient.transport.ssh:Auth banner: srvrw
+
+2016-10-19 15:10:16,017:ncclient.transport.ssh:Authentication (publickey) failed.
+2016-10-19 15:10:16,017:ncclient.transport.ssh:Authentication (password) successful!
+2016-10-19 15:10:16,352:ncclient.transport.ssh:Authentication (password) successful!
+2016-10-19 15:10:16,558:ncclient.transport.session:initialized: session-id=26269 | server_capabilities=<dictionary-keyiterator object at 0x7f0f46ca4f18>
+2016-10-19 15:10:16,558:CONFIG:172.30.108.210:taking lock
+2016-10-19 15:10:16,558:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-19 15:10:16,778:CONFIG:172.30.108.210:Rolling back to: 1
+2016-10-19 15:10:16,779:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-19 15:10:16,950:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-19 15:10:17,121:CONFIG:172.30.108.210:committing change, please be patient
+2016-10-19 15:10:17,122:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-19 15:10:18,253:ncclient.transport.session:initialized: session-id=64293 | server_capabilities=<dictionary-keyiterator object at 0x7f55daaf0f18>
+2016-10-19 15:10:18,253:CONFIG:172.30.108.214:taking lock
+2016-10-19 15:10:18,254:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-19 15:10:18,580:CONFIG:172.30.108.214:Rolling back to: 1
+2016-10-19 15:10:18,580:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-19 15:10:18,903:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-19 15:10:18,962:CONFIG:172.30.108.210:change completed
+2016-10-19 15:10:18,963:CONFIG:172.30.108.210:unlocking
+2016-10-19 15:10:18,963:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-19 15:10:19,083:ncclient.operations.rpc:Requesting 'CloseSession'
+2016-10-19 15:10:20,991:CONFIG:172.30.108.214:committing change, please be patient
+2016-10-19 15:10:20,992:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-19 15:10:33,115:CONFIG:172.30.108.214:change completed
+2016-10-19 15:10:33,115:CONFIG:172.30.108.214:unlocking
+2016-10-19 15:10:33,115:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-19 15:10:33,638:ncclient.operations.rpc:Requesting 'CloseSession'
+2016-10-21 06:07:36,023:CONFIG:172.30.108.210:connecting to host: tiaddemo@172.30.108.210:830
+2016-10-21 06:07:36,024:CONFIG:172.30.108.214:connecting to host: tiaddemo@172.30.108.214:830
+2016-10-21 06:07:36,044:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2016-10-21 06:07:36,091:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_7.1)
+2016-10-21 06:07:36,366:ncclient.transport.ssh:Auth banner: aeevte
+
+2016-10-21 06:07:36,366:ncclient.transport.ssh:Authentication (publickey) failed.
+2016-10-21 06:07:36,399:ncclient.transport.ssh:Authentication (password) successful!
+2016-10-21 06:07:36,476:ncclient.transport.ssh:Auth banner: aeevte
+
+2016-10-21 06:07:36,476:ncclient.transport.ssh:Authentication (publickey) failed.
+2016-10-21 06:07:36,622:ncclient.transport.ssh:Authentication (password) successful!
+2016-10-21 06:07:36,842:ncclient.transport.session:initialized: session-id=44662 | server_capabilities=<dictionary-keyiterator object at 0x7f29974fdf18>
+2016-10-21 06:07:36,843:CONFIG:172.30.108.210:taking lock
+2016-10-21 06:07:36,844:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-21 06:07:37,016:CONFIG:172.30.108.210:Rolling back to: 1
+2016-10-21 06:07:37,017:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-21 06:07:37,138:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-21 06:07:37,309:CONFIG:172.30.108.210:committing change, please be patient
+2016-10-21 06:07:37,310:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-21 06:07:38,345:ncclient.transport.session:initialized: session-id=68705 | server_capabilities=<dictionary-keyiterator object at 0x7fd2d2418f70>
+2016-10-21 06:07:38,346:CONFIG:172.30.108.214:taking lock
+2016-10-21 06:07:38,347:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-21 06:07:38,621:CONFIG:172.30.108.214:Rolling back to: 1
+2016-10-21 06:07:38,621:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-21 06:07:38,894:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-21 06:07:39,101:CONFIG:172.30.108.210:change completed
+2016-10-21 06:07:39,102:CONFIG:172.30.108.210:unlocking
+2016-10-21 06:07:39,102:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-21 06:07:39,223:ncclient.operations.rpc:Requesting 'CloseSession'
+2016-10-21 06:07:40,940:CONFIG:172.30.108.214:committing change, please be patient
+2016-10-21 06:07:40,941:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-21 06:07:52,478:CONFIG:172.30.108.214:change completed
+2016-10-21 06:07:52,479:CONFIG:172.30.108.214:unlocking
+2016-10-21 06:07:52,480:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-21 06:07:53,003:ncclient.operations.rpc:Requesting 'CloseSession'
+2016-10-24 01:22:05,613:CONFIG:172.30.108.210:connecting to host: tiaddemo@172.30.108.210:830
+2016-10-24 01:22:05,709:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2016-10-24 01:22:06,114:ncclient.transport.ssh:Auth banner: afvtebtrnyfn
+
+2016-10-24 01:22:06,114:ncclient.transport.ssh:Authentication (publickey) failed.
+2016-10-24 01:22:06,202:ncclient.transport.ssh:Authentication (password) successful!
+2016-10-24 01:22:06,714:ncclient.transport.session:initialized: session-id=76833 | server_capabilities=<dictionary-keyiterator object at 0x7fc419304f18>
+2016-10-24 01:22:06,715:CONFIG:172.30.108.210:taking lock
+2016-10-24 01:22:06,716:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-24 01:22:06,937:CONFIG:172.30.108.210:Rolling back to: 1
+2016-10-24 01:22:06,937:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-24 01:22:07,059:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-24 01:22:07,236:CONFIG:172.30.108.210:committing change, please be patient
+2016-10-24 01:22:07,237:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-24 01:22:08,876:CONFIG:172.30.108.210:change completed
+2016-10-24 01:22:08,876:CONFIG:172.30.108.210:unlocking
+2016-10-24 01:22:08,876:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-24 01:22:09,093:ncclient.operations.rpc:Requesting 'CloseSession'
+2016-10-24 01:49:50,600:CONFIG:172.30.108.210:connecting to host: tiaddemo@172.30.108.210:830
+2016-10-24 01:49:50,673:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2016-10-24 01:49:51,139:ncclient.transport.ssh:Auth banner: afvtebtrnyfn
+
+2016-10-24 01:49:51,139:ncclient.transport.ssh:Authentication (publickey) failed.
+2016-10-24 01:49:51,241:ncclient.transport.ssh:Authentication (password) successful!
+2016-10-24 01:49:51,809:ncclient.transport.session:initialized: session-id=77047 | server_capabilities=<dictionary-keyiterator object at 0x7f7b18623f18>
+2016-10-24 01:49:51,810:CONFIG:172.30.108.210:taking lock
+2016-10-24 01:49:51,811:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-24 01:49:52,083:CONFIG:172.30.108.210:Rolling back to: 1
+2016-10-24 01:49:52,084:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-24 01:49:52,205:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-24 01:49:52,378:CONFIG:172.30.108.210:committing change, please be patient
+2016-10-24 01:49:52,378:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-24 01:49:54,009:CONFIG:172.30.108.210:change completed
+2016-10-24 01:49:54,009:CONFIG:172.30.108.210:unlocking
+2016-10-24 01:49:54,009:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-24 01:49:54,125:ncclient.operations.rpc:Requesting 'CloseSession'
+2016-10-24 01:50:03,802:CONFIG:172.30.108.210:connecting to host: tiaddemo@172.30.108.210:830
+2016-10-24 01:50:03,874:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2016-10-24 01:50:05,497:ncclient.transport.ssh:Auth banner: afvtebtrnyfn
+
+2016-10-24 01:50:05,497:ncclient.transport.ssh:Authentication (publickey) failed.
+2016-10-24 01:50:05,609:ncclient.transport.ssh:Authentication (password) successful!
+2016-10-24 01:50:06,189:ncclient.transport.session:initialized: session-id=77069 | server_capabilities=<dictionary-keyiterator object at 0x7fa53e65ef18>
+2016-10-24 01:50:06,189:CONFIG:172.30.108.210:taking lock
+2016-10-24 01:50:06,190:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-24 01:50:06,358:CONFIG:172.30.108.210:Rolling back to: 1
+2016-10-24 01:50:06,358:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-24 01:50:06,527:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-24 01:50:06,695:CONFIG:172.30.108.210:doing a commit-check, please be patient
+2016-10-24 01:50:06,696:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-24 01:50:07,773:CONFIG:172.30.108.210:unlocking
+2016-10-24 01:50:07,774:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-24 01:50:07,943:ncclient.operations.rpc:Requesting 'CloseSession'
+2016-10-24 01:50:43,923:CONFIG:172.30.108.210:connecting to host: tiaddemo@172.30.108.210:830
+2016-10-24 01:50:44,027:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2016-10-24 01:50:44,463:ncclient.transport.ssh:Auth banner: afvtebtrnyfn
+
+2016-10-24 01:50:44,463:ncclient.transport.ssh:Authentication (publickey) failed.
+2016-10-24 01:50:44,561:ncclient.transport.ssh:Authentication (password) successful!
+2016-10-24 01:50:46,296:ncclient.transport.session:initialized: session-id=77092 | server_capabilities=<dictionary-keyiterator object at 0x7f0d3cd7cf18>
+2016-10-24 01:50:46,297:CONFIG:172.30.108.210:taking lock
+2016-10-24 01:50:46,298:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-24 01:50:46,518:CONFIG:172.30.108.210:Rolling back to: 1
+2016-10-24 01:50:46,518:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-24 01:50:46,686:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-24 01:50:48,115:CONFIG:172.30.108.210:committing change, please be patient
+2016-10-24 01:50:48,115:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-24 01:50:49,544:CONFIG:172.30.108.210:change completed
+2016-10-24 01:50:49,544:CONFIG:172.30.108.210:unlocking
+2016-10-24 01:50:49,544:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-24 01:50:49,712:ncclient.operations.rpc:Requesting 'CloseSession'
+2016-10-24 01:59:11,716:CONFIG:172.30.108.210:connecting to host: tiaddemo@172.30.108.210:830
+2016-10-24 01:59:11,789:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2016-10-24 01:59:12,225:ncclient.transport.ssh:Auth banner: afvtebtrnyfn
+
+2016-10-24 01:59:12,225:ncclient.transport.ssh:Authentication (publickey) failed.
+2016-10-24 01:59:12,315:ncclient.transport.ssh:Authentication (password) successful!
+2016-10-24 01:59:12,822:ncclient.transport.session:initialized: session-id=77173 | server_capabilities=<dictionary-keyiterator object at 0x7f7ff117bf18>
+2016-10-24 01:59:12,822:CONFIG:172.30.108.210:taking lock
+2016-10-24 01:59:12,823:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-24 01:59:13,044:CONFIG:172.30.108.210:Rolling back to: 1
+2016-10-24 01:59:13,044:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-24 01:59:13,164:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-24 01:59:13,435:CONFIG:172.30.108.210:committing change, please be patient
+2016-10-24 01:59:13,436:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-24 01:59:15,021:CONFIG:172.30.108.210:change completed
+2016-10-24 01:59:15,021:CONFIG:172.30.108.210:unlocking
+2016-10-24 01:59:15,022:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-24 01:59:15,189:ncclient.operations.rpc:Requesting 'CloseSession'
+2016-10-24 01:59:25,484:CONFIG:172.30.108.210:connecting to host: tiaddemo@172.30.108.210:830
+2016-10-24 01:59:25,556:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2016-10-24 01:59:25,984:ncclient.transport.ssh:Auth banner: afvtebtrnyfn
+
+2016-10-24 01:59:25,985:ncclient.transport.ssh:Authentication (publickey) failed.
+2016-10-24 01:59:26,090:ncclient.transport.ssh:Authentication (password) successful!
+2016-10-24 01:59:27,867:ncclient.transport.session:initialized: session-id=77193 | server_capabilities=<dictionary-keyiterator object at 0x7f7064cf3f18>
+2016-10-24 01:59:27,868:CONFIG:172.30.108.210:taking lock
+2016-10-24 01:59:27,869:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-24 01:59:28,040:CONFIG:172.30.108.210:Rolling back to: 1
+2016-10-24 01:59:28,040:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-24 01:59:28,210:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-24 01:59:28,380:CONFIG:172.30.108.210:committing change, please be patient
+2016-10-24 01:59:28,380:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-24 01:59:29,811:CONFIG:172.30.108.210:change completed
+2016-10-24 01:59:29,811:CONFIG:172.30.108.210:unlocking
+2016-10-24 01:59:29,812:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-24 01:59:29,929:ncclient.operations.rpc:Requesting 'CloseSession'
+2016-10-25 06:59:58,573:CONFIG:172.30.108.210:connecting to host: tiaddemo@172.30.108.210:830
+2016-10-25 06:59:58,662:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2016-10-25 06:59:59,025:ncclient.transport.ssh:Auth banner: afvtebtrnyfn
+
+2016-10-25 06:59:59,025:ncclient.transport.ssh:Authentication (publickey) failed.
+2016-10-25 06:59:59,114:ncclient.transport.ssh:Authentication (password) successful!
+2016-10-25 06:59:59,649:ncclient.transport.session:initialized: session-id=91184 | server_capabilities=<dictionary-keyiterator object at 0x7fae0865af18>
+2016-10-25 06:59:59,650:CONFIG:172.30.108.210:taking lock
+2016-10-25 06:59:59,651:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-25 07:00:00,992:CONFIG:172.30.108.210:Rolling back to: 1
+2016-10-25 07:00:00,992:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-25 07:00:01,163:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-25 07:00:01,334:CONFIG:172.30.108.210:committing change, please be patient
+2016-10-25 07:00:01,334:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-25 07:00:02,770:CONFIG:172.30.108.210:change completed
+2016-10-25 07:00:02,770:CONFIG:172.30.108.210:unlocking
+2016-10-25 07:00:02,770:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-25 07:00:02,939:ncclient.operations.rpc:Requesting 'CloseSession'
+2016-10-28 08:09:04,427:CONFIG:172.30.108.210:connecting to host: tiaddemo@172.30.108.210:830
+2016-10-28 08:09:04,457:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2016-10-28 08:09:04,736:ncclient.transport.ssh:Auth banner: afvtebtrnyfn
+
+2016-10-28 08:09:04,736:ncclient.transport.ssh:Authentication (publickey) failed.
+2016-10-28 08:09:04,777:ncclient.transport.ssh:Authentication (password) successful!
+2016-10-28 08:09:05,228:ncclient.transport.session:initialized: session-id=21600 | server_capabilities=<dictionary-keyiterator object at 0x7f5019859ec0>
+2016-10-28 08:09:05,228:CONFIG:172.30.108.210:taking lock
+2016-10-28 08:09:05,229:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-28 08:09:05,401:CONFIG:172.30.108.210:Rolling back to: 1
+2016-10-28 08:09:05,402:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-28 08:09:05,524:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-28 08:09:05,900:CONFIG:172.30.108.210:committing change, please be patient
+2016-10-28 08:09:05,901:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-28 08:09:07,337:CONFIG:172.30.108.210:change completed
+2016-10-28 08:09:07,338:CONFIG:172.30.108.210:unlocking
+2016-10-28 08:09:07,338:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-28 08:09:07,406:ncclient.operations.rpc:Requesting 'CloseSession'
+2016-10-28 08:11:15,192:CONFIG:172.30.108.210:connecting to host: tiaddemo@172.30.108.210:830
+2016-10-28 08:11:15,221:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2016-10-28 08:11:15,519:ncclient.transport.ssh:Auth banner: afvtebtrnyfn
+
+2016-10-28 08:11:15,519:ncclient.transport.ssh:Authentication (publickey) failed.
+2016-10-28 08:11:15,559:ncclient.transport.ssh:Authentication (password) successful!
+2016-10-28 08:11:16,024:ncclient.transport.session:initialized: session-id=21639 | server_capabilities=<dictionary-keyiterator object at 0x7f2070205ec0>
+2016-10-28 08:11:16,024:CONFIG:172.30.108.210:taking lock
+2016-10-28 08:11:16,025:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-28 08:11:16,248:CONFIG:172.30.108.210:Rolling back to: 1
+2016-10-28 08:11:16,248:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-28 08:11:16,369:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-28 08:11:16,698:CONFIG:172.30.108.210:committing change, please be patient
+2016-10-28 08:11:16,699:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-28 08:11:18,188:CONFIG:172.30.108.210:change completed
+2016-10-28 08:11:18,188:CONFIG:172.30.108.210:unlocking
+2016-10-28 08:11:18,189:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-10-28 08:11:18,266:ncclient.operations.rpc:Requesting 'CloseSession'

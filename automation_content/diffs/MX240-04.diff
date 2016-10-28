@@ -1,0 +1,5 @@
+
+[edit protocols bgp group external-peers]
+-     neighbor 10.10.0.10 {
+-         peer-as 65002;
+-     }

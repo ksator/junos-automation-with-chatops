@@ -1,11 +1,11 @@
 ---
- - name: pass set and delete commands
+ - name: pass a junos set or delete command
    hosts: "{{ device }}"
    connection: local
    gather_facts: no
 
    tasks:
-   - name: pass set and delete commands  
+   - name: pass a junos set or delete command  
      junos_config:
       provider: "{{ credentials }}"
       lines: "{{ cli }}"
