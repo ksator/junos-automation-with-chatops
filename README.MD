@@ -7,7 +7,7 @@ Actually based on slack and hubot and automation content (ansible, python, jinja
 You can use slack delegate tasks to the bot.  
 The bot can: 
 - execute a junos command (set/delete/show) on junos devices  
-- load configuration based on a jinja2 template on junos devices  
+- load a configuration data based on a jinja2 template on junos devices  
 - apply a playbook to junos devices   
 - roll back the junos configuration on junos devices  
 - backup locally the configuration of junos devices  
