@@ -9,7 +9,7 @@ You can use slack to delegate these tasks to the bot:
 - roll back the junos configuration on junos devices  
 - backup locally the configuration of junos devices  
 - Manage bgp neighbors (add a neighbor, remove a neighbor, audit a neighbor session) on a junos device   
-- load a configuration data based on a jinja2 template on junos devices  
+- load on junos devices a configuration based on a jinja2 template on junos devices  
 - apply a playbook to junos devices   
 - Execute a python script  
 
