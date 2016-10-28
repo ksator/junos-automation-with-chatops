@@ -158,13 +158,15 @@ ansible-playbook $PWD/automation_content/pb.template.yml --extra-vars "device=<t
 Github, Ansible, Travis CI, ... can send slack notifications. So you can receive slack notifications on these channels from Github (each time there is a change on your github repositories), from TravisCI (each time it will finish to run its tests), from Ansible (if you use the [slack notification module](http://docs.ansible.com/ansible/slack_module.html) in your playbooks. Here's an [example](https://github.com/ksator/chatops_junos/blob/master/automation_content/pb.add.ebgp.yml)).
 -	Install hubot (I installed it on an ubuntu 14.04 VM) 
 -	Integrate your bot in your slack team  
+- the slack status for the bot should appear as "away" in the chat room
 -	Create some automation content (you can do it on the same VM that has the bot, so the bot doesnt need to use API to consume the automation content). My automation content is based on Ansible and Python: https://github.com/ksator/chatops_junos/tree/master/automation_content. 
--	Create a script that tell your bot what to do based on slack messages. Here’s my disctionnary https://github.com/ksator/chatops_junos/blob/master/scripts/junos.coffee.  
+-	Create a script that tell your bot what to do based on the slack messages in the chat room. Here’s my dictionnary https://github.com/ksator/chatops_junos/blob/master/scripts/junos.coffee.  
 - launch the bot, with a slack adaptor, and the token generated when you integrated the bot to the slack team: 
 ```
 ksator@ubuntu:~/myhubot$ HUBOT_SLACK_TOKEN=xoxb-90946701733-BTJh5QnUdQrTMcbtjgawmvjo ./bin/hubot -a slack
 ```
-- the slack status for the bot should now appear as active in the chat room! Send slack messages to your bot in order to delegate tasks to him :-)
+- the slack status for the bot should now appear as "active" in the chat room! 
+- Send slack messages to your bot in order to delegate tasks to him :-)
 
 
 ### Contributions, bugs, questions, suggestions, enhancement requests
