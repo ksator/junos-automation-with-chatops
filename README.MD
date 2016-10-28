@@ -103,7 +103,7 @@ You can use "show" or "sh"
 ```
 @hubot_name show <file>
 ```
-### Examples:   
+### Usage examples:   
 
 To get the help: 
 ```
@@ -148,18 +148,20 @@ To execute a python script:
 To execute an Ansible playbook: 
 ```
 @j-bot list playbooks
+@j-bot show hosts
+@j-bot show pb.check.physical.topology.yml
 @j-bot dev=FR-MX80-214 playbook pb.check.physical.topology.yml
 @j-bot dev=FR-MX80-214 playbook pb.ping.yml
 ```
+To load a configuration data based on a jinja2 template on junos devices
 ```
 @j-bot help template 
 @j-bot ls templates
 @j-bot show openconfig_bgp.j2
 @j-bot show hosts
-@j-bot target Openconfig_Routers template openconfig_bgp.j2
-@myhubot target FR-MX80-214 show bgp summary 
-@myhubot target Openconfig_Routers rollback 1
-
+@j-bot dev=Openconfig_Routers template openconfig_bgp.j2
+@j-bot dev=FR-MX80-214 show bgp summary 
+@j-bot dev=Openconfig_Routers rollback 1
 ```
 
 ### How does it work: 
