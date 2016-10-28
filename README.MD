@@ -13,7 +13,7 @@ You can use slack to delegate these tasks to the bot:
 - Manage bgp neighbors (add a neighbor, remove a neighbor, audit a neighbor session) on a junos device   
 - Execute a python script  
 
-This is easily extensible.    
+This is easily extensible to other tasks.    
 
 ### Chat syntax: 
 Here’s the chat syntax to delegate tasks to the bot:  
