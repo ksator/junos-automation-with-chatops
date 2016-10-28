@@ -210,7 +210,7 @@ Github, Ansible, Travis CI, ... can send slack notifications. So you can receive
 -	Install hubot (I installed it on an ubuntu 14.04 VM) 
 -	Integrate your bot in your slack team  
 - the slack status for the bot should appear as "away" in the chat room
--	Create some automation content (you can do it on the same VM that has the bot, so the bot doesnt need to use API to consume the automation content). My automation content is based on Ansible and Python: https://github.com/ksator/chatops_junos/tree/master/automation_content. 
+-	Create some automation content. You can do it on the same VM that has the bot, so the bot doesnt need to use API to consume the automation content. My automation content is based on Ansible and Python: https://github.com/ksator/chatops_junos/tree/master/automation_content. Install the automation tools (Ansible, python libraries ...) required to execute your automation content.   
 -	Create a script that tell your bot what to do based on the slack messages in the chat room. Here’s my dictionnary https://github.com/ksator/chatops_junos/blob/master/scripts/junos_automation.coffee.  
 - launch the bot, with a slack adaptor, and the token generated when you integrated the bot to the slack team: 
 ```
