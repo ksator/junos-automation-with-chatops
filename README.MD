@@ -14,9 +14,9 @@ The bot can:
 - Manage bgp neighbors (add a neighbor, remove a neighbor, audit a neighbor session) on a junos device   
 - Execute a python script  
 
-It is easily extensible.    
+This is easily extensible.    
 
-#### Syntax: 
+#### Chat syntax: 
 Here’s the chat syntax to delegate tasks to the bot, with some help:  
 
 - Backup the configuration of the device/group \<target>. It run under the hood the playbook pb.backup.yml with the variable \<target>. 
@@ -79,7 +79,8 @@ hubot list python scripts
 ```
 hubot python <script>
 ```
-Note: \<target> is a device or a group of devices. \<target> has to exist in the ansible inventory file (https://github.com/ksator/chatops_junos/blob/master/ansible/hosts).   
+Notes: 
+- \<target> is a device or a group of devices. \<target> has to exist in the ansible inventory file (https://github.com/ksator/chatops_junos/blob/master/ansible/hosts).   
 
 ##### Chat examples:   
 ```
