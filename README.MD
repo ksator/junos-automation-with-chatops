@@ -21,47 +21,47 @@ Here’s the chat syntax to delegate tasks to the bot, with some help:
 
 - Backup the configuration of the device/group \<target>. It run under the hood the playbook pb.backup.yml with the variable \<target>. 
 ```
-hubot dev=\<target> backup 
+hubot dev=<target> backup 
 ```
 - Execute a Junos delete command on device/group \<target>. It run under the hood the playbook pb.delete.yml with the variables \<target>  and \<command>.
 ```
-hubot dev=\<target> delete \<command>
+hubot dev=<target> delete <command>
 ```
 - Rollback \<rb_id> the configuration of device/group \<target>. It run under the hood the playbook pb.rollback.yml with the variables \<target> and \<rb_id>.
 ```
-hubot dev=\<target> rollback \<rb_id>
+hubot dev=<target> rollback <rb_id>
 ```
 - Execute a Junos set command on device/group \<target>.  Add "--diff" to display the differences, add "--check" for a dry run. It run under the hood the playbook pb.config.yml with the variables \<target> and \<command>.
 ```
-hubot dev=\<target> set \<command>
+hubot dev=<target> set <command>
 ```
 - Execute a Junos show command on device/group \<target> and print the command output. You can use "show" or "sh". It run under the hood the playbook pb.command.yml with the variables \<target> anc \<command>.
 ```
-hubot dev=\<target> show \<command>
+hubot dev=<target> show <command>
 ```
 - Backup the configuration of device/group \<target>, and apply the jinja2 template \<template> to the device/group \<target>.  Add "--diff" to display the differences, add "--check" for a dry run. It run under the hood the playbook pb.template.yml with the variables \<target> and \<template>.
 ```
-hubot dev=\<target> template \<template>
+hubot dev=<target> template <template>
 ```
 - Execute the Ansible playbook \<playbook> on device/group \<target>. Add "--diff" to display the differences, add "--check" for a dry run.
 ```
-hubot dev=\<target> playbook \<playbook>
+hubot dev=<target> playbook <playbook>
 ```
 - Configure an ebgp neighbor on device \<target>. You can use "neighbor" or "neigh". Add "--diff" to display the differences, add "--check" for a dry run.  It run under the hood the playbook pb.add.ebgp.yml with the variables \<target> and \<peer_ip> and \<peer_asn>.
 ```
-hubot dev=\<target> add bgp neighbor \<peer_ip> as \<peer_asn>
+hubot dev=<target> add bgp neighbor <peer_ip> as <peer_asn>
 ```
 - Retrieve on the device \<target> the bgp state for the neighbor \<peer_ip>, and print it. You can use "neighbor" or "neigh". It run under the hood the playbook pb.check.bgp.yml with the variables \<target> and \<peer_ip> 
 ```
-hubot dev=\<target> get bgp state \<peer_ip>
+hubot dev=<target> get bgp state <peer_ip>
 ```
 - Delete an existing ebgp neighbor on device \<target>. You can use "remove" or "rm", you can use "neighbor" or "neigh". It run under the hood the playbook pb.remove.ebgp.yml with the variables \<target> and \<peer_ip> 
 ```
-hubot dev=\<target> remove bgp neighbor \<peer_ip>
+hubot dev=<target> remove bgp neighbor <peer_ip>
 ```
 - Print a file (playbook, template, python scripts ...). You can use "show" or "sh"
 ```
-hubot show \<file>
+hubot show <file>
 ```
 - Print the list of Ansible playbooks. You can use "list" or "ls"
 ```
@@ -77,7 +77,7 @@ hubot list python scripts
 ```
 - Execute the python script \<script> and print the program output
 ```
-hubot python \<script>
+hubot python <script>
 ```
 Note: \<target> is a device or a group of devices. \<target> has to exist in the ansible inventory file (https://github.com/ksator/chatops_junos/blob/master/ansible/hosts).   
 
