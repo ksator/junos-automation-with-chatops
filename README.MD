@@ -97,7 +97,7 @@ You can use "list" or "ls"
 You can use "list" or "ls"
 ```
 @hubot_name list python scripts
-```/
+```
 - Print a file (playbook, template, python scripts ...) defined in the directory [**automation_content**] (https://github.com/ksator/chatops_junos/blob/master/automation_content)    
 You can use "show" or "sh"
 ```
@@ -108,7 +108,6 @@ You can use "show" or "sh"
 ```
 @hubot_name show hosts
 ```
-
 
 ### Usage examples:   
 
