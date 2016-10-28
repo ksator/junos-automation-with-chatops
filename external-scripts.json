@@ -1,4 +1,5 @@
 [
   "hubot-help",
-  "hubot-redis-brain"
+  "hubot-redis-brain",
+  "hubot-victory"
 ]
