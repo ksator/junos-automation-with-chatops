@@ -25,11 +25,6 @@ It run under the hood the playbook [**pb.backup.yml**](https://github.com/ksator
 ```
 @hubot_name dev=<target> backup 
 ```
-- Execute a Junos delete command on \<target>.  
-It run under the hood the playbook [**pb.config.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.config.yml) with the variables \<target> and \<command>.
-```
-@hubot_name dev=<target> delete <command>
-```
 - Rollback \<rb_id> the configuration of \<target>.  
 It run under the hood the playbook [**pb.rollback.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.rollback.yml) with the variables \<target> and \<rb_id>.
 ```
@@ -41,24 +36,16 @@ Add "--diff" to display the differences, add "--check" for a dry run.
 ```
 @hubot_name dev=<target> set <command>
 ```
+- Execute a Junos delete command on \<target>.  
+It run under the hood the playbook [**pb.config.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.config.yml) with the variables \<target> and \<command>.
+```
+@hubot_name dev=<target> delete <command>
+```
 - Execute a Junos show command on \<target> and print the command output.  
 It run under the hood the playbook [**pb.command.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.command.yml) with the variables \<target> anc \<command>.  
 You can use "show" or "sh".  
 ```
 @hubot_name dev=<target> show <command>
-```
-- Backup the configuration of \<target>, and apply the jinja2 template \<template> to \<target>.  
-It run under the hood the playbook [**pb.template.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.template.yml) with the variables \<target> and \<template>. 
-The jinja2 template \<template> has to be defined into the directory [**automation_content**] (https://github.com/ksator/chatops_junos/blob/master/automation_content).   
-Add "--diff" to display the differences, add "--check" for a dry run.  
-```
-@hubot_name dev=<target> template <template>
-```
-- Execute the Ansible playbook \<playbook> on \<target>.  
-The Ansible playbook \<playbook> has to be defined into the directory [**automation_content**] (https://github.com/ksator/chatops_junos/blob/master/automation_content).  
-Add "--diff" to display the differences, add "--check" for a dry run.
-```
-@hubot_name dev=<target> playbook <playbook>
 ```
 - Configure an ebgp neighbor on the device \<target>.  
 It run under the hood the playbook [**pb.add.ebgp.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.add.ebgp.yml) with the variables \<target> and \<peer_ip> and \<peer_asn>.  
@@ -78,10 +65,23 @@ You can use "remove" or "rm", you can use "neighbor" or "neigh".
 ```
 @hubot_name dev=<target> remove bgp neighbor <peer_ip>
 ```
-- Print a file (playbook, template, python scripts ...) defined in the directory [**automation_content**] (https://github.com/ksator/chatops_junos/blob/master/automation_content)    
-You can use "show" or "sh"
+- Backup the configuration of \<target>, and apply the jinja2 template \<template> to \<target>.  
+It run under the hood the playbook [**pb.template.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.template.yml) with the variables \<target> and \<template>. 
+The jinja2 template \<template> has to be defined into the directory [**automation_content**] (https://github.com/ksator/chatops_junos/blob/master/automation_content).   
+Add "--diff" to display the differences, add "--check" for a dry run.  
 ```
-@hubot_name show <file>
+@hubot_name dev=<target> template <template>
+```
+- Execute the Ansible playbook \<playbook> on \<target>.  
+The Ansible playbook \<playbook> has to be defined into the directory [**automation_content**] (https://github.com/ksator/chatops_junos/blob/master/automation_content).  
+Add "--diff" to display the differences, add "--check" for a dry run.
+```
+@hubot_name dev=<target> playbook <playbook>
+```
+- Execute the python script \<script> and print the program output  
+The python script has to be defined into the directory [**automation_content**] (https://github.com/ksator/chatops_junos/blob/master/automation_content).  
+```
+@hubot_name python <script>
 ```
 - Print the list of Ansible playbooks defined into the directory [**automation_content**] (https://github.com/ksator/chatops_junos/blob/master/automation_content).  
 You can use "list" or "ls"
@@ -98,12 +98,11 @@ You can use "list" or "ls"
 ```
 @hubot_name list python scripts
 ```
-- Execute the python script \<script> and print the program output  
-The python script has to be defined into the directory [**automation_content**] (https://github.com/ksator/chatops_junos/blob/master/automation_content).  
+- Print a file (playbook, template, python scripts ...) defined in the directory [**automation_content**] (https://github.com/ksator/chatops_junos/blob/master/automation_content)    
+You can use "show" or "sh"
 ```
-@hubot_name python <script>
+@hubot_name show <file>
 ```
-
 ### Examples:   
 ```
 @myhubot help
