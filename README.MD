@@ -162,7 +162,7 @@ To execute an Ansible playbook:
 @j-bot dev=FR-MX80-214 playbook pb.check.physical.topology.yml
 @j-bot dev=FR-MX80-214 playbook pb.ping.yml
 ```
-To load a configuration data based on a jinja2 template on junos devices
+To load on junos devices a configuration based on a jinja2 template 
 ```
 @j-bot help template 
 @j-bot ls templates
