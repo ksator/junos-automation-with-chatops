@@ -1,12 +1,20 @@
 #### What to find on this repo:  
 Chatops for network engineers.  
 Initially inspired by this demo https://www.dravetech.com/blog/2016/03/30/chatops-demo.html  
-Actually based on slack and hubot and ansible for junos automation  
+Actually based on slack and hubot and automation content (ansible, python, jinja2 ...) for junos automation  
 
 #### Bot capabilties:
-The bot can execute junos commands (set/delete/show) to a device or a group of devices.  
-It can also backup the junos configuration, rollback the junos configuration, load a jinja2 template, apply a playbook to junos devices.  
-This is easily extensible.    
+You can use slack delegate tasks to the bot.  
+The bot can: 
+- execute junos commands (set/delete/show) on junos devices  
+- load configuration based on a jinja2 template on junos devices  
+- apply a playbook to junos devices   
+- roll back the junos configuration on junos devices  
+- backup locally the configuration of junos devices  
+- Manage bgp neighbors (add a neighbor, remove a neighbor, audit a neighbor session) on a junos device   
+- Execute a python script  
+
+It is easily extensible.    
 
 #### Syntax: 
 Here’s the chat syntax to delegate tasks to the bot, with some help:  
