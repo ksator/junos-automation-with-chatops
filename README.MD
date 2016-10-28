@@ -59,7 +59,8 @@ Add "--diff" to display the differences, add "--check" for a dry run.
 ```
 - Configure an ebgp neighbor on device \<target>.  
 It run under the hood the playbook [**pb.add.ebgp.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.add.ebgp.yml) with the variables \<target> and \<peer_ip> and \<peer_asn>.  
-You can use "neighbor" or "neigh". Add "--diff" to display the differences, add "--check" for a dry run.  
+You can use "neighbor" or "neigh".  
+Add "--diff" to display the differences, add "--check" for a dry run.  
 ```
 @hubot_name dev=<target> add bgp neighbor <peer_ip> as <peer_asn>
 ```
