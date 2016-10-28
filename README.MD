@@ -105,13 +105,25 @@ You can use "show" or "sh"
 ```
 ### Examples:   
 ```
-@myhubot help
+@j-bot help
 
-@myhubot help template
-@myhubot list templates
-@myhubot display openconfig_bgp.j2
-@myhubot list hosts
-@myhubot target Openconfig_Routers template openconfig_bgp.j2
+@j-bot help bgp
+@j-bot dev=FR-MX80-214 add bgp neighbor 10.10.0.1 as 65001 --check
+@j-bot dev=FR-MX80-214 add bgp neighbor 10.10.0.1 as 65001
+@j-bot dev=MX240-04 add bgp neighbor 10.10.0.2 as 65002
+@j-bot dev=MX240-04 get bgp state 10.10.0.2
+
+
+
+
+
+@j-bot help template
+@j-bot list templates
+@j-bot show openconfig_bgp.j2
+@j-bot show hosts
+
+
+@j-bot target Openconfig_Routers template openconfig_bgp.j2
 @myhubot target FR-MX80-214 show bgp summary 
 @myhubot target Openconfig_Routers rollback 1
 
