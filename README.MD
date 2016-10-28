@@ -152,15 +152,15 @@ ansible-playbook $PWD/automation_content/pb.template.yml --extra-vars "device=<t
 ```
 
 ### The steps to reproduce are: 
--	create a slack team  
--	Optionally, integrate some tools into some channels of this slack team (some of my github repositories have a webhook to slack, some of my .travis.yml send slack notifications. So from these channels I receive notifications from github and TravisCI). 
--	Invite some peoples 
+-	create a slack team (https://slack.com/) 
+-	Invite some peoples (humans) 
+-	Optionally, integrate some tools into some channels of this slack team.  
+Github, Ansible, Travis CI, ... can send slack notifications. So you can receive slack notifications on these channels from Github (each time there is a change on your github repositories), from TravisCI (each time it will finish to test your github changes), from Ansible (if you use the slack notification module in your playbooks).
 -	Install hubot (I installed it on an ubuntu 14.04 VM) 
--	Invite your bot 
--	Create some automation content (on the same VM that has the bot, so the bot doesnt need to use API to consume the automation content). My automation content is based on Ansible: https://github.com/ksator/chatops_junos/tree/master/ansible. 
-- Optionally, you can also use the slack notification module in your Ansible playbooks (here's an example https://github.com/ksator/chatops_junos/blob/master/ansible/pb.template.yml)    
+-	Integrate your bot in your slack team  
+-	Create some automation content (you can do it on the same VM that has the bot, so the bot doesnt need to use API to consume the automation content). My automation content is based on Ansible and Python: https://github.com/ksator/chatops_junos/tree/master/automation_content. 
 -	Create a script that tell your bot what to do based on slack messages. Here’s mine https://github.com/ksator/chatops_junos/blob/master/scripts/junos.coffee.  
-- launch the bot, with a slack adaptor: 
+- launch the bot, with a slack adaptor, and the token generated when you integrated the bot to the slack team: 
 ```
 ksator@ubuntu:~/myhubot$ HUBOT_SLACK_TOKEN=xoxb-90946701733-BTJh5QnUdQrTMcbtjgawmvjo ./bin/hubot -a slack
 ```
