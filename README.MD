@@ -103,6 +103,14 @@ You can use "show" or "sh"
 ```
 @hubot_name show <file>
 ```
+- Print the [**hosts**] (https://github.com/ksator/chatops_junos/blob/master/automation_content/hosts) file 
+It has the valide values for \<target>  
+You can use "show" or "sh"
+```
+@hubot_name show hosts
+```
+
+
 ### Usage examples:   
 
 To get the help: 
