@@ -18,7 +18,7 @@ This is easily extensible.
 #### Chat syntax: 
 Here’s the chat syntax to delegate tasks to the bot:  
 
-Note: \<target> is a device or a group of devices. \<target> has to be defined in the ansible inventory [**hosts**] (https://github.com/ksator/chatops_junos/blob/master/automation_content/hosts) file.   
+Note: \<target> is a device or a group of devices. The value \<target> has to be exist in the ansible inventory [**hosts**] (https://github.com/ksator/chatops_junos/blob/master/automation_content/hosts) file.   
 
 - Backup the configuration of the device/group \<target>.   
 It run under the hood the playbook [**pb.backup.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.backup.yml) with the variable \<target>. 
