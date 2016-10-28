@@ -19,7 +19,8 @@ This is easily extensible.
 #### Chat syntax: 
 Here’s the chat syntax to delegate tasks to the bot:  
 
-- Backup the configuration of the device/group \<target>. It run under the hood the playbook [**pb.backup.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.backup.yml) with the variable \<target>. 
+- Backup the configuration of the device/group \<target>.   
+It run under the hood the playbook [**pb.backup.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.backup.yml) with the variable \<target>. 
 ```
 @hubot_name dev=<target> backup 
 ```
