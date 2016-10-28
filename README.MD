@@ -65,7 +65,6 @@ You can use "neighbor" or "neigh". Add "--diff" to display the differences, add 
 ```
 - Retrieve on the device \<target> the bgp state for the neighbor \<peer_ip>, and print it.  
 It run under the hood the playbook [**pb.check.bgp.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.check.bgp.yml) with the variables \<target> and \<peer_ip>  
-You can use "neighbor" or "neigh".  
 ```
 @hubot_name dev=<target> get bgp state <peer_ip>
 ```
