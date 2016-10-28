@@ -69,8 +69,15 @@ module.exports = (robot) ->
      msg.send msg.random initial_response
      pb = msg.match[2]
      dev = msg.match[1]
+     option = ""   
+     if match = /--check/.test(pb)
+        option = "--check #{option}"
+        pb = pb.replace(/--check/i,'')
+     if match = /--diff/.test(pb)
+        option = "--diff #{option}"
+        pb = pb.replace(/--diff/i,'')
      extra = "device=#{dev}"
-     child_process.exec "ansible-playbook $PWD/automation_content/#{pb} --extra-vars #{extra}", (error, stdout, stderr) ->
+     child_process.exec "ansible-playbook $PWD/automation_content/#{pb} --extra-vars #{extra} #{option}", (error, stdout, stderr) ->
        if error
          msg.send "Oops! " + error + stderr
        else
@@ -81,12 +88,20 @@ module.exports = (robot) ->
      cmd = msg.match[2]
      command = "set #{cmd}"
      dev = msg.match[1]
+     option = ""   
+     if match = /--check/.test(command)
+        option = "--check #{option}"
+        command = command.replace(/--check/i,'')
+     if match = /--diff/.test(command)
+        option = "--diff #{option}"
+        command = command.replace(/--diff/i,'')
      extra = "{'device': #{dev}, 'cli': #{command}}"
-     child_process.exec "ansible-playbook $PWD/automation_content/pb.config.yml --extra-vars \"#{extra}\"", (error, stdout, stderr) ->
+     child_process.exec "ansible-playbook $PWD/automation_content/pb.config.yml --extra-vars \"#{extra}\" #{option}", (error, stdout, stderr) ->
        if error
          msg.send "Oops! " + error + stderr
        else
          msg.send(stdout)
+
    
    robot.respond /dev=(.*) delete (.*)/i, (msg) ->
      msg.send msg.random initial_response
@@ -125,8 +140,15 @@ module.exports = (robot) ->
      msg.send msg.random initial_response
      template = msg.match[2]      
      dev = msg.match[1]
+     option = ""   
+     if match = /--check/.test(template)
+        option = "--check #{option}"
+        template = template.replace(/--check/i,'')
+     if match = /--diff/.test(template)
+        option = "--diff #{option}"
+        template = template.replace(/--diff/i,'')
      extra = "{'device': #{dev}, 'template': #{template}}"
-     child_process.exec "ansible-playbook $PWD/automation_content/pb.template.yml --extra-vars \"#{extra}\"", (error, stdout, stderr) ->
+     child_process.exec "ansible-playbook $PWD/automation_content/pb.template.yml --extra-vars \"#{extra}\" #{option}", (error, stdout, stderr) ->
        if error
          msg.send "Oops! " + error + stderr
        else
