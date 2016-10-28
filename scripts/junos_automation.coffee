@@ -40,30 +40,9 @@
 #   Khelil Sator
 
 child_process = require('child_process')
-enterReplies = ['Hi', 'Hello', 'Welcome']
 initial_response=["I am on it!", "I'll take care of that right away!", "Working on it!"]
 
 module.exports = (robot) ->
-
-   robot.respond /hi|hello/i, (msg) ->
-     msg.reply "Hello!"
-
-   robot.hear /junos/i, (res) ->
-     res.send "I LOVE JUNOS!"
-
-   robot.hear /^(@hubot|hubot) (.*)/i, (res) ->
-     response = "Sorry, my name is #{robot.name}"
-     res.reply response
-
-   robot.listen(
-     (message) ->
-        message.user.name is "ksator" and Math.random() > 0.92
-     (response) ->
-       response.reply "HEY KSATOR! YOU'RE MY BEST FRIEND!"
-   )
-    
-   robot.enter (msg) ->
-     msg.send msg.random enterReplies
 
    robot.respond /dev=(.*) playbook (.*)/i, (msg) ->
      msg.send msg.random initial_response
