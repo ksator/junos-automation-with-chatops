@@ -18,16 +18,36 @@ It is easily extensible.
 
 #### Syntax: 
 Here’s the chat syntax to delegate tasks to the bot, with some help:  
-- **myhubot target \<target> set \<junos_command>** - Execute a junos set command on device/group \<target>
-- **myhubot target \<target> delete \<junos_command>** - Execute a junos delete command on device/group \<target>
-- **myhubot target \<target> rollback \<rb_id>** - Rollback \<rb_id> the configuration of device/group \<target>
-- **myhubot target \<target> template \<template>** - Backup the configuration of device/group \<target>, and apply the jinja2 template \<template> to the device/group \<target>
-- **myhubot target \<target> backup** - Backup the configuration of the device/group \<target>
-- **myhubot target \<target> show \<junos_command>** - Execute a junos show command on device/group \<target> and print the command output
-- **myhubot target \<target> playbook \<playbook>** - Execute the ansible playbook \<playbook> on device/group \<target>
-- **hubot list playbooks** - Print the list of Ansible playbooks
-- **hubot list templates** - Print the list of Jinja2 templates
-- **hubot display <file>** - Print an Ansible file (playbook, template, ...)
+
+- **hubot dev=<target> backup** - Backup the configuration of the device/group <target>. It run under the hood the playbook pb.backup.yml with the variable <target>. 
+
+- **hubot dev=<target> delete <command>** - Execute a Junos delete command on device/group <target>. It run under the hood the playbook pb.delete.yml with the variables <target>  and <command>.
+
+- **hubot dev=<target> rollback <rb_id>** - Rollback <rb_id> the configuration of device/group <target>. It run under the hood the playbook pb.rollback.yml with the variables <target> and <rb_id>.
+
+- **hubot dev=<target> set <command>** - Execute a Junos set command on device/group <target>.  Add "--diff" to display the differences, add "--check" for a dry run. It run under the hood the playbook pb.config.yml with the variables <target> and <command>.
+
+- **hubot dev=<target> show <command>** - Execute a Junos show command on device/group <target> and print the command output. You can use "show" or "sh". It run under the hood the playbook pb.command.yml with the variables <target> anc <command>.
+
+- **hubot dev=<target> template <template>** - Backup the configuration of device/group <target>, and apply the jinja2 template <template> to the device/group <target>.  Add "--diff" to display the differences, add "--check" for a dry run. It run under the hood the playbook pb.template.yml with the variables <target> and <template>.
+
+- **hubot dev=<target> playbook <playbook>** - Execute the Ansible playbook <playbook> on device/group <target>. Add "--diff" to display the differences, add "--check" for a dry run.
+
+- **hubot dev=<target> add bgp neighbor <peer_ip> as <peer_asn>** - Configure an ebgp neighbor on device <target>. You can use "neighbor" or "neigh". Add "--diff" to display the differences, add "--check" for a dry run.  It run under the hood the playbook pb.add.ebgp.yml with the variables <target> and <peer_ip> and <peer_asn>.
+
+- **hubot dev=<target> get bgp state <peer_ip>** - Retrieve on the device <target> the bgp state for the neighbor <peer_ip>, and print it. You can use "neighbor" or "neigh". It run under the hood the playbook pb.check.bgp.yml with the variables <target> and <peer_ip> 
+
+- **hubot dev=<target> remove bgp neighbor <peer_ip>** - Delete an existing ebgp neighbor on device <target>. You can use "remove" or "rm", you can use "neighbor" or "neigh". It run under the hood the playbook pb.remove.ebgp.yml with the variables <target> and <peer_ip> 
+
+- **hubot show <file>** - Print a file (playbook, template, python scripts ...). You can use "show" or "sh"
+
+- **hubot list playbooks** - Print the list of Ansible playbooks. You can use "list" or "ls"
+
+- **hubot list templates** - Print the list of Jinja2 templates. You can use "list" or "ls"
+
+- **hubot list python scripts** - Print the list of Python scripts. You can use "list" or "ls"  
+
+- **hubot python <script>** - Execute the python script <script> and print the program output
 
 Note: \<target> is a device or a group of devices. \<target> has to exist in the ansible inventory file (https://github.com/ksator/chatops_junos/blob/master/ansible/hosts).   
 
