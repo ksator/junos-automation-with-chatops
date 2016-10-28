@@ -4,8 +4,7 @@ Initially inspired by this demo https://www.dravetech.com/blog/2016/03/30/chatop
 Actually based on slack and hubot and automation content (ansible playbooks, python scripts, jinja2 templates ...) for junos automation  
 
 #### Bot capabilties:
-You can use slack delegate tasks to the bot.  
-The bot can: 
+You can use slack delegate these tasks to the bot: 
 - execute a junos command (set/delete/show) on junos devices  
 - load a configuration data based on a jinja2 template on junos devices  
 - apply a playbook to junos devices   
@@ -18,6 +17,8 @@ This is easily extensible.
 
 #### Chat syntax: 
 Here’s the chat syntax to delegate tasks to the bot:  
+
+Note: \<target> is a device or a group of devices. \<target> has to be defined in the ansible inventory [**hosts**] (https://github.com/ksator/chatops_junos/blob/master/automation_content/hosts) file.   
 
 - Backup the configuration of the device/group \<target>.   
 It run under the hood the playbook [**pb.backup.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.backup.yml) with the variable \<target>. 
@@ -47,7 +48,9 @@ You can use "show" or "sh".
 @hubot_name dev=<target> show <command>
 ```
 - Backup the configuration of device/group \<target>, and apply the jinja2 template \<template> to the device/group \<target>.  
-It run under the hood the playbook [**pb.template.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.template.yml) with the variables \<target> and \<template>.  
+It run under the hood the playbook [**pb.template.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.template.yml) with the variables \<target> and \<template>. 
+The template \<target> has to be defined into the directory **automation_content** (https://github.com/ksator/chatops_junos/blob/master/automation_content).   
+
 Add "--diff" to display the differences, add "--check" for a dry run.  
 ```
 @hubot_name dev=<target> template <template>
@@ -99,8 +102,7 @@ You can use "list" or "ls"
 ```
 @hubot_name python <script>
 ```
-Notes: 
-- \<target> is a device or a group of devices. \<target> has to exist in the ansible inventory [**hosts**] (https://github.com/ksator/chatops_junos/blob/master/ansible/hosts) file.   
+
 
 ##### Chat examples:   
 ```
