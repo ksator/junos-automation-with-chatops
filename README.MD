@@ -19,7 +19,9 @@ It is easily extensible.
 #### Syntax: 
 Here’s the chat syntax to delegate tasks to the bot, with some help:  
 
-Backup the configuration of the device/group \<target>. It run under the hood the playbook pb.backup.yml with the variable \<target>. ```
+Backup the configuration of the device/group \<target>. It run under the hood the playbook pb.backup.yml with the variable \<target>. 
+
+```
 hubot dev=\<target> backup 
 ```
 
