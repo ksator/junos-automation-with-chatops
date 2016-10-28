@@ -1,9 +1,9 @@
-#### What to find on this repo:  
+### What to find on this repo:  
 Chatops for network engineers.  
 Initially inspired by this demo https://www.dravetech.com/blog/2016/03/30/chatops-demo.html  
 Actually based on slack and hubot and automation content (ansible playbooks, python scripts, jinja2 templates ...) for junos automation  
 
-#### Bot capabilties:
+### Bot capabilties:
 You can use slack to delegate these tasks to the bot: 
 - execute a junos command (set/delete/show) on junos devices  
 - load a configuration data based on a jinja2 template on junos devices  
@@ -15,7 +15,7 @@ You can use slack to delegate these tasks to the bot:
 
 This is easily extensible.    
 
-#### Chat syntax: 
+### Chat syntax: 
 Here’s the chat syntax to delegate tasks to the bot:  
 
 Note: \<target> is a device or a group of devices. The value \<target> has to be exist in the ansible inventory [**hosts**] (https://github.com/ksator/chatops_junos/blob/master/automation_content/hosts) file.   
@@ -104,8 +104,7 @@ The python script has to be defined into the directory [**automation_content**] 
 @hubot_name python <script>
 ```
 
-
-##### Chat examples:   
+### Examples:   
 ```
 @myhubot help
 
@@ -126,8 +125,7 @@ The python script has to be defined into the directory [**automation_content**] 
 @myhubot target FR-MX80-214 playbook pb.check.physical.topology.yml
 ```
 
-
-#### How does it work: 
+### How does it work: 
 The bot configuration is this file: https://github.com/ksator/chatops_junos/blob/master/scripts/junos.coffee. This is where we define the various actions the bot has to take based on the slack messages in the chat room.  So the bot is configured to execute Ansible playbooks.   
 
 The bot uses Ansible under the hood. Here's the Ansible content (playbooks, variables, inventory ....) https://github.com/ksator/chatops_junos/tree/master/ansible   
@@ -150,7 +148,7 @@ Which is the equivalent of:
 ansible-playbook $PWD/ansible/pb.template.yml --extra-vars "device=<target> template=<template>"  
 ```
 
-#### The steps to reproduce are: 
+### The steps to reproduce are: 
 -	create a slack team  
 -	Optionally, integrate some tools into some channels of this slack team (some of my github repositories have a webhook to slack, some of my .travis.yml send slack notifications. So from these channels I receive notifications from github and TravisCI). 
 -	Invite some peoples 
@@ -164,6 +162,6 @@ ansible-playbook $PWD/ansible/pb.template.yml --extra-vars "device=<target> temp
 ksator@ubuntu:~/myhubot$ HUBOT_SLACK_TOKEN=xoxb-90946701733-BTJh5QnUdQrTMcbtjgawmvjo ./bin/hubot -a slack
 ```
 
-#### Contributions, bugs, questions, suggestions, enhancement requests
+### Contributions, bugs, questions, suggestions, enhancement requests
 They are more than welcome. Please submit github issues or pull requests. 
 
