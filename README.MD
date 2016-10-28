@@ -129,7 +129,7 @@ To backup locally the configuration of all devices:
 @j-bot dev=all backup
 ```
 
-To add/audit/remove bgp neighbors on devices:  
+To manage bgp neighbors (add/audit/remove bgp neighbors) on devices:  
 ```
 @j-bot help bgp
 @j-bot dev=FR-MX80-214 add bgp neighbor 10.10.0.1 as 65001 --check --diff
