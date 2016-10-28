@@ -97,7 +97,7 @@ You can use "list" or "ls"
 You can use "list" or "ls"
 ```
 @hubot_name list python scripts
-```
+```/
 - Print a file (playbook, template, python scripts ...) defined in the directory [**automation_content**] (https://github.com/ksator/chatops_junos/blob/master/automation_content)    
 You can use "show" or "sh"
 ```
@@ -123,12 +123,14 @@ To pass a junos command (set/show/delete) to devices:
 @j-bot show hosts
 @j-bot dev=MX240-04 set interfaces xe-1/0/0 description newdesc
 @j-bot dev=MX240-04 show interfaces descriptions
+@j-bot dev=MX240-04 set interfaces xe-1/0/0 description anotherdesc --check --diff
 @j-bot dev=MX240-04 delete interfaces xe-1/0/0 description
 ```
 
 To roll back the junos configuration on devices:  
 ```
-@j-bot dev=all set system login message newbanner
+@j-bot dev=all set system login message newbanner --check
+@j-bot dev=all set system login message newbanner --diff
 @j-bot dev=all rollback 1
 ```
 
@@ -168,6 +170,8 @@ To load on junos devices a configuration based on a jinja2 template
 @j-bot ls templates
 @j-bot show openconfig_bgp.j2
 @j-bot show hosts
+@j-bot dev=Openconfig_Routers template openconfig_bgp.j2 --check
+@j-bot dev=MX240-04 template openconfig_bgp.j2 --check --diff
 @j-bot dev=Openconfig_Routers template openconfig_bgp.j2
 @j-bot dev=FR-MX80-214 show bgp summary 
 @j-bot dev=Openconfig_Routers rollback 1
