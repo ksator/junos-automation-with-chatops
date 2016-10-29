@@ -4,7 +4,12 @@ Initially inspired by this demo https://www.dravetech.com/blog/2016/03/30/chatop
 Actually based on slack and hubot and automation content (ansible playbooks, python scripts, jinja2 templates ...) for junos. You can delegate junos automation tasks chatting to hubot with slack. 
 
 ### Bot capabilties:
-You can use slack to delegate these tasks to the bot: 
+
+The automation content is [here](https://github.com/ksator/chatops_junos/tree/master/automation_content)  
+
+The bot dictionnary is [here](https://github.com/ksator/chatops_junos/blob/master/scripts/junos_automation.coffee). This is where you define the bot actions based on chat messages. 
+
+So far you can use slack to delegate the following tasks to the bot:
 - execute a junos command (set/delete/show) on junos devices  
 - roll back the junos configuration on junos devices  
 - backup locally the configuration of junos devices  
@@ -13,8 +18,7 @@ You can use slack to delegate these tasks to the bot:
 - apply a playbook to junos devices   
 - Execute a python script  
 
-This is easily extensible to other tasks.    
-
+This is easily extensible to other tasks. You just need to create more automation content, and then you need to update the bot dictionnary.     
 
 ### How does it work: 
 Hubot executes all the scripts defined into the directory [**scripts**](https://github.com/ksator/chatops_junos/blob/master/scripts).    
