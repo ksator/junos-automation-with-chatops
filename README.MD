@@ -1,9 +1,12 @@
 ### What to find on this repo:  
 This repository is about Chatops for network engineers.  
-Initially inspired by this demo https://www.dravetech.com/blog/2016/03/30/chatops-demo.html  
-Actually based on slack and hubot and automation content (ansible playbooks, python scripts, jinja2 templates ...) for junos. You can delegate junos automation tasks chatting to hubot with slack. 
+I was initially inspired by this demo https://www.dravetech.com/blog/2016/03/30/chatops-demo.html  
+The repo is actually based on slack and hubot and automation content (ansible playbooks, python scripts, jinja2 templates ...) for junos.  
+You can delegate junos automation tasks chatting to hubot with slack.  
 You will find into this repo: 
-- some netork automation content [here](https://github.com/ksator/chatops_junos/tree/master/automation_content)  
+- How to use the bot  
+- The installation instructions 
+- the network automation content [here](https://github.com/ksator/chatops_junos/tree/master/automation_content) the bot use.     
 - The bot dictionnary [here](https://github.com/ksator/chatops_junos/blob/master/scripts/junos_automation.coffee). This is where you define the bot actions based on chat messages. 
 
 ### Bot capabilties:
