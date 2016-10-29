@@ -250,8 +250,8 @@ sudo ansible-galaxy install Juniper.junos
 ```
 -	Create some automation content. 
 My automation content is based on Ansible and Python: https://github.com/ksator/chatops_junos/tree/master/automation_content.   
--	Create a script (the bot dictionnary) that tell your bot what to do based on the slack messages in the chat room.  
-Here’s my dictionnary https://github.com/ksator/chatops_junos/blob/master/scripts/junos_automation.coffee.  
+-	Create a script (the bot dictionnary) that tell your bot what to do based on the slack messages in the chat room. It has to live in the directory "script".    
+Here’s the dictionnary I am using https://github.com/ksator/chatops_junos/blob/master/scripts/junos_automation.coffee.  
 - launch the bot, with a slack adaptor, and the token generated when you integrated the bot to the slack team: 
 ```
 ksator@ubuntu:~/myhubot$ HUBOT_SLACK_TOKEN=xoxb-90946701733-BTJh5QnUdQrTMcbtjgawmvjo ./bin/hubot -a slack
