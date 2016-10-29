@@ -236,11 +236,18 @@ yo hubot
 ```
 -	Integrate your bot in your slack team  
 - the bot should now appear in the chat room. its slack status should appear as "away" in the chat room. 
--	Create some automation content.   
+- Install the automation tools (Ansible, python libraries ...) required to execute your automation content.  
 You can do it on the same VM that has the bot, so the bot doesnt need to use API to consume the automation content.   
+Here's the instructions to install some Python libraries for Junos automation (PyEZ, jsnapy, junos-netconify) and Ansible and the Ansible roles for Junos.  
+```
+sudo apt-get update 
+sudo apt-get install -y python-dev libxml2-dev python-pip libxslt1-dev build-essential libssl-dev libffi-dev 
+sudo pip install cryptography==1.2.1 junos-eznc==1.3.1 jxmlease junos-netconify jsnapy requests ipaddress ansible==2.1.0.0
+sudo ansible-galaxy install Juniper.junos
+```
+-	Create some automation content. 
 My automation content is based on Ansible and Python: https://github.com/ksator/chatops_junos/tree/master/automation_content.   
-Install the automation tools (Ansible, python libraries ...) required to execute your automation content.   
--	Create a script that tell your bot what to do based on the slack messages in the chat room.  
+-	Create a script (the bot dictionnary) that tell your bot what to do based on the slack messages in the chat room.  
 Here’s my dictionnary https://github.com/ksator/chatops_junos/blob/master/scripts/junos_automation.coffee.  
 - launch the bot, with a slack adaptor, and the token generated when you integrated the bot to the slack team: 
 ```
