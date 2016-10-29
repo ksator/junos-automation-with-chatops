@@ -206,34 +206,34 @@ To load on junos devices a configuration based on a jinja2 template
 ```
 
 ### Installation instructions: 
-#####	create a slack team (https://slack.com/) 
-#####	Invite humans to the slack team 
-#####	Optionally, integrate some tools into various channels of this slack team.  
+- create a slack team (https://slack.com/) 
+-	Invite humans to the slack team 
+-	Optionally, integrate some tools into various channels of this slack team.  
 Github, Ansible, Travis CI, ... can send slack notifications. So you can receive slack notifications on channels from Github (each time there is a change on your github repositories), from TravisCI (each time it will finish to run its tests), from Ansible (if you use the [ansible slack notification module](http://docs.ansible.com/ansible/slack_module.html) in your playbooks (here's an [example](https://github.com/ksator/chatops_junos/blob/master/automation_content/pb.add.ebgp.yml)).
-#####	Install hubot  
-I installed it on an ubuntu 14.04 VM using the following commands:   
-###### Install node.js and npm:  
+- Install hubot  
+I installed it on an ubuntu 14.04 VM  following the below steps:   
+Install node.js and npm  
+Update npm   
+Install the hubot generator  
+Create a new directory, and generate a new instance of hubot in it. 
+Answer to the questions. About the question "bot adapter". make sure to answer "slack"
 ```
 curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
 sudo apt-get install -y nodejs
 node -v
 ```
-###### update npm:  
 ```
 sudo npm install npm@latest -g
 npm -v
 ```
-Install the hubot generator: 
 ```
 sudo npm install -g yo generator-hubot
 ```
-create a new directory, and generate a new instance of hubot in it. For example, if you want to make a bot called j-bot:
 ``` 
 mkdir j-bot
 cd j-bot
 yo hubot
 ```
-Answer to the questions. about the question "bot adapter". make sure to answer "slack"
 -	Integrate your bot in your slack team  
 - the bot should now appear in the chat room. its slack status should appear as "away" in the chat room. 
 -	Create some automation content.   
