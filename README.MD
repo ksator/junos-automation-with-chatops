@@ -15,6 +15,33 @@ You can use slack to delegate these tasks to the bot:
 
 This is easily extensible to other tasks.    
 
+
+### How does it work: 
+Hubot executes all the scripts defined into the directory [**scripts**](https://github.com/ksator/chatops_junos/blob/master/scripts).    
+
+The dictionnary for network automation is the file [**junos_automation.coffee**] (https://github.com/ksator/chatops_junos/blob/master/scripts/junos_automation.coffee).  
+This is where we define the various actions the bot has to take based on the slack messages in the chat room.  
+
+The bot is configured to execute the automation content (Ansible playbooks, python scripts ...) defined into the directory [**automation_content**] (https://github.com/ksator/chatops_junos/tree/master/automation_content)
+
+So, as example, the slack message:   
+```
+@hubot_name dev=<target> template <template>   
+```
+or
+```
+hubot_name dev=<target> template <template>
+```
+triggers the ansible playbook [**pb.template.yml**](https://github.com/ksator/chatops_junos/blob/master/ansible/pb.template.yml) with some variable definitions (using the --extra-vars option to pass the variables definition to the playbook):   
+Actually, the bot will execute this command:  
+```
+ansible-playbook $PWD/automation_content/pb.template.yml --extra-vars = "{'device': <target>, 'template': <template>}"
+```
+Which is the equivalent of: 
+```
+ansible-playbook $PWD/automation_content/pb.template.yml --extra-vars "device=<target> template=<template>"  
+```
+
 ### Chat syntax: 
 Here’s the chat syntax to delegate tasks to the bot:  
 
@@ -174,32 +201,6 @@ To load on junos devices a configuration based on a jinja2 template
 @j-bot dev=Openconfig_Routers template openconfig_bgp.j2
 @j-bot dev=FR-MX80-214 show bgp summary 
 @j-bot dev=Openconfig_Routers rollback 1
-```
-
-### How does it work: 
-Hubot executes all the scripts defined into the directory [**scripts**](https://github.com/ksator/chatops_junos/blob/master/scripts).    
-
-The dictionnary for network automation is the file [**junos_automation.coffee**] (https://github.com/ksator/chatops_junos/blob/master/scripts/junos_automation.coffee).  
-This is where we define the various actions the bot has to take based on the slack messages in the chat room.  
-
-The bot is configured to execute the automation content (Ansible playbooks, python scripts ...) defined into the directory [**automation_content**] (https://github.com/ksator/chatops_junos/tree/master/automation_content)
-
-So, as example, the slack message:   
-```
-@hubot_name dev=<target> template <template>   
-```
-or
-```
-hubot_name dev=<target> template <template>
-```
-triggers the ansible playbook [**pb.template.yml**](https://github.com/ksator/chatops_junos/blob/master/ansible/pb.template.yml) with some variable definitions (using the --extra-vars option to pass the variables definition to the playbook):   
-Actually, the bot will execute this command:  
-```
-ansible-playbook $PWD/automation_content/pb.template.yml --extra-vars = "{'device': <target>, 'template': <template>}"
-```
-Which is the equivalent of: 
-```
-ansible-playbook $PWD/automation_content/pb.template.yml --extra-vars "device=<target> template=<template>"  
 ```
 
 ### The steps to reproduce are: 
