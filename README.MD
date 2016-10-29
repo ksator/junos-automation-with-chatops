@@ -218,7 +218,7 @@ I installed it on an ubuntu 14.04 VM  following the below steps:
 Install node.js and npm  
 Update npm   
 Install the hubot generator  
-Create a new directory, and generate a new instance of hubot in it. 
+Create a new directory, and generate a new instance of hubot in it.   
 Answer to the questions. About the question "bot adapter". make sure to answer "slack"
 ```
 curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
