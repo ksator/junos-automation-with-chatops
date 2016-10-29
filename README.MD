@@ -6,8 +6,8 @@ You can delegate junos automation tasks chatting to hubot with slack.
 You will find into this repo: 
 - How to use the bot  
 - The installation instructions 
-- the network automation content [here](https://github.com/ksator/chatops_junos/tree/master/automation_content) the bot use.     
-- The bot dictionnary [here](https://github.com/ksator/chatops_junos/blob/master/scripts/junos_automation.coffee). This is where you define the bot actions based on chat messages. 
+- the [network automation content](https://github.com/ksator/chatops_junos/tree/master/automation_content) the bot use.     
+- The [bot dictionnary] (https://github.com/ksator/chatops_junos/blob/master/scripts/junos_automation.coffee). This is where you define the bot actions based on chat messages. 
 
 ### Bot capabilties:
 So far you can use slack to delegate the following tasks to the bot:
