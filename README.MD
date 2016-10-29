@@ -209,7 +209,7 @@ To load on junos devices a configuration based on a jinja2 template
 - create a slack team (https://slack.com/) 
 -	Optionally, invite humans to the slack team 
 -	Optionally, integrate some tools into various channels of this slack team.  
-Github, Ansible, Travis CI, ... can send slack notifications. So you can receive slack notifications on channels from Github (each time there is a change on your github repositories), from TravisCI (each time it will finish to run its tests), from Ansible (if you use the [ansible slack notification module](http://docs.ansible.com/ansible/slack_module.html) in your playbooks (here's an [example](https://github.com/ksator/chatops_junos/blob/master/automation_content/pb.add.ebgp.yml)).
+Github, Ansible, Travis CI, ... can send slack notifications. So you can receive slack notifications on channels from Github (each time there is a change on your github repositories), from TravisCI (each time it will finish to run its tests), from Ansible (if you use the [ansible slack notification module](http://docs.ansible.com/ansible/slack_module.html) in your playbooks. Here's an [example](https://github.com/ksator/chatops_junos/blob/master/automation_content/pb.add.ebgp.yml)).
 - Install hubot  
 I installed it on an ubuntu 14.04 VM  following the below steps:   
 Install node.js and npm  
