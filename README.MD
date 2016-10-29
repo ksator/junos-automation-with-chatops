@@ -210,9 +210,9 @@ To load on junos devices a configuration based on a jinja2 template
 -	Invite humans to the slack team 
 -	Optionally, integrate some tools into various channels of this slack team.  
 Github, Ansible, Travis CI, ... can send slack notifications. So you can receive slack notifications on channels from Github (each time there is a change on your github repositories), from TravisCI (each time it will finish to run its tests), from Ansible (if you use the [ansible slack notification module](http://docs.ansible.com/ansible/slack_module.html) in your playbooks (here's an [example](https://github.com/ksator/chatops_junos/blob/master/automation_content/pb.add.ebgp.yml)).
--	Install hubot
-I installed it on an ubuntu 14.04 VM using the following commands: 
-Install node.js and npm:
+-	Install hubot  
+I installed it on an ubuntu 14.04 VM using the following commands:   
+Install node.js and npm:  
 ```
 curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
 sudo apt-get install -y nodejs
@@ -233,10 +233,9 @@ mkdir j-bot
 cd j-bot
 yo hubot
 ```
-answer to the questions. about the question "bot adapter". make sure to answer "slack"
-
+Answer to the questions. about the question "bot adapter". make sure to answer "slack"
 -	Integrate your bot in your slack team  
-- the bot should appear in the chat room. its slack status should appear as "away" in the chat room. 
+- the bot should now appear in the chat room. its slack status should appear as "away" in the chat room. 
 -	Create some automation content.   
 You can do it on the same VM that has the bot, so the bot doesnt need to use API to consume the automation content.   
 My automation content is based on Ansible and Python: https://github.com/ksator/chatops_junos/tree/master/automation_content.   
