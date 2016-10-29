@@ -1,14 +1,12 @@
 ### What to find on this repo:  
-Chatops for network engineers.  
+This repository is about Chatops for network engineers.  
 Initially inspired by this demo https://www.dravetech.com/blog/2016/03/30/chatops-demo.html  
 Actually based on slack and hubot and automation content (ansible playbooks, python scripts, jinja2 templates ...) for junos. You can delegate junos automation tasks chatting to hubot with slack. 
+You will find into this repo: 
+- some netork automation content [here](https://github.com/ksator/chatops_junos/tree/master/automation_content)  
+- The bot dictionnary [here](https://github.com/ksator/chatops_junos/blob/master/scripts/junos_automation.coffee). This is where you define the bot actions based on chat messages. 
 
 ### Bot capabilties:
-
-The automation content is [here](https://github.com/ksator/chatops_junos/tree/master/automation_content)  
-
-The bot dictionnary is [here](https://github.com/ksator/chatops_junos/blob/master/scripts/junos_automation.coffee). This is where you define the bot actions based on chat messages. 
-
 So far you can use slack to delegate the following tasks to the bot:
 - execute a junos command (set/delete/show) on junos devices  
 - roll back the junos configuration on junos devices  
@@ -207,11 +205,12 @@ To load on junos devices a configuration based on a jinja2 template
 @j-bot dev=Openconfig_Routers rollback 1
 ```
 
-### The steps to reproduce are: 
+### How to reproduce: 
 -	create a slack team (https://slack.com/) 
 -	Invite some peoples (humans) 
--	Optionally, integrate some tools into some channels of this slack team.  
-Github, Ansible, Travis CI, ... can send slack notifications. So you can receive slack notifications on these channels from Github (each time there is a change on your github repositories), from TravisCI (each time it will finish to run its tests), from Ansible (if you use the [slack notification module](http://docs.ansible.com/ansible/slack_module.html) in your playbooks. Here's an [example](https://github.com/ksator/chatops_junos/blob/master/automation_content/pb.add.ebgp.yml)).
+-	Optionally, integrate some tools into various channels of this slack team.  
+Github, Ansible, Travis CI, ... can send slack notifications.  
+So you can receive slack notifications on channels from Github (each time there is a change on your github repositories), from TravisCI (each time it will finish to run its tests), from Ansible (if you use the [slack notification module](http://docs.ansible.com/ansible/slack_module.html) in your playbooks (here's an [example](https://github.com/ksator/chatops_junos/blob/master/automation_content/pb.add.ebgp.yml)).
 -	Install hubot (I installed it on an ubuntu 14.04 VM) 
 -	Integrate your bot in your slack team  
 - the slack status for the bot should appear as "away" in the chat room
