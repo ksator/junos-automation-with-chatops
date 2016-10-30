@@ -216,28 +216,29 @@ Github, Ansible, Travis CI, ... can send slack notifications. So you can receive
 - Install hubot  
   - I installed it on an ubuntu 14.04 VM  following the below steps:   
     - Install node.js and npm  
+    ```
+    curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
+    sudo apt-get install -y nodejs
+    node -v
+    ```    
     - Update npm   
-    - Install the hubot generator  
-    - Create a new directory, and generate a new instance of hubot in it.   
-    - Answer to the questions. About the question "bot adapter". make sure to answer "slack"
-  - Here's the hubot installation details for ubuntu 14.04:    
-```
-curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
-sudo apt-get install -y nodejs
-node -v
-```
-```
-sudo npm install npm@latest -g
-npm -v
-```
-```
-sudo npm install -g yo generator-hubot
-```
-``` 
-mkdir j-bot
-cd j-bot
-yo hubot
-```
+    ```
+    sudo npm install npm@latest -g
+    npm -v
+    ```    
+    - Install the hubot generator
+    ```
+    sudo npm install -g yo generator-hubot
+    ```
+    - Create a new directory (call him hubot)
+    ``` 
+    mkdir hubot
+    ```
+    - Generate a new instance of hubot into the new directory   
+    ```
+    cd hubot
+    yo hubot --owner="your name <user@email.com>" --name="j-bot" --description="Junos automation" --adapter="slack" --defaults
+    ```
 -	Integrate your bot in your slack team  
 - the bot should now appear in the chat room. its slack status should appear as "away" in the chat room. 
 - Install the automation tools (Ansible, python libraries ...) required to execute your automation content.  
