@@ -9,7 +9,7 @@ You will find into this repo:
 - the [network automation content](https://github.com/ksator/chatops_junos/tree/master/automation_content) the bot use.     
 - The [bot dictionnary] (https://github.com/ksator/chatops_junos/blob/master/scripts/junos_automation.coffee). This is where you define the bot actions based on chat messages. 
 
-### Bot capabilties:
+### Bot capabilities:
 So far you can use slack to delegate the following tasks to the bot:
 - execute a junos command (set/delete/show) on junos devices  
 - roll back the junos configuration on junos devices  
