@@ -262,7 +262,7 @@ Github, Ansible, Travis CI, ... can send slack notifications. So you can receive
 - the bot should now appear in the chat room. its slack status should appear as "away" in the chat room. 
 - launch the bot, with a slack adaptor, and the token generated when you integrated the bot to the slack team: 
 ```
-HUBOT_SLACK_TOKEN=xoxb-90946701733-BTJh5QnUdQrTMcbtjgawmvjo ./bin/hubot -a slack
+HUBOT_SLACK_TOKEN=xxxxxxxxxx ./bin/hubot -a slack
 ```
 - the slack status for the bot should now appear as "active" in the chat room! 
 - Send slack messages to your bot in order to delegate tasks to him :-)
