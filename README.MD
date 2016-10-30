@@ -245,10 +245,10 @@ sudo apt-get install -y python-dev libxml2-dev python-pip libxslt1-dev build-ess
 sudo pip install cryptography==1.2.1 junos-eznc==1.3.1 jxmlease junos-netconify jsnapy requests ipaddress ansible==2.1.0.0
 sudo ansible-galaxy install Juniper.junos
 ```
--	Create your automation content. 
+-	Create your automation content.  
 You can do it on the same VM that has the bot, so the bot doesnt need to use API to consume the automation content.   
 My automation content is based on Ansible and Python: https://github.com/ksator/chatops_junos/tree/master/automation_content.   
--	Create a script (the bot dictionnary) that tell your bot what to do based on the slack messages in the chat room. It has to live in the directory "script".    
+-	Create a script (the bot dictionnary) that tell your bot what to do based on the slack messages in the chat room. It has to live in the directory "scripts".    
 Here’s the dictionnary I am using https://github.com/ksator/chatops_junos/blob/master/scripts/junos_automation.coffee.  
 - create a slack team (https://slack.com/) 
 -	Optionally, invite humans to the slack team 
