@@ -215,11 +215,12 @@ To load on junos devices a configuration based on a jinja2 template
 Github, Ansible, Travis CI, ... can send slack notifications. So you can receive slack notifications on channels from Github (each time there is a change on your github repositories), from TravisCI (each time it will finish to run its tests), from Ansible (if you use the [ansible slack notification module](http://docs.ansible.com/ansible/slack_module.html) in your playbooks. Here's an [example](https://github.com/ksator/chatops_junos/blob/master/automation_content/pb.add.ebgp.yml)).
 - Install hubot  
   - I installed it on an ubuntu 14.04 VM  following the below steps:   
-  - Install node.js and npm  
-  - Update npm   
-  - Install the hubot generator  
-  - Create a new directory, and generate a new instance of hubot in it.   
-  - Answer to the questions. About the question "bot adapter". make sure to answer "slack"
+    - Install node.js and npm  
+    - Update npm   
+    - Install the hubot generator  
+    - Create a new directory, and generate a new instance of hubot in it.   
+    - Answer to the questions. About the question "bot adapter". make sure to answer "slack"
+  - Here's the hubot installation details for ubuntu 14.04:    
 ```
 curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
 sudo apt-get install -y nodejs
