@@ -260,6 +260,14 @@ Here’s the dictionnary I am using https://github.com/ksator/chatops_junos/blob
 -	Optionally, invite humans to the slack team 
 -	Optionally, integrate some tools into various channels of this slack team.  
 Github, Ansible, Travis CI, ... can send slack notifications. So you can receive slack notifications on channels from Github (each time there is a change on your github repositories), from TravisCI (each time it will finish to run its tests), from Ansible (if you use the [ansible slack notification module](http://docs.ansible.com/ansible/slack_module.html) in your playbooks. Here's an [example](https://github.com/ksator/chatops_junos/blob/master/automation_content/pb.add.ebgp.yml)).
+- if you want to interact with your bot locally (i.e with the shell adapter, instead of the slack adaptor) (useful for testing), you can run this command: 
+```
+bin/hubot
+j-bot> j-bot help
+j-bot> j-bot help bgp
+j-bot> j-bot dev=AMS-all backup
+j-bot> exit
+```
 -	Integrate your bot in your slack team  
 - the bot should now appear in the chat room. its slack status should appear as "away" in the chat room. 
 - launch the bot, with a slack adaptor, and the token generated when you integrated the bot to the slack team: 
