@@ -10,8 +10,8 @@ You will find into this repo:
   - [Chat syntax](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#chat-syntax)
   - [Usage examples](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#usage-examples)
 - The [installation instructions](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#installation-instructions) 
-- The [bot dictionnary](https://github.com/ksator/chatops_junos/blob/master/scripts/junos_automation.coffee). This is where you define the bot actions based on chat messages. 
-- the [network automation content](https://github.com/ksator/chatops_junos/tree/master/automation_content) the bot uses.     
+- The [bot dictionnary](https://github.com/ksator/chatops_junos/blob/master/scripts/junos_automation.coffee). This is where you define the bot actions based on chat messages. Hubot scripts are written in CoffeeScript.  
+- the [network automation content](https://github.com/ksator/chatops_junos/tree/master/automation_content) the bot uses (python scripts, ansible playbooks ...)  
 
 ### Bot capabilities:
 So far you can use slack to delegate the following tasks to the bot:
@@ -26,8 +26,8 @@ So far you can use slack to delegate the following tasks to the bot:
 This is easily extensible to other tasks. You just need to create more automation content, and then you need to update the bot dictionnary.     
 
 ### How does it work: 
+Hubot scripts are written in CoffeeScript.    
 Hubot executes all the scripts defined into the directory [**scripts**](https://github.com/ksator/chatops_junos/blob/master/scripts).    
-
 The dictionnary for network automation is the file [**junos_automation.coffee**] (https://github.com/ksator/chatops_junos/blob/master/scripts/junos_automation.coffee).  
 This is where we define the various actions the bot has to take based on the slack messages in the chat room.  
 
@@ -215,7 +215,7 @@ To load on junos devices a configuration based on a jinja2 template
 ### Installation instructions: 
 - Install hubot  
   - I installed it on an ubuntu 14.04 VM  following the below steps:   
-    - Install node.js and npm (package manager for JavaScript) 
+    - Install node.js and npm (npm is the package manager for JavaScript) 
     ```
     curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
     sudo apt-get install -y nodejs
