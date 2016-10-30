@@ -215,7 +215,7 @@ To load on junos devices a configuration based on a jinja2 template
 ### Installation instructions: 
 - Install hubot  
   - I installed it on an ubuntu 14.04 VM  following the below steps:   
-    - Install node.js and npm  
+    - Install node.js and npm (package manager for JavaScript) 
     ```
     curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
     sudo apt-get install -y nodejs
