@@ -45,8 +45,9 @@ RUN yo hubot --owner="first name last name <user@email.com>" --name="j-bot" --de
 #ADD scripts/script.coffee /hubot/scripts
 #ADD automation_content /hubot/automation_content
 
-ENV HUBOT_SLACK_TOKEN xoxb-90946701733-bOtCxFFH4611wo7nNC2sibvH
-ENV HUBOT_NAME j-bot
+#ENV HUBOT_SLACK_TOKEN xoxb-90946701733-bOtCxFFH4611wo7nNC2sibvH
+#ENV HUBOT_NAME j-bot
 #CMD ["./bin/hubot", "--name", "${HUBOT_NAME}", "HUBOT_SLACK_TOKEN", "${HUBOT_SLACK_TOKEN}",  "--adapter", "slack"]
-CMD bin/hubot
+#CMD bin/hubot
+
 
