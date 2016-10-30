@@ -34,8 +34,7 @@ RUN	useradd -d /hubot -m -s /bin/bash -U hubot
 USER	hubot
 WORKDIR /hubot
 # instanciate the bot
-RUN yo hubot --owner="first name last name <user@email.com>" --name="j-bot" --description="Junos automation" --ad
-apter="slack" --defaults
+RUN yo hubot --owner="first name last name <user@email.com>" --name="j-bot" --description="Junos automation" --adapter="slack" --defaults
 
 #######################################################
 # add the bot dictionnary and add the automation content to the bot
