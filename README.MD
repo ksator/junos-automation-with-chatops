@@ -8,7 +8,7 @@ You will find into this repo:
   - [Bot capabilities](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#bot-capabilities)
   - [How does it work](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#how-does-it-work)
   - [Chat syntax](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#chat-syntax)
-  - [Usage examples](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#Uuage-examples)
+  - [Usage examples](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#usage-examples)
 - The [installation instructions](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#installation-instructions) 
 - The [bot dictionnary](https://github.com/ksator/chatops_junos/blob/master/scripts/junos_automation.coffee). This is where you define the bot actions based on chat messages. 
 - the [network automation content](https://github.com/ksator/chatops_junos/tree/master/automation_content) the bot uses.     
