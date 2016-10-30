@@ -39,10 +39,10 @@ RUN yo hubot --owner="first name last name <user@email.com>" --name="j-bot" --de
 #######################################################
 # add the bot dictionnary and add the automation content to the bot
 #######################################################
-ADD ansible.cfg /hubot/ansible.cfg
-ADD scripts/junos_automation.coffee /hubot/scripts
-ADD scripts/script.coffee /hubot/scripts
-ADD automation_content /hubot/automation_content
+#ADD ansible.cfg /hubot/ansible.cfg
+#ADD scripts/junos_automation.coffee /hubot/scripts
+#ADD scripts/script.coffee /hubot/scripts
+#ADD automation_content /hubot/automation_content
 
 #ENV HUBOT_SLACK_TOKEN xoxb-90946701733-bOtCxFFH4611wo7nNC2sibvH
 #ENV HUBOT_NAME j-bot
