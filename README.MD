@@ -235,6 +235,7 @@ To load on junos devices a configuration based on a jinja2 template
     cd hubot
     yo hubot --owner="your name <user@email.com>" --name="j-bot" --description="Junos automation" --adapter="slack" --defaults
     ```
+    - So you have now a hubot called j-bot, with a slack adapter. 
 - Install the automation tools (Ansible, python libraries ...) required to execute your automation content.  
 You can do it on the same VM that has the bot, so the bot doesnt need to use API to consume the automation content.   
 Here's the instructions to install some Python libraries for Junos automation (PyEZ, jsnapy, junos-netconify) and Ansible and the Ansible roles for Junos.  
@@ -245,6 +246,7 @@ sudo pip install cryptography==1.2.1 junos-eznc==1.3.1 jxmlease junos-netconify 
 sudo ansible-galaxy install Juniper.junos
 ```
 -	Create your automation content. 
+You can do it on the same VM that has the bot, so the bot doesnt need to use API to consume the automation content.   
 My automation content is based on Ansible and Python: https://github.com/ksator/chatops_junos/tree/master/automation_content.   
 -	Create a script (the bot dictionnary) that tell your bot what to do based on the slack messages in the chat room. It has to live in the directory "script".    
 Here’s the dictionnary I am using https://github.com/ksator/chatops_junos/blob/master/scripts/junos_automation.coffee.  
