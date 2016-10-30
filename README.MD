@@ -5,10 +5,10 @@ The repo is actually based on slack and hubot and automation content (ansible pl
 You can delegate junos automation tasks chatting to hubot with slack.  
 You will find into this repo: 
 - How to use the bot  
-  - [Bot capabilities](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#Bot capabilities)
-  - [How does it work](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#How does it work)
-  - [Chat syntax](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#Chat syntax)
-  - [Usage examples](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#Usage examples)
+  - [Bot capabilities](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#Bot-capabilities)
+  - [How does it work](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#How-does-it-work)
+  - [Chat syntax](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#Chat-syntax)
+  - [Usage examples](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#Usage-examples)
 - The [installation instructions](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#installation-instructions) 
 - The [bot dictionnary](https://github.com/ksator/chatops_junos/blob/master/scripts/junos_automation.coffee). This is where you define the bot actions based on chat messages. 
 - the [network automation content](https://github.com/ksator/chatops_junos/tree/master/automation_content) the bot uses.     
