@@ -209,10 +209,6 @@ To load on junos devices a configuration based on a jinja2 template
 ```
 
 ### Installation instructions: 
-- create a slack team (https://slack.com/) 
--	Optionally, invite humans to the slack team 
--	Optionally, integrate some tools into various channels of this slack team.  
-Github, Ansible, Travis CI, ... can send slack notifications. So you can receive slack notifications on channels from Github (each time there is a change on your github repositories), from TravisCI (each time it will finish to run its tests), from Ansible (if you use the [ansible slack notification module](http://docs.ansible.com/ansible/slack_module.html) in your playbooks. Here's an [example](https://github.com/ksator/chatops_junos/blob/master/automation_content/pb.add.ebgp.yml)).
 - Install hubot  
   - I installed it on an ubuntu 14.04 VM  following the below steps:   
     - Install node.js and npm  
@@ -239,8 +235,6 @@ Github, Ansible, Travis CI, ... can send slack notifications. So you can receive
     cd hubot
     yo hubot --owner="your name <user@email.com>" --name="j-bot" --description="Junos automation" --adapter="slack" --defaults
     ```
--	Integrate your bot in your slack team  
-- the bot should now appear in the chat room. its slack status should appear as "away" in the chat room. 
 - Install the automation tools (Ansible, python libraries ...) required to execute your automation content.  
 You can do it on the same VM that has the bot, so the bot doesnt need to use API to consume the automation content.   
 Here's the instructions to install some Python libraries for Junos automation (PyEZ, jsnapy, junos-netconify) and Ansible and the Ansible roles for Junos.  
@@ -250,10 +244,16 @@ sudo apt-get install -y python-dev libxml2-dev python-pip libxslt1-dev build-ess
 sudo pip install cryptography==1.2.1 junos-eznc==1.3.1 jxmlease junos-netconify jsnapy requests ipaddress ansible==2.1.0.0
 sudo ansible-galaxy install Juniper.junos
 ```
--	Create some automation content. 
+-	Create your automation content. 
 My automation content is based on Ansible and Python: https://github.com/ksator/chatops_junos/tree/master/automation_content.   
 -	Create a script (the bot dictionnary) that tell your bot what to do based on the slack messages in the chat room. It has to live in the directory "script".    
 Here’s the dictionnary I am using https://github.com/ksator/chatops_junos/blob/master/scripts/junos_automation.coffee.  
+- create a slack team (https://slack.com/) 
+-	Optionally, invite humans to the slack team 
+-	Optionally, integrate some tools into various channels of this slack team.  
+Github, Ansible, Travis CI, ... can send slack notifications. So you can receive slack notifications on channels from Github (each time there is a change on your github repositories), from TravisCI (each time it will finish to run its tests), from Ansible (if you use the [ansible slack notification module](http://docs.ansible.com/ansible/slack_module.html) in your playbooks. Here's an [example](https://github.com/ksator/chatops_junos/blob/master/automation_content/pb.add.ebgp.yml)).
+-	Integrate your bot in your slack team  
+- the bot should now appear in the chat room. its slack status should appear as "away" in the chat room. 
 - launch the bot, with a slack adaptor, and the token generated when you integrated the bot to the slack team: 
 ```
 ksator@ubuntu:~/myhubot$ HUBOT_SLACK_TOKEN=xoxb-90946701733-BTJh5QnUdQrTMcbtjgawmvjo ./bin/hubot -a slack
