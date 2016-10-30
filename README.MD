@@ -234,7 +234,9 @@ To load on junos devices a configuration based on a jinja2 template
     ``` 
     mkdir hubot
     ```
-    - Generate a new instance of hubot into the new directory   
+    - move to the new directory and generate a new instance of hubot running the command "yo hubot". 
+    if you prefer to automate your hubot build without being interactively prompted for its configuration, you can add the following
+    options to the "yo hubot" command.
     ```
     cd hubot
     yo hubot --owner="your name <user@email.com>" --name="j-bot" --description="Junos automation" --adapter="slack" --defaults
