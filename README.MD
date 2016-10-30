@@ -5,7 +5,7 @@ The repo is actually based on slack and hubot and automation content (ansible pl
 You can delegate junos automation tasks chatting to hubot with slack.  
 You will find into this repo: 
 - How to use the bot  
-- The installation instructions 
+- The [installation instructions](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#installation-instructions) 
 - the [network automation content](https://github.com/ksator/chatops_junos/tree/master/automation_content) the bot use.     
 - The [bot dictionnary] (https://github.com/ksator/chatops_junos/blob/master/scripts/junos_automation.coffee). This is where you define the bot actions based on chat messages. 
 
