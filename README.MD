@@ -215,6 +215,9 @@ You can use "show" or "sh"
 ```
 
 ### Installation instructions: 
+This section provides the details for each step if you want to install everything yourself. 
+The next section [(a dockerized and slack integrated hubot for junos automation)](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#a-dockerized-and-slack-integrated-hubot-for-junos-automation) is about using docker to get most of this. 
+
 - Install hubot  
   - I installed it on an ubuntu 14.04 VM  following the below steps:   
     - Install node.js and npm (npm is the package manager for JavaScript) 
