@@ -334,6 +334,12 @@ docker build -t j-bot-image .
 docker run -v $PWD/automation_content:/hubot/automation_content -e HUBOT_SLACK_TOKEN=xxxxxxxxxxxxxxxx -d j-bot-image
 ```
 
+### Road map
+- Travis CI notification settings encryption https://docs.travis-ci.com/user/encryption-keys/ (to not show the slack token in clear text in the .travis.yml file)
+- add Hubot permissions/roles (chatops access control with hubot-auth)
+- remove hardcoded details from the python script
+
 ### Contributions, bugs, questions, suggestions, enhancement requests
 They are more than welcome. Please submit github issues or pull requests. 
+
 
