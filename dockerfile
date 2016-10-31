@@ -80,7 +80,7 @@ CMD ["./bin/hubot", "--name", "${HUBOT_NAME}", "HUBOT_SLACK_TOKEN", "${HUBOT_SLA
 ######################################################################################################
 ## that's it to build the image!
 ## you also need to instanciate the docker image to get a container. 
-## from the same directory, use the following command to get a container:
+## from the same directory, use the following command to get a slack integrated hubot for Junos automation container:
 ## docker run -v $PWD/automation_content:/hubot/automation_content -e HUBOT_SLACK_TOKEN=xxxxxxxxxxxxxxxx --rm -d j-bot_image
 #######################################################################################################
 
