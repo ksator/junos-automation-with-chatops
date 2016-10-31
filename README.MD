@@ -303,8 +303,8 @@ cd junos-automation-with-chatops
   - The **automation_content** directory has:
     - The ansible **hosts** inventory file.  
     You need to change this file in order to use the ip addresses of your network.   
-    - the ansible variables under the directories **host_vars** and **group_var**.  
-    You need to change the files under the directories **host_vars** and **group_var** to define your own variables (device credentials ....). 
+    - the ansible variables definition under the directories **host_vars** and **group_var**.  
+    You need to change the files under the directories **host_vars** and **group_var** to define the variables that match your network settings (device credentials ....). 
     - the ansible playbooks.  
     it is not required to change them. 
     - the jinja2 templates.  
