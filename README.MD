@@ -28,12 +28,17 @@ So far you can use slack to delegate the following tasks to the bot:
 This is easily extensible to other tasks. You just need to create more automation content, and then you need to update the bot dictionnary.     
 
 ### How does it work: 
+
+##### Hubot scripts
 Hubot scripts are written in CoffeeScript.    
 Hubot executes all the scripts defined into the directory [**scripts**](https://github.com/ksator/chatops_junos/blob/master/scripts).    
 The dictionnary for network automation is the file [**junos_automation.coffee**] (https://github.com/ksator/chatops_junos/blob/master/scripts/junos_automation.coffee).  
 This is where we define the various actions the bot has to take based on the slack messages in the chat room.  
 
+##### Automation content
 The bot is configured to execute the automation content (Ansible playbooks, python scripts ...) defined into the directory [**automation_content**] (https://github.com/ksator/chatops_junos/tree/master/automation_content)
+
+##### Example
 
 So, as example, the slack message:   
 ```
