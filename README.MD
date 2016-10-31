@@ -301,15 +301,15 @@ cd junos-automation-with-chatops
 ```
 - adapt your local repository to match your network settings (devices ip @, credentials, ...)
   - The **automation_content** directory has:
-    - The ansible **hosts** inventory file  
+    - The ansible **hosts** inventory file.  
     You need to change this file in order to use the ip addresses of your network.   
-    - the ansible variables under the directories **host_vars** and **group_var**  
-    You need to change the files under the directories **host_vars** and **group_var** to define your own variables (device credentials ....) 
-    - ansible playbooks  
-    it is not required to change them 
-    - jinja2 templates  
-    it is not required to change them   
-    - python scripts  
+    - the ansible variables under the directories **host_vars** and **group_var**.  
+    You need to change the files under the directories **host_vars** and **group_var** to define your own variables (device credentials ....). 
+    - the ansible playbooks.  
+    it is not required to change them. 
+    - the jinja2 templates.  
+    it is not required to change them.  
+    - the python scripts.  
     some variables are hard coded inside the python script (devices ip @ and device credentials), you need to change them to match your network settings.    
   - The hubot coffeescript are in the **scripts** directory (the script I am using to educate the bot is **junos_automation.coffee**).   
   it is not required to change it. 
