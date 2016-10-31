@@ -327,9 +327,8 @@ docker build -t j-bot-image .
   - -e to set the environement variable HUBOT_SLACK_TOKEN with the token provided by slack when you integrated the bot to the slack team
   - -v to add a data volume to the container. Your local **automation_content** directory will be mounted to the diretory **automation_content** in the container.
   - -d to run the container in background and print container ID
-  - --rm to automatically remove the container when it exits
 ```
-docker run -v $PWD/automation_content:/hubot/automation_content -e HUBOT_SLACK_TOKEN=xxxxxxxxxxxxxxxx --rm -d j-bot_image
+docker run -v $PWD/automation_content:/hubot/automation_content -e HUBOT_SLACK_TOKEN=xxxxxxxxxxxxxxxx -d j-bot-image
 ```
 
 ### Contributions, bugs, questions, suggestions, enhancement requests
