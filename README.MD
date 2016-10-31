@@ -300,17 +300,15 @@ git clone https://github.com/ksator/junos-automation-with-chatops.git
 cd junos-automation-with-chatops
 ```
 - adapt your local repository to match your network settings (devices ip @, credentials, ...)
-  - The hubot coffeescript are in the **scripts** directory (the script I am using to educate the bot is **junos_automation.coffee**). 
-  - The **ansible.cfg** (ansible configuration file) is at the root of the repository
   - The junos automation content is in the **automation_content** directory. This directory has:
-    - The ansible **hosts** inventory file. You need to change this file in order to use the ip addresses of your network.   
-    - the ansible variables under the directories **host_vars** and **group_var**. You need to change the files under the directories **host_vars** and **group_var** to define your own variables (device credentials ....) 
-    - python scripts 
-    - ansible playbooks 
-    - jinja2 templates 
-- optionnaly, apply the desirated changes on the dockerfile on your local repository    
-the dockerfile is located at the root repository
-
+    - The ansible **hosts** inventory file: You need to change this file in order to use the ip addresses of your network.   
+    - the ansible variables under the directories **host_vars** and **group_var**: You need to change the files under the directories **host_vars** and **group_var** to define your own variables (device credentials ....) 
+    - ansible playbooks: it is not required to change them 
+    - jinja2 templates: it is not required to change them   
+    - python scripts: some variables are hard coded inside the python script (devices ip @ and device credentials), you need to change them to match your network settings.    
+  - The hubot coffeescript are in the **scripts** directory (the script I am using to educate the bot is **junos_automation.coffee**). it is not required to change it. 
+  - The **ansible.cfg** (ansible configuration file) is at the root of the repository. it is not required to change it. 
+- optionnaly, apply the desirated changes on the dockerfile on your local repository (the dockerfile is located at the root repository)
 - create a docker image based on the local dockerfile
 ```
 docker build -t j-bot-image .
