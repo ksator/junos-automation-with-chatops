@@ -11,8 +11,7 @@ You will find into this repo:
   - [How does it work](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#how-does-it-work)
   - [Chat syntax](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#chat-syntax)
   - [Usage examples](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#usage-examples)
-- The [installation instructions](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#installation-instructions) 
-- [A dockerized and slack integrated hubot for Junos automation](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#a-dockerized-and-slack-integrated-hubot-for-junos-automation) 
+- The [installation instructions](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#installation-instructions) if you want to install it yourself, and [dockerfile](https://github.com/ksator/chatops_junos/tree/master/dockerfile) if you prefer [a dockerized and slack integrated hubot for Junos automation](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#a-dockerized-and-slack-integrated-hubot-for-junos-automation)  
 - The [bot dictionnary](https://github.com/ksator/chatops_junos/blob/master/scripts/junos_automation.coffee). It defines the bot actions based on chat messages. Hubot scripts are written in CoffeeScript. Hubot scripts have to live in the "scripts" directory.   
 - the [network automation content](https://github.com/ksator/chatops_junos/tree/master/automation_content) the bot uses (python scripts, ansible playbooks ...)  
 
