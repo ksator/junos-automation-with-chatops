@@ -61,7 +61,7 @@ ansible-playbook $PWD/automation_content/pb.template.yml --extra-vars "device=<t
 ### Chat syntax: 
 Here’s the chat syntax to delegate tasks to the bot:  
 
-Notes: \<target> is a device or a group of devices. The value for \<target> has to exist in the ansible inventory [**hosts**] (https://github.com/ksator/chatops_junos/blob/master/automation_content/hosts) file.   
+Notes: \<target> is a device or a group of devices. The value for \<target> in the chat messages has to exist in the ansible inventory [**hosts**] (https://github.com/ksator/chatops_junos/blob/master/automation_content/hosts) file.   
 
 - Backup the configuration of \<target>.   
 It run under the hood the playbook [**pb.backup.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.backup.yml) with the variable \<target>. 
