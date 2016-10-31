@@ -315,7 +315,8 @@ cd junos-automation-with-chatops
   it is not required to change it. 
   - The **ansible.cfg** (ansible configuration file) is at the root of the repository.   
   it is not required to change it. 
-  - optionnaly, apply the desirated changes on the dockerfile on your local repository (the dockerfile is located at the root repository)  
+  - The **dockerfile** is ta the root of the repository.  
+  it is not required to change it. 
 - create a docker image based on the local dockerfile
 ```
 docker build -t j-bot-image .
