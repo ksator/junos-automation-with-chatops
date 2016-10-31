@@ -153,13 +153,12 @@ You can use "show" or "sh"
 
 ### Usage examples:   
 
-To get the help: 
+##### To get the help: 
 ```
 @j-bot help
 @j-bot help bgp
 ```
-
-To pass a junos command (set/show/delete) to devices: 
+##### To pass a junos command (set/show/delete) to devices: 
 ```
 @j-bot show hosts
 @j-bot dev=MX240-04 set interfaces xe-1/0/0 description newdesc
@@ -167,20 +166,17 @@ To pass a junos command (set/show/delete) to devices:
 @j-bot dev=MX240-04 set interfaces xe-1/0/0 description anotherdesc --check --diff
 @j-bot dev=MX240-04 delete interfaces xe-1/0/0 description
 ```
-
-To roll back the junos configuration on devices:  
+##### To roll back the junos configuration on devices:  
 ```
 @j-bot dev=all set system login message newbanner --check
 @j-bot dev=all set system login message newbanner --diff
 @j-bot dev=all rollback 1
 ```
-
-To backup locally the configuration of all devices:
+##### To backup locally the configuration of all devices:
 ```
 @j-bot dev=all backup
 ```
-
-To manage bgp neighbors (add/audit/remove bgp neighbors) on devices:  
+##### To manage bgp neighbors (add/audit/remove bgp neighbors) on devices:  
 ```
 @j-bot help bgp
 @j-bot dev=FR-MX80-214 add bgp neighbor 10.10.0.1 as 65001 --check --diff
@@ -191,13 +187,13 @@ To manage bgp neighbors (add/audit/remove bgp neighbors) on devices:
 @j-bot dev=MX240-04 remove bgp neighbor 10.10.0.2
 @j-bot dev=FR-MX80-214 rm bgp neighbor 10.10.0.1
 ```
-To execute a python script: 
+##### To execute a python script: 
 ```
 @j-bot list python scripts
 @j-bot show get_facts.py
 @j-bot python get_facts.py
 ```
-To execute an Ansible playbook: 
+##### To execute an Ansible playbook: 
 ```
 @j-bot list playbooks
 @j-bot show pb.check.physical.topology.yml
@@ -205,7 +201,7 @@ To execute an Ansible playbook:
 @j-bot dev=FR-MX80-214 playbook pb.check.physical.topology.yml
 @j-bot dev=FR-MX80-214 playbook pb.ping.yml
 ```
-To load on junos devices a configuration based on a jinja2 template 
+##### To load on junos devices a configuration based on a jinja2 template 
 ```
 @j-bot help template 
 @j-bot ls templates
