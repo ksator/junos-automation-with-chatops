@@ -299,13 +299,15 @@ git clone https://github.com/ksator/junos-automation-with-chatops.git
 ```
 cd junos-automation-with-chatops
 ```
-- adapt the setup to match your network settings (devices ip @, devices credentials, ...)
-  - The hubot scrips are in the "scripts" directory 
-  - The ansible hosts file is in the "automation_content" directory
-  - The junos automation content is in the "automation_content" directory (it has python scripts, ansible playbooks, jinja2 templates, the ansible hosts inventory file, the ansible variable under the directories host_vars and group_var) 
-  - The ansible.cfg (ansible configuration file) is at the root of the repository
-  
-
+- adapt your local repository to match your network settings (devices ip @, credentials, ...)
+  - The hubot coffeescript are in the **scripts** directory (the script I am using to educate the bot is **junos_automation.coffee**). 
+  - The **ansible.cfg** (ansible configuration file) is at the root of the repository
+  - The junos automation content is in the **automation_content** directory. This directory has:
+    - The ansible **hosts** inventory file. You need to change this file in order to use the ip addresses of your network.   
+    - the ansible variables under the directories **host_vars** and **group_var**. You need to change the files under the directories **host_vars** and **group_var** to define your own variables (device credentials ....) 
+    - python scripts 
+    - ansible playbooks 
+    - jinja2 templates 
 - optionnaly, apply the desirated changes on the dockerfile on your local repository    
 the dockerfile is located at the root repository
 
