@@ -282,7 +282,8 @@ HUBOT_SLACK_TOKEN=xxxxxxxxxx ./bin/hubot -a slack
 There is a [dokerfile](https://github.com/ksator/junos-automation-with-chatops/blob/master/dockerfile) at the root of the repository.   
 The dockerfile has the details: 
 - to install hubot and its requirements (nodejs, npm ...) 
-- to install some tools for junos automation (ansible, python libraries ...)  
+- to install some tools for junos automation (ansible, python libraries ...)   
+
 So this simplifies and automates part of the [installation instructions](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#installation-instructions) in the above section. 
 - You still need to manually create a slack team, and integrate your bot in your slack team.      
 
