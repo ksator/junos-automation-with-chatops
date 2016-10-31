@@ -307,8 +307,9 @@ docker build -t ksator/hubot .
   - -e flag to set the environement variable HUBOT_SLACK_TOKEN with the token provided by slack when you integrated the bot to the slack team
   - -v flag to add a data volume to the container
   - -d flag to run the container in background and print container ID
+  - --rm flag to automatically remove the container when it exits
 ```
-docker run -v $PWD/automation_content:/hubot/automation_content -e HUBOT_SLACK_TOKEN=xxxxxxxxxxxxxxxx -d ksator/hubot
+docker run -v $PWD/automation_content:/hubot/automation_content -e HUBOT_SLACK_TOKEN=xxxxxxxxxxxxxxxx --rm -d ksator/hubot
 ```
 
 ### Contributions, bugs, questions, suggestions, enhancement requests
