@@ -3,8 +3,9 @@ This directory has the automation content you can ask to the bot to execute (ans
 - **python scripts** - These files are names **xxx.py**
 - **ansible playbooks** - These files are named **pb.xxx.yml**
 - **ansible inventory** - [**hosts**] (https://github.com/ksator/chatops_junos/blob/master/automation_content/hosts) file
-- **variables definition** - They are defined under the directories **host_vars** and [**group_vars**] (https://github.com/ksator/chatops_junos/blob/master/automation_content/hosts)  
-Note: the ansible configuration file [**ansible.cfg**]((https://github.com/ksator/chatops_junos/blob/master/ansible.cfg) is NOT under this directory.  
+- **variables definition** - They are defined under the directories **host_vars** and [**group_vars**] (https://github.com/ksator/chatops_junos/blob/master/automation_content/hosts)   
+
+Note: the ansible configuration file [**ansible.cfg**](https://github.com/ksator/chatops_junos/blob/master/ansible.cfg) is NOT under this directory.  
 
 
 
