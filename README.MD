@@ -277,6 +277,39 @@ HUBOT_SLACK_TOKEN=xxxxxxxxxx ./bin/hubot -a slack
 - the slack status for the bot should now appear as "active" in the chat room! 
 - Send slack messages to your bot in order to delegate tasks to him :-)
 
+### Docker
+
+- clone locally the repository
+```
+git clone https://github.com/ksator/junos-automation-with-chatops.git
+```
+- move to your local repository
+```
+cd junos-automation-with-chatops
+```
+- adapt the setup to match your network settings (devices ip @, devices credentials, ...)
+https://github.com/ksator/junos-automation-with-chatops/tree/master/scripts
+https://github.com/ksator/junos-automation-with-chatops/blob/master/scripts/junos_automation.coffee
+https://github.com/ksator/junos-automation-with-chatops/tree/master/automation_content
+https://github.com/ksator/junos-automation-with-chatops/blob/master/automation_content/hosts 
+https://github.com/ksator/junos-automation-with-chatops/tree/master/automation_content/group_vars
+https://github.com/ksator/junos-automation-with-chatops/tree/master/automation_content/hosts_vars
+https://github.com/ksator/junos-automation-with-chatops/blob/master/ansible.cfg
+
+- optionnaly, apply the desirated changes on the local dockerfile 
+the dockerfile is located at the root repository
+
+- create a docker image based on the local dockerfile
+```
+docker build -t ksator/hubot .
+```
+- instanciate the docker image to get a container with the following options: 
+  - -e flag to set the environement variable HUBOT_SLACK_TOKEN with the token provided by slack when you integrated the bot to the slack team
+  - -v flag to add a data volume to the container
+  - -d flag to run the container in background and print container ID
+```
+docker run -v $PWD/automation_content:/hubot/automation_content -e HUBOT_SLACK_TOKEN=xxxxxxxxxxxxxxxx -d ksator/hubot
+```
 
 ### Contributions, bugs, questions, suggestions, enhancement requests
 They are more than welcome. Please submit github issues or pull requests. 
