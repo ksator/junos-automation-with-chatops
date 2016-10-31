@@ -39,7 +39,6 @@ This is where we define the various actions the bot has to take based on the sla
 The bot is configured to execute the automation content (Ansible playbooks, python scripts ...) defined into the directory [**automation_content**] (https://github.com/ksator/chatops_junos/tree/master/automation_content)
 
 ##### Example
-
 So, as example, the slack message:   
 ```
 @hubot_name dev=<target> template <template>   
@@ -61,7 +60,7 @@ ansible-playbook $PWD/automation_content/pb.template.yml --extra-vars "device=<t
 ### Chat syntax: 
 Here’s the chat syntax to delegate tasks to the bot:  
 
-Notes: \<target> is a device or a group of devices. The value for \<target> in the chat messages has to exist in the ansible inventory [**hosts**] (https://github.com/ksator/chatops_junos/blob/master/automation_content/hosts) file.   
+Notes: \<target> can refer to a device or to a group of devices. The value for \<target> in the chat messages has to exist in the ansible inventory [**hosts**] (https://github.com/ksator/chatops_junos/blob/master/automation_content/hosts) file.   
 
 - Backup the configuration of \<target>.   
 It run under the hood the playbook [**pb.backup.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.backup.yml) with the variable \<target>. 
