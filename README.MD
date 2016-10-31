@@ -287,7 +287,8 @@ The dockerfile has the details:
 So this simplifies and automates part of the [installation instructions](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#installation-instructions) in the above section. 
 - You still need to manually create a slack team, and integrate your bot in your slack team.      
 
-Requirement: you need git and docker on your laptop.   
+Requirements: 
+- you need git and docker on your laptop.   
 
 Here's the instructions to use it:  
 - clone locally the repository
@@ -299,14 +300,11 @@ git clone https://github.com/ksator/junos-automation-with-chatops.git
 cd junos-automation-with-chatops
 ```
 - adapt the setup to match your network settings (devices ip @, devices credentials, ...)
-https://github.com/ksator/junos-automation-with-chatops/tree/master/scripts
-https://github.com/ksator/junos-automation-with-chatops/blob/master/scripts/junos_automation.coffee
-https://github.com/ksator/junos-automation-with-chatops/tree/master/automation_content
-https://github.com/ksator/junos-automation-with-chatops/blob/master/automation_content/hosts 
-https://github.com/ksator/junos-automation-with-chatops/tree/master/automation_content/group_vars
-https://github.com/ksator/junos-automation-with-chatops/tree/master/automation_content/hosts_vars
-https://github.com/ksator/junos-automation-with-chatops/blob/master/ansible.cfg
-
+  - The hubot scrips are in the "scripts" directory 
+  - The ansible hosts file is in the "automation_content" directory
+  - The junos automation content is in the "automation_content" directory (it has python scripts, ansible playbooks, jinja2 templates, the ansible hosts inventory file, the ansible variable under the directories host_vars and group_var) 
+  - The ansible.cfg (ansible configuration file) is at the root of the repository
+  
 
 - optionnaly, apply the desirated changes on the dockerfile on your local repository    
 the dockerfile is located at the root repository
@@ -315,7 +313,7 @@ the dockerfile is located at the root repository
 ```
 docker build -t j-bot-image .
 ```
-- Instanciate the docker image to get a container with the following options: 
+- Instanciate the docker image to get a container. Use the following options: 
   - -e to set the environement variable HUBOT_SLACK_TOKEN with the token provided by slack when you integrated the bot to the slack team
   - -v to add a data volume to the container
   - -d to run the container in background and print container ID
@@ -323,10 +321,6 @@ docker build -t j-bot-image .
 ```
 docker run -v $PWD/automation_content:/hubot/automation_content -e HUBOT_SLACK_TOKEN=xxxxxxxxxxxxxxxx --rm -d j-bot_image
 ```
-
-
-
-
 
 ### Contributions, bugs, questions, suggestions, enhancement requests
 They are more than welcome. Please submit github issues or pull requests. 
