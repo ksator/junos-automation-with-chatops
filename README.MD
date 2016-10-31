@@ -10,6 +10,7 @@ You will find into this repo:
   - [Chat syntax](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#chat-syntax)
   - [Usage examples](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#usage-examples)
 - The [installation instructions](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#installation-instructions) 
+- [A dockerized and slack integrated hubot for Junos automation](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#A-dockerized-and-slack-integrated-hubot-for-Junos-automation) 
 - The [bot dictionnary](https://github.com/ksator/chatops_junos/blob/master/scripts/junos_automation.coffee). This is where you define the bot actions based on chat messages. Hubot scripts are written in CoffeeScript.  
 - the [network automation content](https://github.com/ksator/chatops_junos/tree/master/automation_content) the bot uses (python scripts, ansible playbooks ...)  
 
@@ -277,8 +278,11 @@ HUBOT_SLACK_TOKEN=xxxxxxxxxx ./bin/hubot -a slack
 - the slack status for the bot should now appear as "active" in the chat room! 
 - Send slack messages to your bot in order to delegate tasks to him :-)
 
-### Docker
+### A dockerized and slack integrated hubot for Junos automation
+There is a [dokerfile](https://github.com/ksator/junos-automation-with-chatops/blob/master/dockerfile) at the root of the repository 
+It has the details to install some network automation tools for junos (ansible, python libraries ...), to install hubot, .... 
 
+Here's the instructions to use it:  
 - clone locally the repository
 ```
 git clone https://github.com/ksator/junos-automation-with-chatops.git
@@ -296,7 +300,8 @@ https://github.com/ksator/junos-automation-with-chatops/tree/master/automation_c
 https://github.com/ksator/junos-automation-with-chatops/tree/master/automation_content/hosts_vars
 https://github.com/ksator/junos-automation-with-chatops/blob/master/ansible.cfg
 
-- optionnaly, apply the desirated changes on the local dockerfile 
+
+- optionnaly, apply the desirated changes on the local dockerfile  
 the dockerfile is located at the root repository
 
 - create a docker image based on the local dockerfile
