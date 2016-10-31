@@ -280,8 +280,12 @@ HUBOT_SLACK_TOKEN=xxxxxxxxxx ./bin/hubot -a slack
 
 ### A dockerized and slack integrated hubot for Junos automation
 There is a [dokerfile](https://github.com/ksator/junos-automation-with-chatops/blob/master/dockerfile) at the root of the repository.   
-It has the details to install some network automation tools for junos (ansible, python libraries ...), to install hubot, .... 
+It has the details: 
+- to install some network automation tools for junos (ansible, python libraries ...)
+- to install hubot and its requirements (nodejs, npm ...) 
+- to configure hubot for Junos automation  
 
+So this simplify and automate part of the [installation instructions](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#installation-instructions) in the above section.  
 Requirement: you need git and docker on your laptop.   
 
 Here's the instructions to use it:  
