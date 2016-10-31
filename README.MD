@@ -303,7 +303,7 @@ the dockerfile is located at the root repository
 ```
 docker build -t ksator/hubot .
 ```
-- instanciate the docker image to get a container with the following options: 
+- Instanciate the docker image to get a container with the following options: 
   - -e flag to set the environement variable HUBOT_SLACK_TOKEN with the token provided by slack when you integrated the bot to the slack team
   - -v flag to add a data volume to the container
   - -d flag to run the container in background and print container ID
