@@ -39,4 +39,4 @@ notifications:
       - khelil.sator.git@gmail.com
     on_failure: always
   slack: 
-    ksator-junos:XAUJP6A29mgYtUtGIJQdPBS7
+    ksator-junos:kgUUctwogccahp2mSfiKDPhZ
