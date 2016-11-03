@@ -47,8 +47,9 @@ or
 ```
 hubot_name dev=<target> template <template>
 ```
-triggers the ansible playbook [**pb.template.yml**](https://github.com/ksator/chatops_junos/blob/master/ansible/pb.template.yml) with some variable definitions (using the --extra-vars option to pass the variables definition to the playbook):   
-Actually, the bot will execute this command:  
+configure the device or group of devices \<target> with the template \<template>.  
+Actually, this slack message triggers the ansible playbook [**pb.template.yml**](https://github.com/ksator/chatops_junos/blob/master/ansible/pb.template.yml) with some variable definitions (using the --extra-vars option to pass the variables definition to the playbook):   
+The bot will execute this command:  
 ```
 ansible-playbook $PWD/automation_content/pb.template.yml --extra-vars = "{'device': <target>, 'template': <template>}"
 ```
