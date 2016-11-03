@@ -47,7 +47,7 @@ or
 ```
 hubot_name dev=<target> template <template>
 ```
-configure the device or group of devices \<target> with the template \<template>.  
+configures the device (or group of devices) \<target> with the template \<template>.  
 Actually, this slack message triggers the ansible playbook [**pb.template.yml**](https://github.com/ksator/chatops_junos/blob/master/ansible/pb.template.yml) with some variable definitions (using the --extra-vars option to pass the variables definition to the playbook):   
 The bot will execute this command:  
 ```
@@ -61,7 +61,7 @@ ansible-playbook $PWD/automation_content/pb.template.yml --extra-vars "device=<t
 ### Chat syntax: 
 Here’s the chat syntax to delegate tasks to the bot:  
 
-Notes: \<target> can refer to a device or to a group of devices. The value for \<target> in the chat messages has to exist in the ansible inventory [**hosts**] (https://github.com/ksator/chatops_junos/blob/master/automation_content/hosts) file.   
+Notes: \<target> can refer to a device or to a group of devices. The value for \<target> in the chat messages has to be define in the  [**hosts**] (https://github.com/ksator/chatops_junos/blob/master/automation_content/hosts) file (this is ansible inventory).     
 
 ##### Backup the configuration of \<target>
 It run under the hood the playbook [**pb.backup.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.backup.yml) with the variable \<target>. 
