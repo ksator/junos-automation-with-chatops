@@ -47,7 +47,7 @@ or
 ```
 hubot_name dev=<target> template <template>
 ```
-configures the device (or group of devices) \<target> with the template \<template>.  
+configures the device (or the group of devices) \<target> with the template \<template>.  
 Actually, this slack message triggers the ansible playbook [**pb.template.yml**](https://github.com/ksator/chatops_junos/blob/master/ansible/pb.template.yml) with some variable definitions (using the --extra-vars option to pass the variables definition to the playbook):   
 The bot will execute this command:  
 ```
