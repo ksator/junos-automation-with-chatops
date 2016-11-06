@@ -3,8 +3,6 @@
 #
 # Commands:
 #
-# here's the help! 
-#
 #   hubot dev=<target> backup - Backup the configuration of the device/group <target>. It run under the hood the playbook pb.backup.yml with the variable <target>. 
 #
 #   hubot dev=<target> delete <command> - Execute a Junos delete command on device/group <target>. It run under the hood the playbook pb.config.yml with the variables <target>  and <command>.
