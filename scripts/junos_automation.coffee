@@ -40,7 +40,7 @@
 #   Khelil Sator
 
 child_process = require('child_process')
-initial_response=["I am on it!", "I'll take care of that right away!", "Working on it!"]
+initial_response=["I am on it!", "I'll take care of that right away!", "Working on it!", "Understood!"]
 
 module.exports = (robot) ->
 
