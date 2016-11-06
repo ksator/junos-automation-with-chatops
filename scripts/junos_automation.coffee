@@ -1,5 +1,5 @@
 # Description:
-#   Junos automation
+#   Junos automation with Hubot
 #
 # Commands:
 #
