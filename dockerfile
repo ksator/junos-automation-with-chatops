@@ -61,8 +61,8 @@ ADD external-scripts.json /hubot/external-scripts.json
 
 #####################################################################################################
 ## add add the automation content to the bot.
-## the automation_content directory in the local repository will be mounted to the diretory automation_content in the container later on (once we
-## will instanciate the container, with the flag -v).
+## the automation_content directory in the local repository will be mounted to the diretory automation_content in the container later on
+## i.e, once we will instanciate the container, with the flag -v.
 #####################################################################################################
 ADD ansible.cfg /hubot/ansible.cfg
 #ADD automation_content /hubot/automation_content
