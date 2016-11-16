@@ -4,7 +4,7 @@ I was initially inspired by this demo https://www.dravetech.com/blog/2016/03/30/
 The repo is actually based on slack and hubot and content for junos automation (ansible playbooks, python scripts, jinja2 templates ...).   
 So you can delegate junos automation tasks chatting to hubot with slack.  
 
-### What to find on this repo:  
+### What to find on this repo  
 You will find into this repo: 
 - How to use the bot  
   - [Bot capabilities](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#bot-capabilities)
