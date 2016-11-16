@@ -347,6 +347,12 @@ docker build -t j-bot-image .
 ```
 docker run -v $PWD/automation_content:/hubot/automation_content -e HUBOT_SLACK_TOKEN=xxxxxxxxxxxxxxxx -d j-bot-image
 ```
+### Continuous integration
+There is a github webhook with Travis CI.  
+The playbooks in  this repository are tested automatically by Travis CI.  
+The python scripts in  this repository are tested automatically by Travis CI.  
+Travis CI is only testing the syntax. 
+The files **.travis.yml** and **requirements.txt** at the root of this repository are used for this.  
 
 ### Road map
 - Travis CI notification settings encryption https://docs.travis-ci.com/user/encryption-keys/ (to not show the slack token in clear text in the .travis.yml file)
