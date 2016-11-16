@@ -1,5 +1,5 @@
 ### About this repo:  
-This repository is about Chatops for network engineers.  
+This repository is about Chatops for network engineers  
 I was initially inspired by this demo https://www.dravetech.com/blog/2016/03/30/chatops-demo.html  
 The repo is actually based on slack and hubot and content for junos automation (ansible playbooks, python scripts, jinja2 templates ...).   
 So you can delegate junos automation tasks chatting to hubot with slack.  
