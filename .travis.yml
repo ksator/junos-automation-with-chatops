@@ -28,7 +28,7 @@ script:
   - ansible-playbook automation_content/pb.conf.bgp.oc.yml --extra-vars "device=fabric" --syntax-check
   - ansible-playbook automation_content/pb.check.interfaces.yml --extra-vars "device=fabric" --syntax-check
   - ansible-playbook automation_content/pb.check.bgp.yml --extra-vars "device=leaf-03 peer_ip=172.16.0.28" --syntax-check
-  - ansible-playbook automation_content/pb.add.ebgp.yml --extra-vars "device=leaf-03 peer_ip=172.16.0.28 peer_asn=65014"--syntax-check
+  - ansible-playbook automation_content/pb.add.ebgp.yml --extra-vars "device=leaf-03 peer_ip=172.16.0.28 peer_asn=65014" --syntax-check
   - python -m py_compile automation_content/get_facts.py 
 
 branches:
