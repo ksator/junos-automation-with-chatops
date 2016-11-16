@@ -7,11 +7,11 @@ So you can delegate junos automation tasks chatting to hubot with slack.
 ### What to find on this repo  
 You will find into this repo: 
 - How to use the bot  
-  - [Bot capabilities](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#bot-capabilities)
-  - [How does it work](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#how-does-it-work)
-  - [Chat syntax](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#chat-syntax)
-  - [Usage examples](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#usage-examples)
-- The [installation instructions](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#installation-instructions) if you want to install it yourself, and [dockerfile](https://github.com/ksator/chatops_junos/tree/master/dockerfile) if you prefer [a dockerized and slack integrated hubot for Junos automation](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#a-dockerized-and-slack-integrated-hubot-for-junos-automation)  
+  - [Bot capabilities](https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/README.MD#bot-capabilities)
+  - [How does it work](https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/README.MD#how-does-it-work)
+  - [Chat syntax](https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/README.MD#chat-syntax)
+  - [Usage examples](https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/README.MD#usage-examples)
+- The [installation instructions](https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/README.MD#installation-instructions) if you want to install it yourself, and [dockerfile](https://github.com/ksator/chatops_junos/tree/master/dockerfile) if you prefer [a dockerized and slack integrated hubot for Junos automation](https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/README.MD#a-dockerized-and-slack-integrated-hubot-for-junos-automation)  
 - The [bot dictionnary](https://github.com/ksator/chatops_junos/blob/master/scripts/junos_automation.coffee). It defines the bot actions based on chat messages (Hubot scripts are written in CoffeeScript, and have to live in the "scripts" directory).   
 - the [network automation content](https://github.com/ksator/chatops_junos/tree/master/automation_content) the bot uses (python scripts, ansible playbooks, jinja2 templates ...)  
 
@@ -217,7 +217,7 @@ You can use "show" or "sh"
 
 ### Installation instructions: 
 This section provides the details for each step if you want to install everything yourself.  
-The next section [(a dockerized and slack integrated hubot for junos automation)](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#a-dockerized-and-slack-integrated-hubot-for-junos-automation) is about using docker to get most of this. 
+The next section [(a dockerized and slack integrated hubot for junos automation)](https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/README.MD#a-dockerized-and-slack-integrated-hubot-for-junos-automation) is about using docker to get most of this. 
 
 - Install hubot  
   - I installed it on an ubuntu 14.04 VM  following the below steps:   
@@ -284,13 +284,13 @@ HUBOT_SLACK_TOKEN=xxxxxxxxxx ./bin/hubot -a slack
 - Send slack messages to your bot in order to delegate tasks to him :-)
 
 ### A dockerized and slack integrated hubot for Junos automation
-There is a [dokerfile](https://github.com/ksator/junos-automation-with-chatops/blob/master/dockerfile) at the root of the repository.   
+There is a [dokerfile](https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/dockerfile) at the root of the repository.   
 It has the details: 
 - to install hubot and its requirements (nodejs, npm ...) 
 - to install some tools for junos automation (ansible, python libraries ...)   
 - to configure the bot 
 
-So this simplifies and automates part of the [installation instructions](https://github.com/ksator/junos-automation-with-chatops/blob/master/README.MD#installation-instructions) in the above section. 
+So this simplifies and automates part of the [installation instructions](https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/README.MD#installation-instructions) in the above section. 
 - You still need to manually create a slack team, and integrate your bot in your slack team.      
 
 Requirements: 
@@ -299,7 +299,7 @@ Requirements:
 Here's the instructions to use it:  
 - clone locally the repository
 ```
-git clone https://github.com/ksator/junos-automation-with-chatops.git
+git clone https://github.com/ksator/junos-automation-with-chatops-in-ams.git
 ```
 - move to your local repository
 ```
