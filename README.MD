@@ -157,15 +157,11 @@ You can use "show" or "sh"
 ##### To get the help: 
 ```
 @j-bot help
-```
-```
 @j-bot help bgp
 ```
 ##### To pass a junos command (set/show/delete) to devices: 
 ```
 @j-bot show hosts
-```
-```
 @j-bot dev=leaf-04 set interfaces xe-1/0/0 description newdesc
 @j-bot dev=leaf-04 show interfaces descriptions
 @j-bot dev=leaf-04 set interfaces xe-1/0/0 description anotherdesc --check --diff
@@ -184,19 +180,11 @@ You can use "show" or "sh"
 ##### To manage bgp neighbors (add/audit/remove bgp neighbors) on devices:  
 ```
 @j-bot help bgp
-```
-```
 @j-bot dev=leaf-03 add bgp neighbor 172.16.0.28 as 65014 --check --diff
 @j-bot dev=leaf-03 add bgp neighbor 172.16.0.28 as 65014
-```
-```
 @j-bot dev=spine-04 add bgp neigh 172.16.0.29 as 65023 --check 
 @j-bot dev=spine-04 add bgp neigh 172.16.0.29 as 65023 --diff
-```
-```
 @j-bot dev=spine-04 get bgp state 172.16.0.29
-```
-```
 @j-bot dev=leaf-03 remove bgp neighbor 172.16.0.28
 @j-bot dev=spine-04 rm bgp neighbor 172.16.0.29
 ```
@@ -219,13 +207,12 @@ You can use "show" or "sh"
 ```
 @j-bot help template 
 @j-bot ls templates
-@j-bot show openconfig_bgp.j2
+@j-bot show dns.j2
 @j-bot show hosts
-@j-bot dev=Openconfig_Routers template openconfig_bgp.j2 --check
-@j-bot dev=MX240-04 template openconfig_bgp.j2 --check --diff
-@j-bot dev=Openconfig_Routers template openconfig_bgp.j2
-@j-bot dev=FR-MX80-214 show bgp summary 
-@j-bot dev=Openconfig_Routers rollback 1
+@j-bot dev=all template dns.j2 --check
+@j-bot dev=leaf-02 dns.j2 --check --diff
+@j-bot dev=leaf-02 template dns.j2
+@j-bot dev=leaf-02 rollback 1
 ```
 
 ### Installation instructions: 
