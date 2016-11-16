@@ -11,9 +11,9 @@ You will find into this repo:
   - [How does it work](https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/README.MD#how-does-it-work)
   - [Chat syntax](https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/README.MD#chat-syntax)
   - [Usage examples](https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/README.MD#usage-examples)
-- The [installation instructions](https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/README.MD#installation-instructions) if you want to install it yourself, and [dockerfile](https://github.com/ksator/chatops_junos/tree/master/dockerfile) if you prefer [a dockerized and slack integrated hubot for Junos automation](https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/README.MD#a-dockerized-and-slack-integrated-hubot-for-junos-automation)  
-- The [bot dictionnary](https://github.com/ksator/chatops_junos/blob/master/scripts/junos_automation.coffee). It defines the bot actions based on chat messages (Hubot scripts are written in CoffeeScript, and have to live in the "scripts" directory).   
-- the [network automation content](https://github.com/ksator/chatops_junos/tree/master/automation_content) the bot uses (python scripts, ansible playbooks, jinja2 templates ...)  
+- The [installation instructions](https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/README.MD#installation-instructions) if you want to install it yourself, and [dockerfile](https://github.com/ksator/junos-automation-with-chatops-in-ams/tree/master/dockerfile) if you prefer [a dockerized and slack integrated hubot for Junos automation](https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/README.MD#a-dockerized-and-slack-integrated-hubot-for-junos-automation)  
+- The [bot dictionnary](https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/scripts/junos_automation.coffee). It defines the bot actions based on chat messages (Hubot scripts are written in CoffeeScript, and have to live in the "scripts" directory).   
+- the [network automation content](https://github.com/ksator/junos-automation-with-chatops-in-ams/tree/master/automation_content) the bot uses (python scripts, ansible playbooks, jinja2 templates ...)  
 
 ### Bot capabilities:
 So far you can use slack to delegate the following tasks to the bot:
@@ -31,12 +31,12 @@ This is easily extensible to other tasks. You just need to create more automatio
 
 ##### Hubot scripts
 Hubot scripts are written in CoffeeScript.    
-Hubot executes all the scripts defined into the directory [**scripts**](https://github.com/ksator/chatops_junos/blob/master/scripts).    
-The dictionnary for network automation is the file [**junos_automation.coffee**] (https://github.com/ksator/chatops_junos/blob/master/scripts/junos_automation.coffee).  
+Hubot executes all the scripts defined into the directory [**scripts**](https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/scripts).    
+The dictionnary for network automation is the file [**junos_automation.coffee**] (https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/scripts/junos_automation.coffee).  
 This is where we define the various actions the bot has to take based on the slack messages in the chat room.  
 
 ##### Automation content
-The bot is configured to execute the automation content (Ansible playbooks, python scripts ...) defined into the directory [**automation_content**] (https://github.com/ksator/chatops_junos/tree/master/automation_content)
+The bot is configured to execute the automation content (Ansible playbooks, python scripts ...) defined into the directory [**automation_content**] (https://github.com/ksator/junos-automation-with-chatops-in-ams/tree/master/automation_content)
 
 ##### Example
 So, as example, the slack message:   
@@ -48,7 +48,7 @@ or
 hubot_name dev=<target> template <template>
 ```
 configures the device (or the group of devices) \<target> with the template \<template>.  
-Actually, this slack message triggers the ansible playbook [**pb.template.yml**](https://github.com/ksator/chatops_junos/blob/master/ansible/pb.template.yml) with some variable definitions (using the --extra-vars option to pass the variables definition to the playbook):   
+Actually, this slack message triggers the ansible playbook [**pb.template.yml**](https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/ansible/pb.template.yml) with some variable definitions (using the --extra-vars option to pass the variables definition to the playbook):   
 The bot will execute this command:  
 ```
 ansible-playbook $PWD/automation_content/pb.template.yml --extra-vars = "{'device': <target>, 'template': <template>}"
@@ -61,92 +61,92 @@ ansible-playbook $PWD/automation_content/pb.template.yml --extra-vars "device=<t
 ### Chat syntax: 
 Here’s the chat syntax to delegate tasks to the bot:  
 
-Notes: \<target> can refer to a device or to a group of devices. The value for \<target> in the chat messages has to be define in the  [**hosts**] (https://github.com/ksator/chatops_junos/blob/master/automation_content/hosts) file (this is the ansible inventory).     
+Notes: \<target> can refer to a device or to a group of devices. The value for \<target> in the chat messages has to be define in the  [**hosts**] (https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/automation_content/hosts) file (this is the ansible inventory).     
 
 ##### Backup the configuration of \<target>
-It run under the hood the playbook [**pb.backup.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.backup.yml) with the variable \<target>. 
+It run under the hood the playbook [**pb.backup.yml**](https://github.com/ksator/junos-automation-with-chatops-in-ams/tree/master/automation_content/pb.backup.yml) with the variable \<target>. 
 ```
 @hubot_name dev=<target> backup 
 ```
 ##### Rollback \<rb_id> the configuration of \<target>
-Run under the hood the playbook [**pb.rollback.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.rollback.yml) with the variables \<target> and \<rb_id>.
+Run under the hood the playbook [**pb.rollback.yml**](https://github.com/ksator/junos-automation-with-chatops-in-ams/tree/master/automation_content/pb.rollback.yml) with the variables \<target> and \<rb_id>.
 ```
 @hubot_name dev=<target> rollback <rb_id>
 ```
 ##### Execute a Junos set command on \<target> 
-Run under the hood the playbook [**pb.config.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.config.yml) with the variables \<target> and \<command>.  
+Run under the hood the playbook [**pb.config.yml**](https://github.com/ksator/junos-automation-with-chatops-in-ams/tree/master/automation_content/pb.config.yml) with the variables \<target> and \<command>.  
 Add "--diff" to display the differences, add "--check" for a dry run.  
 ```
 @hubot_name dev=<target> set <command>
 ```
 ##### Execute a Junos delete command on \<target> 
-Run under the hood the playbook [**pb.config.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.config.yml) with the variables \<target> and \<command>.
+Run under the hood the playbook [**pb.config.yml**](https://github.com/ksator/junos-automation-with-chatops-in-ams/tree/master/automation_content/pb.config.yml) with the variables \<target> and \<command>.
 ```
 @hubot_name dev=<target> delete <command>
 ```
 ##### Execute a Junos show command on \<target> and print the command output  
-Run under the hood the playbook [**pb.command.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.command.yml) with the variables \<target> anc \<command>.  
+Run under the hood the playbook [**pb.command.yml**](https://github.com/ksator/junos-automation-with-chatops-in-ams/tree/master/automation_content/pb.command.yml) with the variables \<target> anc \<command>.  
 You can use "show" or "sh".  
 ```
 @hubot_name dev=<target> show <command>
 ```
 ##### Configure an ebgp neighbor on the device \<target>  
-Run under the hood the playbook [**pb.add.ebgp.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.add.ebgp.yml) with the variables \<target> and \<peer_ip> and \<peer_asn>.  
+Run under the hood the playbook [**pb.add.ebgp.yml**](https://github.com/ksator/junos-automation-with-chatops-in-ams/tree/master/automation_content/pb.add.ebgp.yml) with the variables \<target> and \<peer_ip> and \<peer_asn>.  
 You can use "neighbor" or "neigh".  
 Add "--diff" to display the differences, add "--check" for a dry run.  
 ```
 @hubot_name dev=<target> add bgp neighbor <peer_ip> as <peer_asn>
 ```
 ##### Retrieve on the device \<target> the bgp state for the neighbor \<peer_ip>, and print it 
-Run under the hood the playbook [**pb.check.bgp.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.check.bgp.yml) with the variables \<target> and \<peer_ip>  
+Run under the hood the playbook [**pb.check.bgp.yml**](https://github.com/ksator/junos-automation-with-chatops-in-ams/tree/master/automation_content/pb.check.bgp.yml) with the variables \<target> and \<peer_ip>  
 ```
 @hubot_name dev=<target> get bgp state <peer_ip>
 ```
 ##### Delete an existing ebgp neighbor on the device \<target>  
-Run under the hood the playbook [**pb.remove.ebgp.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.remove.ebgp.yml) with the variables \<target> and \<peer_ip>  
+Run under the hood the playbook [**pb.remove.ebgp.yml**](https://github.com/ksator/junos-automation-with-chatops-in-ams/tree/master/automation_content/pb.remove.ebgp.yml) with the variables \<target> and \<peer_ip>  
 You can use "remove" or "rm", you can use "neighbor" or "neigh".   
 ```
 @hubot_name dev=<target> remove bgp neighbor <peer_ip>
 ```
 ##### Backup the configuration of \<target>, and apply the jinja2 template \<template> to \<target>  
-Run under the hood the playbook [**pb.template.yml**](https://github.com/ksator/chatops_junos/tree/master/automation_content/pb.template.yml) with the variables \<target> and \<template>. 
-The jinja2 template \<template> has to be defined into the directory [**automation_content**] (https://github.com/ksator/chatops_junos/blob/master/automation_content).   
+Run under the hood the playbook [**pb.template.yml**](https://github.com/ksator/junos-automation-with-chatops-in-ams/tree/master/automation_content/pb.template.yml) with the variables \<target> and \<template>. 
+The jinja2 template \<template> has to be defined into the directory [**automation_content**] (https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/automation_content).   
 Add "--diff" to display the differences, add "--check" for a dry run.  
 ```
 @hubot_name dev=<target> template <template>
 ```
 ##### Execute the Ansible playbook \<playbook> on \<target>  
-The Ansible playbook \<playbook> has to be defined into the directory [**automation_content**] (https://github.com/ksator/chatops_junos/blob/master/automation_content).  
+The Ansible playbook \<playbook> has to be defined into the directory [**automation_content**] (https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/automation_content).  
 Add "--diff" to display the differences, add "--check" for a dry run.
 ```
 @hubot_name dev=<target> playbook <playbook>
 ```
 ##### Execute the python script \<script> and print the program output  
-The python script has to be defined into the directory [**automation_content**] (https://github.com/ksator/chatops_junos/blob/master/automation_content).  
+The python script has to be defined into the directory [**automation_content**] (https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/automation_content).  
 ```
 @hubot_name python <script>
 ```
-##### Print the list of Ansible playbooks defined into the directory [**automation_content**] (https://github.com/ksator/chatops_junos/blob/master/automation_content).  
+##### Print the list of Ansible playbooks defined into the directory [**automation_content**] (https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/automation_content).  
 You can use "list" or "ls"
 ```
 @hubot_name list playbooks
 ```
-##### Print the list of Jinja2 templates defined into the directory [**automation_content**] (https://github.com/ksator/chatops_junos/blob/master/automation_content).    
+##### Print the list of Jinja2 templates defined into the directory [**automation_content**] (https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/automation_content).    
 You can use "list" or "ls"
 ```
 @hubot_name list templates
 ```
-##### Print the list of Python scripts defined into the directory [**automation_content**] (https://github.com/ksator/chatops_junos/blob/master/automation_content).  
+##### Print the list of Python scripts defined into the directory [**automation_content**] (https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/automation_content).  
 You can use "list" or "ls"
 ```
 @hubot_name list python scripts
 ```
-##### Print a file (playbook, template, python scripts ...) defined in the directory [**automation_content**] (https://github.com/ksator/chatops_junos/blob/master/automation_content)    
+##### Print a file (playbook, template, python scripts ...) defined in the directory [**automation_content**] (https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/automation_content)    
 You can use "show" or "sh"
 ```
 @hubot_name show <file>
 ```
-##### Print the [**hosts**] (https://github.com/ksator/chatops_junos/blob/master/automation_content/hosts) file (It has the valid values for \<target>)    
+##### Print the [**hosts**] (https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/automation_content/hosts) file (It has the valid values for \<target>)    
 You can use "show" or "sh"
 ```
 @hubot_name show hosts
@@ -259,9 +259,9 @@ sudo ansible-galaxy install Juniper.junos
 ```
 -	Create your automation content.  
 You can do it on the same VM that has the bot, so the bot doesnt need to use API to consume the automation content.   
-My automation content is based on Ansible and Python: https://github.com/ksator/chatops_junos/tree/master/automation_content.   
+My automation content is based on Ansible and Python: https://github.com/ksator/junos-automation-with-chatops-in-ams/tree/master/automation_content.   
 -	Create a script (the bot dictionnary) that tell your bot what to do based on the slack messages in the chat room. It has to live in the directory "scripts".    
-Here’s the dictionnary I am using https://github.com/ksator/chatops_junos/blob/master/scripts/junos_automation.coffee.  
+Here’s the dictionnary I am using https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/scripts/junos_automation.coffee.  
 - if you want to interact with your bot locally (i.e with the shell adapter, instead of the slack adaptor) (useful for testing), you can run this command: 
 ```
 bin/hubot
@@ -273,7 +273,7 @@ j-bot> exit
 - create a slack team (https://slack.com/) 
 -	Optionally, invite humans to the slack team 
 -	Optionally, integrate some tools into various channels of this slack team.  
-Github, Ansible, Travis CI, ... can send slack notifications. So you can receive slack notifications on channels from Github (each time there is a change on your github repositories), from TravisCI (each time it will finish to run its tests), from Ansible (if you use the [ansible slack notification module](http://docs.ansible.com/ansible/slack_module.html) in your playbooks. Here's an [example](https://github.com/ksator/chatops_junos/blob/master/automation_content/pb.add.ebgp.yml)).
+Github, Ansible, Travis CI, ... can send slack notifications. So you can receive slack notifications on channels from Github (each time there is a change on your github repositories), from TravisCI (each time it will finish to run its tests), from Ansible (if you use the [ansible slack notification module](http://docs.ansible.com/ansible/slack_module.html) in your playbooks. Here's an [example](https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/automation_content/pb.add.ebgp.yml)).
 -	Integrate your bot in your slack team  
 - the bot should now appear in the chat room. its slack status should appear as "away" in the chat room. 
 - launch the bot, with a slack adaptor, and the token generated when you integrated the bot to the slack team: 
