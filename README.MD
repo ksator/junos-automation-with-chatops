@@ -157,15 +157,19 @@ You can use "show" or "sh"
 ##### To get the help: 
 ```
 @j-bot help
+```
+```
 @j-bot help bgp
 ```
 ##### To pass a junos command (set/show/delete) to devices: 
 ```
 @j-bot show hosts
-@j-bot dev=MX240-04 set interfaces xe-1/0/0 description newdesc
-@j-bot dev=MX240-04 show interfaces descriptions
-@j-bot dev=MX240-04 set interfaces xe-1/0/0 description anotherdesc --check --diff
-@j-bot dev=MX240-04 delete interfaces xe-1/0/0 description
+```
+```
+@j-bot dev=leaf-04 set interfaces xe-1/0/0 description newdesc
+@j-bot dev=leaf-04 show interfaces descriptions
+@j-bot dev=leaf-04 set interfaces xe-1/0/0 description anotherdesc --check --diff
+@j-bot dev=leaf-04 delete interfaces xe-1/0/0 description
 ```
 ##### To roll back the junos configuration on devices:  
 ```
@@ -180,13 +184,21 @@ You can use "show" or "sh"
 ##### To manage bgp neighbors (add/audit/remove bgp neighbors) on devices:  
 ```
 @j-bot help bgp
-@j-bot dev=FR-MX80-214 add bgp neighbor 10.10.0.1 as 65001 --check --diff
-@j-bot dev=FR-MX80-214 add bgp neighbor 10.10.0.1 as 65001
-@j-bot dev=MX240-04 add bgp neigh 10.10.0.2 as 65000 --check 
-@j-bot dev=MX240-04 add bgp neigh 10.10.0.2 as 65000 --diff
-@j-bot dev=MX240-04 get bgp state 10.10.0.2
-@j-bot dev=MX240-04 remove bgp neighbor 10.10.0.2
-@j-bot dev=FR-MX80-214 rm bgp neighbor 10.10.0.1
+```
+```
+@j-bot dev=leaf-03 add bgp neighbor 172.16.0.28 as 65014 --check --diff
+@j-bot dev=leaf-03 add bgp neighbor 172.16.0.28 as 65014
+```
+```
+@j-bot dev=spine-04 add bgp neigh 172.16.0.29 as 65023 --check 
+@j-bot dev=spine-04 add bgp neigh 172.16.0.29 as 65023 --diff
+```
+```
+@j-bot dev=spine-04 get bgp state 172.16.0.29
+```
+```
+@j-bot dev=leaf-03 remove bgp neighbor 172.16.0.28
+@j-bot dev=spine-04 rm bgp neighbor 172.16.0.29
 ```
 ##### To execute a python script: 
 ```
@@ -197,10 +209,11 @@ You can use "show" or "sh"
 ##### To execute an Ansible playbook: 
 ```
 @j-bot list playbooks
-@j-bot show pb.check.physical.topology.yml
+@j-bot show pb.check.interfaces.yml
+@j-bot sh pb.conf.bgp.oc.yml
 @j-bot show hosts
-@j-bot dev=FR-MX80-214 playbook pb.check.physical.topology.yml
-@j-bot dev=FR-MX80-214 playbook pb.ping.yml
+@j-bot dev=fabric playbook pb.check.interfaces.yml
+@j-bot dev=fabric playbook pb.conf.bgp.oc.yml
 ```
 ##### To load on junos devices a configuration based on a jinja2 template 
 ```
