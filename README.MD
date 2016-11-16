@@ -210,7 +210,7 @@ You can use "show" or "sh"
 @j-bot show dns.j2
 @j-bot show hosts
 @j-bot dev=all template dns.j2 --check
-@j-bot dev=leaf-02 dns.j2 --check --diff
+@j-bot dev=leaf-02 template dns.j2 --check --diff
 @j-bot dev=leaf-02 template dns.j2
 @j-bot dev=leaf-02 rollback 1
 ```
