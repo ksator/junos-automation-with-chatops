@@ -1,0 +1,8 @@
+system {
+    name-server {
+        {% for item in  DNSSRVs %}
+        {{ item }};
+        {% endfor %}
+    }
+}
+

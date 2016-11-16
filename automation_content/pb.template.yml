@@ -11,7 +11,7 @@
       #http://docs.ansible.com/ansible/junos_template_module.html
       provider: "{{  credentials }}"
       src: "{{ playbook_dir }}/{{ template }}"
-      comment: "configuration from Ansible"
+      comment: "configuration commited by playbook pb.template.yml with template {{ template }}"
       backup: true
       
    - name: Send Slack notification

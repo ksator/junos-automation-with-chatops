@@ -11,7 +11,7 @@
       #http://docs.ansible.com/ansible/junos_template_module.html
       provider: "{{  credentials }}"
       src: "{{ playbook_dir }}/add_ebgp.j2"
-      comment: "add ebgp neighbor from Ansible"
+      comment: "add ebgp neighbor from Ansible playbook pb.add.ebgp.yml"
       
    - name: Send Slack notification
      local_action:

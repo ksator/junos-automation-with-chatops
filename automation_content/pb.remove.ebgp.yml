@@ -12,7 +12,7 @@
       provider: "{{  credentials }}"
       src: "{{ playbook_dir }}/remove_ebgp.j2"
       config_format: set
-      comment: "remove an ebgp neighbor. Configuration done by Ansible"
+      comment: "remove an ebgp neighbor. Configuration done by Ansible playbook pb.remove.ebgp.yml"
       
    - name: Send Slack notification
      local_action:

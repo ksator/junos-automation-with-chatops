@@ -249,3 +249,184 @@
 2016-10-28 08:11:18,188:CONFIG:172.30.108.210:unlocking
 2016-10-28 08:11:18,189:ncclient.operations.rpc:Requesting 'ExecuteRpc'
 2016-10-28 08:11:18,266:ncclient.operations.rpc:Requesting 'CloseSession'
+2016-11-15 19:24:27,725:CONFIG:172.30.179.95:connecting to host: pytraining@172.30.179.95:830
+2016-11-15 19:24:27,781:CONFIG:172.30.179.65:connecting to host: pytraining@172.30.179.65:830
+2016-11-15 19:24:27,784:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.4)
+2016-11-15 19:24:27,838:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.4)
+2016-11-15 19:24:27,860:CONFIG:172.30.179.96:connecting to host: pytraining@172.30.179.96:830
+2016-11-15 19:24:27,918:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.4)
+2016-11-15 19:24:28,119:ncclient.transport.ssh:Authentication (password) successful!
+2016-11-15 19:24:28,175:ncclient.transport.ssh:Authentication (password) successful!
+2016-11-15 19:24:28,216:ncclient.transport.ssh:Authentication (password) successful!
+2016-11-15 19:24:29,550:ncclient.transport.session:initialized: session-id=36685 | server_capabilities=<dictionary-keyiterator object at 0x7f3a794958e8>
+2016-11-15 19:24:29,551:CONFIG:172.30.179.95:taking lock
+2016-11-15 19:24:29,552:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-15 19:24:29,559:ncclient.transport.session:initialized: session-id=95246 | server_capabilities=<dictionary-keyiterator object at 0x7eff493e0940>
+2016-11-15 19:24:29,560:CONFIG:172.30.179.65:taking lock
+2016-11-15 19:24:29,560:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-15 19:24:29,598:ncclient.transport.session:initialized: session-id=47711 | server_capabilities=<dictionary-keyiterator object at 0x7f29fc1048e8>
+2016-11-15 19:24:29,599:CONFIG:172.30.179.96:taking lock
+2016-11-15 19:24:29,599:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-15 19:24:29,674:CONFIG:172.30.179.95:Rolling back to: 1
+2016-11-15 19:24:29,675:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-15 19:24:29,676:CONFIG:172.30.179.65:Rolling back to: 1
+2016-11-15 19:24:29,677:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-15 19:24:29,715:CONFIG:172.30.179.96:Rolling back to: 1
+2016-11-15 19:24:29,715:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-15 19:24:29,894:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-15 19:24:29,932:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-15 19:24:29,941:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-15 19:24:30,161:CONFIG:172.30.179.65:committing change, please be patient
+2016-11-15 19:24:30,161:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-15 19:24:30,208:CONFIG:172.30.179.95:committing change, please be patient
+2016-11-15 19:24:30,208:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-15 19:24:30,298:CONFIG:172.30.179.96:committing change, please be patient
+2016-11-15 19:24:30,299:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-15 19:24:35,187:CONFIG:172.30.179.95:change completed
+2016-11-15 19:24:35,188:CONFIG:172.30.179.95:unlocking
+2016-11-15 19:24:35,188:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-15 19:24:35,241:CONFIG:172.30.179.65:change completed
+2016-11-15 19:24:35,242:CONFIG:172.30.179.65:unlocking
+2016-11-15 19:24:35,242:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-15 19:24:35,354:ncclient.operations.rpc:Requesting 'CloseSession'
+2016-11-15 19:24:35,358:ncclient.operations.rpc:Requesting 'CloseSession'
+2016-11-15 19:24:35,484:CONFIG:172.30.179.96:change completed
+2016-11-15 19:24:35,484:CONFIG:172.30.179.96:unlocking
+2016-11-15 19:24:35,485:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-15 19:24:36,051:ncclient.operations.rpc:Requesting 'CloseSession'
+2016-11-16 11:58:31,278:CONFIG:172.30.54.146:connecting to host: lab@172.30.54.146:830
+2016-11-16 11:58:31,278:CONFIG:172.30.54.235:connecting to host: lab@172.30.54.235:830
+2016-11-16 11:58:31,343:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_7.1)
+2016-11-16 11:58:31,343:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_7.1)
+2016-11-16 11:58:31,772:ncclient.transport.ssh:Auth banner: Welcome to EMEA SLAB 
+
+2016-11-16 11:58:31,773:ncclient.transport.ssh:Authentication (password) successful!
+2016-11-16 11:58:31,798:ncclient.transport.ssh:Auth banner: Welcome to EMEA SLAB 
+
+2016-11-16 11:58:31,799:ncclient.transport.ssh:Authentication (password) successful!
+2016-11-16 11:58:33,393:ncclient.transport.session:initialized: session-id=55479 | server_capabilities=<dictionary-keyiterator object at 0x7f044fb7b940>
+2016-11-16 11:58:33,393:CONFIG:172.30.54.146:taking lock
+2016-11-16 11:58:33,394:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-16 11:58:33,395:ncclient.transport.session:initialized: session-id=47683 | server_capabilities=<dictionary-keyiterator object at 0x7faba23a8940>
+2016-11-16 11:58:33,395:CONFIG:172.30.54.235:taking lock
+2016-11-16 11:58:33,396:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-16 11:58:33,661:CONFIG:172.30.54.146:Rolling back to: 1
+2016-11-16 11:58:33,661:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-16 11:58:33,662:CONFIG:172.30.54.235:Rolling back to: 1
+2016-11-16 11:58:33,663:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-16 11:58:33,827:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-16 11:58:33,828:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-16 11:58:34,293:CONFIG:172.30.54.146:committing change, please be patient
+2016-11-16 11:58:34,294:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-16 11:58:35,099:CONFIG:172.30.54.235:committing change, please be patient
+2016-11-16 11:58:35,100:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-16 11:58:42,486:CONFIG:172.30.54.146:change completed
+2016-11-16 11:58:42,486:CONFIG:172.30.54.146:unlocking
+2016-11-16 11:58:42,487:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-16 11:58:42,603:ncclient.operations.rpc:Requesting 'CloseSession'
+2016-11-16 11:58:45,394:CONFIG:172.30.54.235:change completed
+2016-11-16 11:58:45,394:CONFIG:172.30.54.235:unlocking
+2016-11-16 11:58:45,395:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-16 11:58:45,560:ncclient.operations.rpc:Requesting 'CloseSession'
+2016-11-16 12:06:04,042:CONFIG:172.30.54.146:connecting to host: lab@172.30.54.146:830
+2016-11-16 12:06:04,072:CONFIG:172.30.54.235:connecting to host: lab@172.30.54.235:830
+2016-11-16 12:06:04,105:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_7.1)
+2016-11-16 12:06:04,138:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_7.1)
+2016-11-16 12:06:04,548:ncclient.transport.ssh:Auth banner: Welcome to EMEA SLAB 
+
+2016-11-16 12:06:04,548:ncclient.transport.ssh:Authentication (password) successful!
+2016-11-16 12:06:04,594:ncclient.transport.ssh:Auth banner: Welcome to EMEA SLAB 
+
+2016-11-16 12:06:04,595:ncclient.transport.ssh:Authentication (password) successful!
+2016-11-16 12:06:06,144:ncclient.transport.session:initialized: session-id=56326 | server_capabilities=<dictionary-keyiterator object at 0x7f7efc126940>
+2016-11-16 12:06:06,145:CONFIG:172.30.54.146:taking lock
+2016-11-16 12:06:06,146:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-16 12:06:06,184:ncclient.transport.session:initialized: session-id=48530 | server_capabilities=<dictionary-keyiterator object at 0x7fafa2ae5940>
+2016-11-16 12:06:06,185:CONFIG:172.30.54.235:taking lock
+2016-11-16 12:06:06,185:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-16 12:06:06,412:CONFIG:172.30.54.146:Rolling back to: 1
+2016-11-16 12:06:06,412:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-16 12:06:06,452:CONFIG:172.30.54.235:Rolling back to: 1
+2016-11-16 12:06:06,453:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-16 12:06:06,629:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-16 12:06:06,669:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-16 12:06:07,045:CONFIG:172.30.54.146:committing change, please be patient
+2016-11-16 12:06:07,046:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-16 12:06:07,587:CONFIG:172.30.54.235:committing change, please be patient
+2016-11-16 12:06:07,587:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-16 12:06:15,483:CONFIG:172.30.54.146:change completed
+2016-11-16 12:06:15,483:CONFIG:172.30.54.146:unlocking
+2016-11-16 12:06:15,484:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-16 12:06:15,650:ncclient.operations.rpc:Requesting 'CloseSession'
+2016-11-16 12:06:18,028:CONFIG:172.30.54.235:change completed
+2016-11-16 12:06:18,028:CONFIG:172.30.54.235:unlocking
+2016-11-16 12:06:18,029:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-16 12:06:18,194:ncclient.operations.rpc:Requesting 'CloseSession'
+2016-11-16 14:00:24,051:CONFIG:172.30.54.235:connecting to host: lab@172.30.54.235:830
+2016-11-16 14:00:24,123:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_7.1)
+2016-11-16 14:00:24,172:CONFIG:172.30.54.146:connecting to host: lab@172.30.54.146:830
+2016-11-16 14:00:24,240:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_7.1)
+2016-11-16 14:00:24,510:ncclient.transport.ssh:Auth banner: Welcome to EMEA SLAB 
+
+2016-11-16 14:00:24,510:ncclient.transport.ssh:Authentication (password) successful!
+2016-11-16 14:00:24,629:ncclient.transport.ssh:Auth banner: Welcome to EMEA SLAB 
+
+2016-11-16 14:00:24,629:ncclient.transport.ssh:Authentication (password) successful!
+2016-11-16 14:00:26,126:ncclient.transport.session:initialized: session-id=50189 | server_capabilities=<dictionary-keyiterator object at 0x7f0108606940>
+2016-11-16 14:00:26,127:CONFIG:172.30.54.235:taking lock
+2016-11-16 14:00:26,127:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-16 14:00:26,243:ncclient.transport.session:initialized: session-id=57983 | server_capabilities=<dictionary-keyiterator object at 0x7f212c6dd940>
+2016-11-16 14:00:26,243:CONFIG:172.30.54.146:taking lock
+2016-11-16 14:00:26,244:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-16 14:00:26,393:CONFIG:172.30.54.235:Rolling back to: 1
+2016-11-16 14:00:26,394:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-16 14:00:26,510:CONFIG:172.30.54.146:Rolling back to: 1
+2016-11-16 14:00:26,511:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-16 14:00:26,560:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-16 14:00:26,726:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-16 14:00:27,143:CONFIG:172.30.54.146:committing change, please be patient
+2016-11-16 14:00:27,144:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-16 14:00:27,678:CONFIG:172.30.54.235:committing change, please be patient
+2016-11-16 14:00:27,679:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-16 14:00:43,293:CONFIG:172.30.54.146:change completed
+2016-11-16 14:00:43,294:CONFIG:172.30.54.146:unlocking
+2016-11-16 14:00:43,294:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-16 14:00:43,460:ncclient.operations.rpc:Requesting 'CloseSession'
+2016-11-16 14:00:47,840:CONFIG:172.30.54.235:change completed
+2016-11-16 14:00:47,840:CONFIG:172.30.54.235:unlocking
+2016-11-16 14:00:47,841:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-16 14:00:48,559:ncclient.operations.rpc:Requesting 'CloseSession'
+2016-11-16 14:05:12,682:CONFIG:172.30.54.235:connecting to host: lab@172.30.54.235:830
+2016-11-16 14:05:12,750:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_7.1)
+2016-11-16 14:05:12,758:CONFIG:172.30.54.146:connecting to host: lab@172.30.54.146:830
+2016-11-16 14:05:12,825:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_7.1)
+2016-11-16 14:05:13,151:ncclient.transport.ssh:Auth banner: Welcome to EMEA SLAB 
+
+2016-11-16 14:05:13,151:ncclient.transport.ssh:Authentication (password) successful!
+2016-11-16 14:05:13,231:ncclient.transport.ssh:Auth banner: Welcome to EMEA SLAB 
+
+2016-11-16 14:05:13,231:ncclient.transport.ssh:Authentication (password) successful!
+2016-11-16 14:05:14,744:ncclient.transport.session:initialized: session-id=50432 | server_capabilities=<dictionary-keyiterator object at 0x7f94047ea940>
+2016-11-16 14:05:14,745:CONFIG:172.30.54.235:taking lock
+2016-11-16 14:05:14,746:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-16 14:05:14,823:ncclient.transport.session:initialized: session-id=58226 | server_capabilities=<dictionary-keyiterator object at 0x7f10a00b7940>
+2016-11-16 14:05:14,824:CONFIG:172.30.54.146:taking lock
+2016-11-16 14:05:14,826:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-16 14:05:15,013:CONFIG:172.30.54.235:Rolling back to: 1
+2016-11-16 14:05:15,014:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-16 14:05:15,094:CONFIG:172.30.54.146:Rolling back to: 1
+2016-11-16 14:05:15,095:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-16 14:05:15,231:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-16 14:05:15,263:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-16 14:05:15,681:CONFIG:172.30.54.146:committing change, please be patient
+2016-11-16 14:05:15,682:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-16 14:05:16,555:CONFIG:172.30.54.235:committing change, please be patient
+2016-11-16 14:05:16,556:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-16 14:05:32,093:CONFIG:172.30.54.146:change completed
+2016-11-16 14:05:32,093:CONFIG:172.30.54.146:unlocking
+2016-11-16 14:05:32,094:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-16 14:05:32,209:ncclient.operations.rpc:Requesting 'CloseSession'
+2016-11-16 14:05:36,322:CONFIG:172.30.54.235:change completed
+2016-11-16 14:05:36,322:CONFIG:172.30.54.235:unlocking
+2016-11-16 14:05:36,323:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2016-11-16 14:05:36,740:ncclient.operations.rpc:Requesting 'CloseSession'

@@ -16,3 +16,14 @@
 
    - name: Print some bgp states
      debug: msg="bgp neighbor {{ peer_ip }} state is {{bgp.stdout[0]["bgp-information"]["bgp-peer"]["peer-state"]}}"
+
+ 
+
+
+
+
+
+
+
+
+

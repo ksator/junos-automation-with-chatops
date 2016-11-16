@@ -1,17 +1,86 @@
 [all:children]
-Openconfig_Routers
-AMS-all
+slab
+pytraining
 
-[Openconfig_Routers]
-FR-MX80-214  junos_host=172.30.108.214
-MX240-04     junos_host=172.30.108.210
+[slab:children]
+evpn-vxlan
+nsx
+server
 
-[AMS-all:children]
-AMS-EX4200
-AMS-EX4300
-AMS-MX
+[evpn-vxlan:children]
+fabric
+spine
+leaf
 
-[AMS-EX4200]
+[fabric]
+fabric-01   junos_host=172.30.54.235  
+fabric-02   junos_host=172.30.54.146  
+
+[spine:children]
+spine-mx
+spine-qfx
+
+[spine-qfx]
+spine-01    junos_host=172.30.54.107   
+spine-02    junos_host=172.30.54.108   
+
+[spine-mx]
+spine-03      junos_host=172.30.54.109  
+spine-04      junos_host=172.30.54.110  
+
+[leaf]
+leaf-01    junos_host=172.30.52.65    
+leaf-02    junos_host=172.30.52.66    
+leaf-03    junos_host=172.30.52.63    
+leaf-04    junos_host=172.30.52.64    
+
+[server]
+switch3  junos_host=172.30.54.23
+
+[pod1]
+spine-01
+spine-02
+leaf-01
+leaf-02
+
+[pod2]
+spine-03
+spine-04
+leaf-03
+leaf-04
+
+[qfx10000]
+spine-01
+spine-02
+
+[qfx5000]
+leaf-01
+leaf-02
+leaf-03
+leaf-04
+
+[mx]
+spine-03
+spine-04
+fabric-01
+fabric-02
+
+[nsx]
+qfx5100-115    junos_host=172.30.54.111    
+qfx5100-116    junos_host=172.30.54.112    
+qfx5100-117    junos_host=172.30.54.113    
+qfx5100-118    junos_host=172.30.54.114    
+
+[pytraining:children]
+ex4200
+ex4300
+
+[ex4300]
+ex4300-4    junos_host=172.30.179.65
+ex4300-9    junos_host=172.30.179.95
+ex4300-10   junos_host=172.30.179.96
+
+[ex4200]
 ex4200-2    junos_host=172.30.179.102
 ex4200-3    junos_host=172.30.179.103
 ex4200-4    junos_host=172.30.179.104
@@ -21,13 +90,6 @@ ex4200-9    junos_host=172.30.179.109
 ex4200-10   junos_host=172.30.179.110
 ex4200-11   junos_host=172.30.179.111
 
-[AMS-test]
+[test]
 ex4200-11
 
-[AMS-EX4300]
-ex4300-4    junos_host=172.30.179.65
-ex4300-9    junos_host=172.30.179.95
-ex4300-10   junos_host=172.30.179.96
-
-[AMS-MX]
-mx80-17 junos_host=172.30.177.170
