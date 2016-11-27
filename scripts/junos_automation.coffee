@@ -33,6 +33,7 @@
 #
 #   hubot python <script> - Execute the python script <script> and print the program output
 #
+#   hubot whois <target> - retrieve and print some facts about the device <target>. It run under the hood the python script whois.py with the variable <target>
 #
 # Author:
 #   Khelil Sator
@@ -192,6 +193,13 @@ module.exports = (robot) ->
      output = child_process.exec "python $PWD/automation_content/#{script}"
      output.stdout.on 'data', (data) ->
         msg.send data.toString()
+
+   robot.respond /whois (.*)/i, (msg) ->
+     msg.send msg.random initial_response
+     script = msg.match[1]
+     output = child_process.exec "python $PWD/automation_content/whois.py #{script}"
+     output.stdout.on 'data', (data) ->
+       msg.send data.toString()
 
    robot.respond /(list|ls) playbooks/i, (msg) ->
      child_process.exec "cd $PWD/automation_content && ls pb.*.yml && cd ..", (error, stdout, stderr) ->
