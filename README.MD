@@ -194,6 +194,13 @@ You can use "show" or "sh"
 @j-bot show get_facts.py
 @j-bot python get_facts.py
 ```
+```
+@j-bot help whois
+@j-bot show whois.py
+j-bot whois 172.30.52.65
+```
+
+
 ##### To execute an Ansible playbook: 
 ```
 @j-bot list playbooks
