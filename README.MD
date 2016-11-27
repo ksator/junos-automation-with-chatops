@@ -197,7 +197,7 @@ You can use "show" or "sh"
 ```
 @j-bot help whois
 @j-bot show whois.py
-j-bot whois 172.30.52.65
+@j-bot whois 172.30.52.65
 ```
 
 
