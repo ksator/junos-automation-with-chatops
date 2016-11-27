@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ksator/junos-automation-with-chatops-in-ams.svg?branch=master)](https://travis-ci.org/ksator/junos-automation-with-chatops-in-ams)
+
 ### About this repo:  
 This repository is about Chatops for network engineers  
 I was initially inspired by this demo https://www.dravetech.com/blog/2016/03/30/chatops-demo.html  
