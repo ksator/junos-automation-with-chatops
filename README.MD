@@ -304,6 +304,7 @@ So this simplifies and automates part of the [installation instructions](https:/
 
 Requirements: 
 - you need git and docker on your laptop.   
+It works with docker 1.12.1 and 1.13.0 but fails with 1.13.1  
 
 Here's the instructions to use it:  
 - clone locally the repository
