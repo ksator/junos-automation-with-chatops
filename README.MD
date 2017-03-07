@@ -5,7 +5,8 @@ This repository is about Chatops for network engineers
 I was initially inspired by this demo https://www.dravetech.com/blog/2016/03/30/chatops-demo.html  
 The repo is actually based on slack and hubot and content for junos automation (ansible playbooks, python scripts, jinja2 templates ...).   
 So you can delegate junos automation tasks chatting to hubot with slack.  
-There is also a chatbot for OpenContrail https://www.youtube.com/watch?v=06aEYYb4cMg 
+
+There is also a chatbot demo for OpenContrail https://www.youtube.com/watch?v=06aEYYb4cMg 
 
 ### What to find on this repo  
 You will find into this repo: 
