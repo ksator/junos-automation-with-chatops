@@ -232,28 +232,33 @@ The next section [(a dockerized and slack integrated hubot for junos automation)
 
 - Install hubot  
   - I installed it on an ubuntu 14.04 VM  following the below steps:   
-    - Install node.js and npm (npm is the package manager for JavaScript) 
+    - Install node.js and npm (npm is the package manager for JavaScript)  
+    
     ```
     curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
     sudo apt-get install -y nodejs
     node -v
     ```    
     - Update npm   
+    
     ```
     sudo npm install npm@latest -g
     npm -v
     ```    
-    - Install the hubot generator
+    - Install the hubot generator  
+    
     ```
     sudo npm install -g yo generator-hubot
     ```
-    - Create a new directory (call him hubot)
+    - Create a new directory (call him hubot)  
+    
     ``` 
     mkdir hubot
     ```
     - move to the new directory and generate a new instance of hubot running the command "yo hubot".  
     if you prefer to automate your hubot build without being interactively prompted for its configuration, you can add the following
-    options to the "yo hubot" command.
+    options to the "yo hubot" command.  
+    
     ```
     cd hubot
     yo hubot --owner="your name <user@email.com>" --name="j-bot" --description="Junos automation" --adapter="slack" --defaults
@@ -262,6 +267,7 @@ The next section [(a dockerized and slack integrated hubot for junos automation)
 - Install the automation tools (Ansible, python libraries ...) required to execute your automation content.  
 You can do it on the same VM that has the bot, so the bot doesnt need to use API to consume the automation content.   
 Here's the instructions to install some Python libraries for Junos automation (PyEZ, jsnapy, junos-netconify) and Ansible and the Ansible roles for Junos.  
+
 ```
 sudo apt-get update 
 sudo apt-get install -y python-dev libxml2-dev python-pip libxslt1-dev build-essential libssl-dev libffi-dev 
@@ -273,7 +279,8 @@ You can do it on the same VM that has the bot, so the bot doesnt need to use API
 My automation content is based on Ansible and Python: https://github.com/ksator/junos-automation-with-chatops-in-ams/tree/master/automation_content.   
 -	Create a script (the bot dictionnary) that tell your bot what to do based on the slack messages in the chat room. It has to live in the directory "scripts".    
 Here’s the dictionnary I am using https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/scripts/junos_automation.coffee.  
-- if you want to interact with your bot locally (i.e with the shell adapter, instead of the slack adaptor) (useful for testing), you can run this command: 
+- if you want to interact with your bot locally (i.e with the shell adapter, instead of the slack adaptor) (useful for testing), you can run this command:  
+
 ```
 bin/hubot
 j-bot> j-bot help
@@ -287,7 +294,8 @@ j-bot> exit
 Github, Ansible, Travis CI, ... can send slack notifications. So you can receive slack notifications on channels from Github (each time there is a change on your github repositories), from TravisCI (each time it will finish to run its tests), from Ansible (if you use the [ansible slack notification module](http://docs.ansible.com/ansible/slack_module.html) in your playbooks. Here's an [example](https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/automation_content/pb.add.ebgp.yml)).
 -	Integrate your bot in your slack team  
 - the bot should now appear in the chat room. its slack status should appear as "away" in the chat room. 
-- launch the bot, with a slack adaptor, and the token generated when you integrated the bot to the slack team: 
+- launch the bot, with a slack adaptor, and the token generated when you integrated the bot to the slack team:  
+
 ```
 HUBOT_SLACK_TOKEN=xxxxxxxxxx ./bin/hubot -a slack
 ```
@@ -309,11 +317,13 @@ Requirements:
 It works with docker 1.12.1 and 1.13.0 but fails with 1.13.1  
 
 Here's the instructions to use it:  
-- clone locally the repository
+- clone locally the repository  
+
 ```
 git clone https://github.com/ksator/junos-automation-with-chatops-in-ams.git
 ```
-- move to your local repository
+- move to your local repository  
+
 ```
 cd junos-automation-with-chatops
 ```
@@ -335,14 +345,16 @@ cd junos-automation-with-chatops
   it is not required to change it. 
   - The **dockerfile** is ta the root of the repository.  
   it is not required to change it. 
-- create a docker image based on the local dockerfile
+- create a docker image based on the local dockerfile  
+
 ```
 docker build -t j-bot-image .
 ```
 - Instanciate the docker image to get a container. Use the following options: 
   - -e to set the environement variable HUBOT_SLACK_TOKEN with the token provided by slack when you integrated the bot to the slack team
   - -v to add a data volume to the container. Your local **automation_content** directory will be mounted to the diretory **automation_content** in the container.
-  - -d to run the container in background and print container ID
+  - -d to run the container in background and print container ID  
+
 ```
 docker run -v $PWD/automation_content:/hubot/automation_content -e HUBOT_SLACK_TOKEN=xxxxxxxxxxxxxxxx -d j-bot-image
 ```
