@@ -9,7 +9,7 @@ There is also a chatbot demo for OpenContrail https://www.youtube.com/watch?v=06
 
 There are many benefits, including:  
 - you can consume your automation content easily (with some level of abstraction) just chatting with a bot 
-- you can integrate the devops activities with notifications into one place, making it easier for everyone in the team to know what’s going on across the enterprise (python, ansible, gitlab, gitlab CI, github, travis CI, ... can send slack notifications).
+- Python, ansible, gitlab, gitlab CI, github, travis CI, ... can send slack notifications. You can integrate the devops activities with notifications into one place, making it easier for everyone in the team to know what’s going on across the enterprise.
 - you can have the conversions and the notifications and the bot into the same place
 
 ### About this repo  
