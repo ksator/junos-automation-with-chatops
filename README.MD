@@ -1,12 +1,22 @@
 [![Build Status](https://travis-ci.org/ksator/junos-automation-with-chatops-in-ams.svg?branch=master)](https://travis-ci.org/ksator/junos-automation-with-chatops-in-ams)
 
+### What is Chatops
+It is about humans chatting to Bots (and the other way around).  
+A more formal definition would be the concept of delegating tasks to a bot.  
+
+This repo is about chatops for Junos automation.  
+There is also a chatbot demo for OpenContrail https://www.youtube.com/watch?v=06aEYYb4cMg 
+
+There are many benefits, including:  
+- you can consume your automation content easily (with some level of abstraction) just chatting with a bot 
+- you can integrate the devops activities with notifications into one place, making it easier for everyone in the team to know what’s going on across the enterprise (python, ansible, gitlab, gitlab CI, github, travis CI, ... can send slack notifications).
+- you can have the conversions and the notifications and the bot into the same place
+
 ### About this repo  
 This repository is about Chatops for network engineers  
-I was initially inspired by this demo https://www.dravetech.com/blog/2016/03/30/chatops-demo.html  
+I was initially inspired by this demo https://www.dravetech.com/blog/2016/03/30/chatops-demo.html from David Barroso.    
 The repo is actually based on slack and hubot and content for junos automation (ansible playbooks, python scripts, jinja2 templates ...).   
 So you can delegate junos automation tasks chatting to hubot with slack.  
-
-There is also a chatbot demo for OpenContrail https://www.youtube.com/watch?v=06aEYYb4cMg 
 
 ### What to find on this repo  
 You will find into this repo: 
