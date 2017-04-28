@@ -124,43 +124,43 @@ You can use "remove" or "rm", you can use "neighbor" or "neigh".
 ```
 ##### Backup the configuration of \<target>, and apply the jinja2 template \<template> to \<target>  
 Run under the hood the playbook [**pb.template.yml**](https://github.com/ksator/junos-automation-with-chatops-in-ams/tree/master/automation_content/pb.template.yml) with the variables \<target> and \<template>. 
-The jinja2 template \<template> has to be defined into the directory [**automation_content**] (https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/automation_content).   
+The jinja2 template \<template> has to be defined into the directory [**automation_content**](https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/automation_content).   
 Add "--diff" to display the differences, add "--check" for a dry run.  
 ```
 @hubot_name dev=<target> template <template>
 ```
 ##### Execute the Ansible playbook \<playbook> on \<target>  
-The Ansible playbook \<playbook> has to be defined into the directory [**automation_content**] (https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/automation_content).  
+The Ansible playbook \<playbook> has to be defined into the directory [**automation_content**](https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/automation_content).  
 Add "--diff" to display the differences, add "--check" for a dry run.
 ```
 @hubot_name dev=<target> playbook <playbook>
 ```
 ##### Execute the python script \<script> and print the program output  
-The python script has to be defined into the directory [**automation_content**] (https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/automation_content).  
+The python script has to be defined into the directory [**automation_content**](https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/automation_content).  
 ```
 @hubot_name python <script>
 ```
-##### Print the list of Ansible playbooks defined into the directory [**automation_content**] (https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/automation_content).  
+##### Print the list of Ansible playbooks defined into the directory [**automation_content**](https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/automation_content).  
 You can use "list" or "ls"
 ```
 @hubot_name list playbooks
 ```
-##### Print the list of Jinja2 templates defined into the directory [**automation_content**] (https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/automation_content).    
+##### Print the list of Jinja2 templates defined into the directory [**automation_content**](https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/automation_content).    
 You can use "list" or "ls"
 ```
 @hubot_name list templates
 ```
-##### Print the list of Python scripts defined into the directory [**automation_content**] (https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/automation_content).  
+##### Print the list of Python scripts defined into the directory [**automation_content**](https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/automation_content).  
 You can use "list" or "ls"
 ```
 @hubot_name list python scripts
 ```
-##### Print a file (playbook, template, python scripts ...) defined in the directory [**automation_content**] (https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/automation_content)    
+##### Print a file (playbook, template, python scripts ...) defined in the directory [**automation_content**](https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/automation_content)    
 You can use "show" or "sh"
 ```
 @hubot_name show <file>
 ```
-##### Print the [**hosts**] (https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/automation_content/hosts) file (It has the valid values for \<target>)    
+##### Print the [**hosts**](https://github.com/ksator/junos-automation-with-chatops-in-ams/blob/master/automation_content/hosts) file (It has the valid values for \<target>)    
 You can use "show" or "sh"
 ```
 @hubot_name show hosts
