@@ -5,7 +5,7 @@ It is about humans chatting to Bots (and the other way around).
 A more formal definition would be the concept of delegating tasks to a bot.  
 
 This repo is about chatops for Junos automation.  
-There is also a chatbot demo for OpenContrail https://www.youtube.com/watch?v=06aEYYb4cMg 
+There is also a [chatbot demo](https://www.youtube.com/watch?v=06aEYYb4cMg) for OpenContrail   
 
 There are many benefits, including:  
 - You can consume your automation content easily (with some level of abstraction) just chatting with a bot. 
@@ -14,7 +14,7 @@ There are many benefits, including:
 
 ### About this repo  
 This repository is about Chatops for network engineers. 
-I was initially inspired by this demo https://www.dravetech.com/blog/2016/03/30/chatops-demo.html from David Barroso.    
+I was initially inspired by this [demo](https://www.dravetech.com/blog/2016/03/30/chatops-demo.html) from David Barroso.    
 The repo is actually based on slack and hubot and content for junos automation (ansible playbooks, python scripts, jinja2 templates ...).   
 So you can delegate junos automation tasks chatting to hubot with slack.  
 
