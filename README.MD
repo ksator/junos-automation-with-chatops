@@ -8,6 +8,7 @@ The repo is actually based on slack and hubot and junos automation content (ansi
 
 Please visit [wiki](https://github.com/ksator/junos-automation-with-chatops/wiki) to get all the [bot capabilities](https://github.com/ksator/junos-automation-with-chatops/wiki/03.-Bot-capabilities) and to get the usage instructions.  
 
+
 Few examples:    
 
 Get details about a device:  
