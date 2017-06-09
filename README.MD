@@ -8,6 +8,7 @@ The repo is actually based on slack and hubot and junos automation content (ansi
 
 Few examples:    
 
+
 Get details about a device:  
 ![whois.png](resources/whois.png)  
 
