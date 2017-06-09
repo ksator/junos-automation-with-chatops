@@ -6,4 +6,4 @@ This repo provides a dockerized and slack integrated hubot for junos automation.
 The repo is actually based on slack and hubot and junos automation content (ansible playbooks, python scripts, jinja2 templates ...): so we can delegate junos automation tasks chatting to hubot with slack.  
 Please visit [wiki](https://github.com/ksator/junos-automation-with-chatops/wiki) for the instructions.  
 
-![backup.png](backup.png)
+![bot.png](resources/bot.png)
