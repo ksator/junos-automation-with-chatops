@@ -19,6 +19,6 @@ Backup the Junos configuration running on Junos devices on a server:
 Pass a Junos set/delete/show command:  
 ![set.png](resources/set.png)  
 
-Pass a Junos set/delete/show command:  
-![set.png](resources/set.png)  
+Get details about a device:  
+![whois.png](resources/whois.png)  
 
