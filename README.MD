@@ -8,7 +8,7 @@ The repo is actually based on slack and hubot and junos automation content (ansi
 
 Please visit [wiki](https://github.com/ksator/junos-automation-with-chatops/wiki) to get all the [bot capabilities](https://github.com/ksator/junos-automation-with-chatops/wiki/03.-Bot-capabilities) and to get the installation and usage instructions.  
 
-Few examples:    
+Here's few examples:    
 
 Get details about a device:  
 ![whois.png](resources/whois.png)  
