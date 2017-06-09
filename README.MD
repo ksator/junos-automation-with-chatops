@@ -12,4 +12,4 @@ Rollback the Junos configuration:
 ![rollback.png](resources/rollback.png)  
 
 Backup the Junos configuration running on Junos devices on a server:  
-![backup.png](resources/backup.png)  
+![backup.png](resources/backup_configuration.png)  
