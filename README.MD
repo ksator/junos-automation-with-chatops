@@ -6,9 +6,6 @@ Chatops is about humans chatting to Bots (and the other way around) to delegate 
 This repo provides a dockerized and slack integrated hubot for junos automation.  
 The repo is actually based on slack and hubot and junos automation content (ansible playbooks, python scripts, jinja2 templates ...): so we can delegate junos automation tasks chatting to hubot with slack.  
 
-Please visit [wiki](https://github.com/ksator/junos-automation-with-chatops/wiki) to get all the [bot capabilities](https://github.com/ksator/junos-automation-with-chatops/wiki/03.-Bot-capabilities) and to get the usage instructions.  
-
-
 Few examples:    
 
 Get details about a device:  
@@ -25,3 +22,8 @@ Pass a Junos command (set, delete, show):
 
 Manage BGP neighbors (add a neighbor, remove a neighbor, audit a neighbor session):  
 ![bgp.png](resources/bgp.png)  
+
+Github and TravisCI slack notifications:  
+![git.png](resources/git.png)  
+
+Please visit [wiki](https://github.com/ksator/junos-automation-with-chatops/wiki) to get all the [bot capabilities](https://github.com/ksator/junos-automation-with-chatops/wiki/03.-Bot-capabilities) and to get the installation and usage instructions.  
