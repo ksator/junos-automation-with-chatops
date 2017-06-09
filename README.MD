@@ -16,6 +16,9 @@ Rollback the Junos configuration:
 Backup the Junos configuration running on Junos devices on a server:  
 ![backup.png](resources/backup.png)  
 
-Pass a Junos set command:  
+Pass a Junos set/delete/show command:  
+![set.png](resources/set.png)  
+
+Pass a Junos set/delete/show command:  
 ![set.png](resources/set.png)  
 
